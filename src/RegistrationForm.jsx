@@ -4,8 +4,12 @@ import FormHeader from "./FormHeader";
 import FormInput from "./FormInput";
 import FormCheckbox from "./FormCheckbox";
 import SubmitButton from "./SubmitButton";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {app} from "../src/credentials"
 
-const RegistrationForm = () => {
+const auth = getAuth(app);
+
+export default function RegistrationForm () {
   // Estados para cada input
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -139,4 +143,3 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
