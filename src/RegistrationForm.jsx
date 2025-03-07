@@ -1,79 +1,81 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import FormHeader from "./FormHeader";
 import FormInput from "./FormInput";
 import FormCheckbox from "./FormCheckbox";
 import SubmitButton from "./SubmitButton";
 
 const RegistrationForm = () => {
+  // Estados para cada input
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [idDocument, setIdDocument] = useState("");
+  const [age, setAge] = useState("");
+  const [registrationType, setRegistrationType] = useState("");
+  const[loading, setLoading]=useState(false)
+
+
+  const handleRegister = async (event) => {
+    event.preventDefault();
+  
+    try {
+      setLoading(true)
+      const nombreRegistraado = await createuserwithemailandpassword(email, password)
+      console.log(nombreRegistraado.user.email)
+      setEmail("")
+      setPassword("")
+      setName("") 
+      setLastName("")
+      setGender("") 
+      setConfirmPassword("")
+      setPhone("")
+      setIdDocument("")
+      setAge("")
+      setRegistrationType("")
+      setLoading(false)
+      navigation("login")
+    } catch (error) {
+      console.log(error)
+    }
+
+    
+    console.log(nombreRegistraado.user.uid)
+  };
+
   return (
     <main className="registration-form">
       <FormHeader />
       <section className="form-container">
-        <form className="form-content">
+        <form className="form-content" onSubmit={handleRegister}>
           <div className="input-row">
-            <FormInput
-              label="Nombre"
-              placeholder="Ingresa tu nombre"
-              type="text"
-            />
-            <FormInput
-              label="Apellido"
-              placeholder="Ingresa tu apellido"
-              type="text"
-            />
+            {loading && <p>Registrando...</p>}
+            <FormInput label="Nombre" placeholder="Ingresa tu nombre" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <FormInput label="Apellido" placeholder="Ingresa tu apellido" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
           </div>
 
           <div className="input-row">
-            <FormInput
-              label="Email"
-              placeholder="krivas@correo.unimet.edu.ve"
-              type="email"
-            />
-            <FormInput
-              label="Género"
-              placeholder="Hombre o Mujer"
-              type="text"
-            />
+            <FormInput label="Email" placeholder="krivas@correo.unimet.edu.ve" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <FormInput label="Género" placeholder="Hombre o Mujer" type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
           </div>
 
           <div className="input-row">
-            <FormInput
-              label="Contraseña"
-              placeholder="Ingresa tu contraseña"
-              type="password"
-            />
-            <FormInput
-              label="Confirmar contraseña"
-              placeholder="Ingresa tu contraseña"
-              type="password"
-            />
+            <FormInput label="Contraseña" placeholder="Ingresa tu contraseña" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <FormInput label="Confirmar contraseña" placeholder="Ingresa tu contraseña" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
           </div>
 
           <div className="input-row">
-            <FormInput
-              label="Teléfono"
-              placeholder="Ingresa tu numero de teléfono"
-              type="tel"
-            />
-            <FormInput
-              label="Documento de identidad"
-              placeholder="Ingresa tu cédula de identidad o carnet universitario"
-              type="text"
-            />
+            <FormInput label="Teléfono" placeholder="Ingresa tu número de teléfono" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
+            <FormInput label="Documento de identidad" placeholder="Ingresa tu cédula de identidad o carnet universitario" type="text" value={idDocument} onChange={(e) => setIdDocument(e.target.value)} />
           </div>
 
           <div className="input-row">
-            <FormInput
-              label="Edad"
-              placeholder="Ingresa tu numero de teléfono"
-              type="number"
-            />
-            <FormInput
-              label="¿Cómo deseas registrarte?"
-              placeholder=">"
-              type="text"
-            />
+            <FormInput label="Edad" placeholder="Ingresa tu edad" type="number" value={age} onChange={(e) => setAge(e.target.value)} />
+            <FormInput label="¿Cómo deseas registrarte?" placeholder=">" type="text" value={registrationType} onChange={(e) => setRegistrationType(e.target.value)} />
           </div>
 
           <SubmitButton />
