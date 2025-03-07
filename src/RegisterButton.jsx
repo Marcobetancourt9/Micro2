@@ -1,14 +1,19 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import styles from "./LoginForm.module.css";
 
 const RegisterButton = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/register');
+  };
+
   return (
     <button
       type="button"
       className={styles.registerButton}
-      onClick={() => {
-        /* Handle Registration */
-      }}
+      onClick={handleButtonClick}
     >
       Regístrate
     </button>
@@ -16,3 +21,4 @@ const RegisterButton = () => {
 };
 
 export default RegisterButton;
+
