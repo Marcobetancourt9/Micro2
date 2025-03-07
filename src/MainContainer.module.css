@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   background-color: #031d31;
   font-family: Poppins, sans-serif;
@@ -37,6 +38,11 @@ body {
   border: none;
   padding: 0;
 }
+
+.headerButton:nth-child(2) .headerButtonImage {
+  transform: translateX(100px); /* Mueve la imagen 20px a la derecha */
+}
+
 
 .headerButtonImage {
   width: 400px; /* Tamaño reducido */
