@@ -1,0 +1,128 @@
+.missionVisionSection {
+  width: 100%;
+  max-width: 1224px;
+  margin-top: 20px; /* Mayor separación inicial */
+  align-self: end;
+}
+
+.contentWrapper {
+  gap: 80px; /* Aumenta la separación horizontal */
+  display: flex;
+  justify-content: center;
+}
+
+.missionColumn,
+.visionColumn {
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  line-height: normal;
+  display: flex;
+}
+
+.missionColumn {
+  margin-left: -50px; /* Mueve todo el contenido de Misión más a la izquierda */
+}
+
+.visionColumn {
+  margin-left: -30px; /* Mueve el texto de Visión más a la izquierda */
+}
+
+.missionContent,
+.visionContent {
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  gap: 30px; /* Separa más los títulos y los textos */
+}
+
+.title {
+  color: #ff6709;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 15px; /* Mayor separación del título */
+}
+
+.description {
+  color: #fff;
+  text-align: center;
+  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  max-width: 80%;
+}
+
+.missionImage {
+  aspect-ratio: 1.09;
+  object-fit: contain;
+  object-position: center;
+  width: 433px;
+  max-width: 100%;
+  margin-top: 50px; /* Más espacio entre la imagen y el texto */
+}
+
+.visionImage {
+  aspect-ratio: 1.06;
+  object-fit: contain;
+  object-position: center;
+  z-index: 10;
+  border-radius: 50%;
+  width: 439px;
+  max-width: 100%;
+  margin-top: 50px; /* Más espacio entre la imagen y el texto */
+}
+
+.divider {
+  border: 1px solid #fff;
+  width: 100%;
+  min-height: 1px;
+  margin-top: 60px; /* Mayor separación entre las secciones */
+}
+
+@media (width <= 991px) {
+  .missionVisionSection,
+  .contentWrapper {
+    max-width: 100%;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px; /* Más espacio entre Misión y Visión en pantallas pequeñas */
+  }
+
+  .missionColumn,
+  .visionColumn {
+    width: 100%;
+    margin-left: 0; /* Restablece la alineación en pantallas pequeñas */
+  }
+
+  .missionContent,
+  .visionContent {
+    max-width: 100%;
+    margin-top: 50px; /* Más espacio vertical */
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .description {
+    max-width: 90%;
+  }
+
+  .missionImage,
+  .visionImage {
+    margin-top: 50px; /* Más espacio vertical en móviles */
+  }
+
+  .divider {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+}

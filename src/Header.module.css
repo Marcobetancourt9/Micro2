@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1200px;/* Aumenta o disminuye según la separación deseada */
+  width: 100%;
+  max-width: 1140px;
+}
+
+.mainLogo, .secondaryLogo {
+  width: 80px; /* Ajusta el tamaño de las imágenes */
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+@media (width <= 991px) {
+  .header {
+    max-width: 100%;
+    gap: 20px; /* Reduce la separación en pantallas pequeñas */
+  }
+  
+  .mainLogo, .secondaryLogo {
+    width: 60px;
+    height: 60px;
+  }
+}

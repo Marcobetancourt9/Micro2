@@ -1,0 +1,32 @@
+.slide1693 {
+  background-color: #031d31;
+  border: 1px solid #000;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 50px;
+  padding-bottom: 151px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoSection {
+  margin-bottom: 100px; /* Aumenta la separación */
+}
+
+.missionVision {
+  margin-top: 0px; /* Ajuste adicional si es necesario */
+}
+
+
+
+@media (width <= 991px) {
+  .slide1693 {
+    padding-bottom: 100px;
+  }
+}
