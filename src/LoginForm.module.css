@@ -18,7 +18,11 @@
   align-self: center;
   width: 410px;
   max-width: 100%;
+  display: block; /* Asegura que se comporte como un bloque */
+  margin-left: auto; /* Centra horizontalmente */
+  margin-right: auto; /* Centra horizontalmente */
 }
+
 
 .brandLogo {
   aspect-ratio: 4.33;
@@ -135,6 +139,32 @@
   font-weight: 700;
   cursor: pointer;
 }
+.largeHeading {
+  font-size: 48px;  /* Aumenta el tamaño de la fuente */
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px; /* Añade espacio entre el h1 y el h2 */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ddd;
+  margin-bottom: 30px; /* Ajusta la distancia entre h2 y el resto del contenido */
+}
+
+@media (max-width: 991px) {
+  .largeHeading {
+    font-size: 32px; /* Reducir tamaño de fuente en pantallas más pequeñas */
+    margin-bottom: 15px; /* Menos espacio entre h1 y h2 */
+  }
+
+  h2 {
+    font-size: 18px; /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    margin-bottom: 20px; /* Reduce la distancia */
+  }
+}
+
 
 @media (width <= 991px) {
   .loginContainer {

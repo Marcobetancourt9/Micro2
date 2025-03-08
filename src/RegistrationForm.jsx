@@ -108,6 +108,10 @@ export default function RegistrationForm() {
     <main className="registration-form">
       <FormHeader />
       <section className="form-container">
+      <div className="header-content">
+        <h1 className="title">Crea una cuenta</h1>
+        <p className="subtitle">Es rápido y fácil.</p>
+      </div>
         <form onSubmit={handleRegister} className="form-content">
           {loading && <p>Registrando...</p>}
           {error && <p className="text-red-500">{error}</p>}
