@@ -31,7 +31,7 @@ const LoginForm = () => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("Usuario:", userCredential.user.email);
       console.log("UID:", userCredential.user.uid);
-      navigate("/"); // Redirigir al home
+      navigate("/home"); // Redirigir al home
     } catch (error) {
       console.error("Error de autenticación:", error.message);
 
