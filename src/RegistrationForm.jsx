@@ -26,18 +26,37 @@ export default function RegistrationForm() {
     age: "",
     registrationType: "",
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email.trim());
   };
 
   const handleRegister = async (event) => {
     event.preventDefault();
     setError("");
 
+    // Validación de campos vacíos
+    if (!formData.name || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
+      setError("Todos los campos son requeridos");
+      return;
+    }
+
+    // Validación de email
+    const email = formData.email.trim();
+    if (!validateEmail(email)) {
+      setError("El formato del correo es inválido");
+      return;
+    }
+
+    // Validación de contraseñas
     if (formData.password !== formData.confirmPassword) {
       setError("Las contraseñas no coinciden");
       return;
@@ -76,7 +95,7 @@ export default function RegistrationForm() {
       setLoading(false);
       navigate("/login");
     } catch (error) {
-      setError(error.message);
+      setError("Hubo un error al registrar el usuario. Inténtalo nuevamente.");
       setLoading(false);
     }
   };
@@ -85,7 +104,7 @@ export default function RegistrationForm() {
     <main className="registration-form">
       <FormHeader />
       <section className="form-container">
-        <form onSubmit={handleRegister}  className="form-content">
+        <form onSubmit={handleRegister} className="form-content">
           {loading && <p>Registrando...</p>}
           {error && <p className="text-red-500">{error}</p>}
           <FormInput label="Nombre" name="name" type="text" value={formData.name} onChange={handleChange} />
@@ -98,30 +117,32 @@ export default function RegistrationForm() {
           <FormInput label="Documento de identidad" name="idDocument" type="text" value={formData.idDocument} onChange={handleChange} />
           <FormInput label="Edad" name="age" type="number" value={formData.age} onChange={handleChange} />
           <FormInput label="¿Cómo deseas registrarte?" name="registrationType" type="text" value={formData.registrationType} onChange={handleChange} />
+          
           <button 
-  style={{
-    borderRadius: "25px",
-    backgroundColor: "rgba(255, 103, 9, 1)",
-    border: "1px solid rgba(0, 0, 0, 1)",
-    minHeight: "100px",
-    width: "499px",
-    maxWidth: "100%",
-    padding: "27px 10px",
-    fontSize: "32px",
-    color: "rgba(0, 0, 0, 1)",
-    fontWeight: "700",
-    textAlign: "center",
-    cursor: "pointer",
-    margin: "37px auto",
-  }} 
-  type="submit"
->
-  Registrar
-</button>
+            style={{
+              borderRadius: "25px",
+              backgroundColor: "rgba(255, 103, 9, 1)",
+              border: "1px solid rgba(0, 0, 0, 1)",
+              minHeight: "100px",
+              width: "499px",
+              maxWidth: "100%",
+              padding: "27px 10px",
+              fontSize: "32px",
+              color: "rgba(0, 0, 0, 1)",
+              fontWeight: "700",
+              textAlign: "center",
+              cursor: "pointer",
+              margin: "37px auto",
+            }} 
+            type="submit"
+          >
+            Registrar
+          </button>
 
           <FormCheckbox />
         </form>
       </section>
+
       <style jsx>{`
         .registration-form {
           background-color: rgba(3, 29, 49, 1);
