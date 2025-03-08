@@ -7,7 +7,7 @@ import PasswordInput from "./PasswordInput";
 import GoogleAuthButton from "./GoogleAuthButton";
 import RegisterButton from "./RegisterButton";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "../credentials";
+import { app } from "../../credentials";
 import { useNavigate } from "react-router-dom";
 
 const auth = getAuth(app);

@@ -1,12 +1,16 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const FormHeader = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="form-header">
       <img
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/4d728afb440bc96104b5d45de50809e465b4c258dfd1b3a2d597873200cbb295?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
         alt="Registration form logo"
         className="header-logo"
+        onClick={()=> navigate("/")}
       />
       <style jsx>{`
         .form-header {
@@ -25,6 +29,7 @@ const FormHeader = () => {
           align-self: center;
           z-index: 10;
           max-width: 100%;
+          cursor:pointer;
         }
 
         .header-content {

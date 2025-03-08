@@ -6,7 +6,7 @@ import FormInput from "./FormInput";
 import FormCheckbox from "./FormCheckbox";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
-import { app } from "../credentials";
+import { app } from "../../credentials";
 
 const auth = getAuth(app);
 const db = getFirestore(app);

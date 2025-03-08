@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
-import MainContainer from './MainContainer';
-import LoginForm from './LoginForm';
-import RegistrationForm from './RegistrationForm';
+import MainContainer from './Main/MainContainer.jsx';
+import LoginForm from './Login/LoginForm.jsx';
+import RegistrationForm from './Register/RegistrationForm.jsx';
 import Destino from './Destinos/Destino.jsx'
 export default function App() {
     return (
