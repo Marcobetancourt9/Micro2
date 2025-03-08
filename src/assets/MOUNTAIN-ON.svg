@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-3 {
+        fill-opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #00720a;
+      }
+    </style>
+  </defs>
+  <path id="id1" class="cls-4" d="M351.6,265.6l101.6,171.9H46.9l101.5-171.9,101.6-171.9,101.6,171.9Z"/>
+  <path id="id2" class="cls-2" d="M227.1,194.1l11.2-10.6,12.6,19.2,14.7-3.4,8.4,3.4,27.5,8.2-50.7-85.9-50.4,88.6,26.6-19.5Z"/>
+  <path id="id2-2" data-name="id2" class="cls-1" d="M227.1,194.1l11.2-10.6,12.6,19.2,14.7-3.4,8.4,3.4,27.5,8.2-50.7-85.9-50.4,88.6,26.6-19.5Z"/>
+  <path id="id3" class="cls-4" d="M211.7,320.3l70.6,117.2H0l70.6-117.2,70.6-117.2,70.6,117.2Z"/>
+  <path id="id3-2" data-name="id3" class="cls-3" d="M211.7,320.3l70.6,117.2H0l70.6-117.2,70.6-117.2,70.6,117.2Z"/>
+  <path id="id4" class="cls-4" d="M443.5,343.8l59.3,93.8h-237.1l59.3-93.8,59.3-93.8,59.3,93.8Z"/>
+</svg>

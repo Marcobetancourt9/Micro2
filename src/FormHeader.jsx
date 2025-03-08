@@ -8,11 +8,6 @@ const FormHeader = () => {
         alt="Registration form logo"
         className="header-logo"
       />
-      <div className="header-content">
-        <h1 className="title">Crea una cuenta</h1>
-        <p className="subtitle">Es rápido y fácil.</p>
-      </div>
-
       <style jsx>{`
         .form-header {
           display: flex;

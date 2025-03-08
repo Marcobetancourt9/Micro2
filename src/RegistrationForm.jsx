@@ -1,88 +1,152 @@
 "use client";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FormHeader from "./FormHeader";
 import FormInput from "./FormInput";
 import FormCheckbox from "./FormCheckbox";
-import SubmitButton from "./SubmitButton";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import {app} from "../src/credentials"
+import { getFirestore, setDoc, doc } from "firebase/firestore";
+import { app } from "../credentials";
 
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-export default function RegistrationForm () {
-  // Estados para cada input
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [idDocument, setIdDocument] = useState("");
-  const [age, setAge] = useState("");
-  const [registrationType, setRegistrationType] = useState("");
-  const[loading, setLoading]=useState(false)
+export default function RegistrationForm() {
+  const navigate = useNavigate();
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    email: "",
+    gender: "",
+    password: "",
+    confirmPassword: "",
+    phone: "",
+    idDocument: "",
+    age: "",
+    registrationType: "",
+  });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email.trim());
+  };
 
   const handleRegister = async (event) => {
     event.preventDefault();
-  
-    try {
-      setLoading(true)
-      const nombreRegistraado = await createuserwithemailandpassword(email, password)
-      console.log(nombreRegistraado.user.email)
-      setEmail("")
-      setPassword("")
-      setName("") 
-      setLastName("")
-      setGender("") 
-      setConfirmPassword("")
-      setPhone("")
-      setIdDocument("")
-      setAge("")
-      setRegistrationType("")
-      setLoading(false)
-      navigation("login")
-    } catch (error) {
-      console.log(error)
+    setError("");
+
+    if (!formData.name || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
+      setError("Todos los campos son requeridos");
+      return;
     }
 
-    
-    console.log(nombreRegistraado.user.uid)
+    const email = formData.email.trim();
+    if (!validateEmail(email)) {
+      setError("El formato del correo es inválido");
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Las contraseñas no coinciden");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+      const user = userCredential.user;
+      
+      await setDoc(doc(db, "users", user.uid), {
+        nombre: formData.name,
+        apellido: formData.lastName,
+        email: formData.email,
+        genero: formData.gender,
+        telefono: formData.phone,
+        documento: formData.idDocument,
+        edad: formData.age,
+        tipoRegistro: formData.registrationType,
+        uid: user.uid,
+        fechaCreacion: new Date(),
+      });
+      
+      setFormData({
+        name: "",
+        lastName: "",
+        email: "",
+        gender: "",
+        password: "",
+        confirmPassword: "",
+        phone: "",
+        idDocument: "",
+        age: "",
+        registrationType: "",
+      });
+      console.log("Usuario registrado exitosamente");
+      setLoading(false);
+      console.log("Usuario registrado exitosamente");
+      navigate("/login");
+    } catch (error) {
+      console.error(error);
+      setError("Hubo un error al registrar el usuario. Inténtalo nuevamente.");
+      setLoading(false);
+    }
   };
 
   return (
     <main className="registration-form">
       <FormHeader />
       <section className="form-container">
-        <form className="form-content" onSubmit={handleRegister}>
-          <div className="input-row">
-            {loading && <p>Registrando...</p>}
-            <FormInput label="Nombre" placeholder="Ingresa tu nombre" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            <FormInput label="Apellido" placeholder="Ingresa tu apellido" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-          </div>
+      <div className="header-content">
+        <h1 className="title">Crea una cuenta</h1>
+        <p className="subtitle">Es rápido y fácil.</p>
+      </div>
+        <form onSubmit={handleRegister} className="form-content">
+          {loading && <p>Registrando...</p>}
+          {error && <p className="text-red-500">{error}</p>}
+          <FormInput label="Nombre" name="name" type="text" value={formData.name} onChange={handleChange} />
+          <FormInput label="Apellido" name="lastName" type="text" value={formData.lastName} onChange={handleChange} />
+          <FormInput label="Email" name="email" type="email" value={formData.email} onChange={handleChange} />
+          <FormInput label="Género" name="gender" type="text" value={formData.gender} onChange={handleChange} />
+          <FormInput label="Contraseña" name="password" type="password" value={formData.password} onChange={handleChange} />
+          <FormInput label="Confirmar contraseña" name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} />
+          <FormInput label="Teléfono" name="phone" type="tel" value={formData.phone} onChange={handleChange} />
+          <FormInput label="Documento de identidad" name="idDocument" type="text" value={formData.idDocument} onChange={handleChange} />
+          <FormInput label="Edad" name="age" type="number" value={formData.age} onChange={handleChange} />
+          <FormInput label="¿Cómo deseas registrarte?" name="registrationType" type="text" value={formData.registrationType} onChange={handleChange} />
+          
+          <button 
+            style={{
+              borderRadius: "25px",
+              backgroundColor: "rgba(255, 103, 9, 1)",
+              border: "1px solid rgba(0, 0, 0, 1)",
+              minHeight: "100px",
+              width: "499px",
+              maxWidth: "100%",
+              padding: "27px 10px",
+              fontSize: "32px",
+              color: "rgba(0, 0, 0, 1)",
+              fontWeight: "700",
+              textAlign: "center",
+              cursor: "pointer",
+              margin: "37px auto",
+            }} 
+            type="submit"
+          >
+            Registrarse
+          </button>
 
-          <div className="input-row">
-            <FormInput label="Email" placeholder="krivas@correo.unimet.edu.ve" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <FormInput label="Género" placeholder="Hombre o Mujer" type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
-          </div>
-
-          <div className="input-row">
-            <FormInput label="Contraseña" placeholder="Ingresa tu contraseña" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <FormInput label="Confirmar contraseña" placeholder="Ingresa tu contraseña" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-          </div>
-
-          <div className="input-row">
-            <FormInput label="Teléfono" placeholder="Ingresa tu número de teléfono" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
-            <FormInput label="Documento de identidad" placeholder="Ingresa tu cédula de identidad o carnet universitario" type="text" value={idDocument} onChange={(e) => setIdDocument(e.target.value)} />
-          </div>
-
-          <div className="input-row">
-            <FormInput label="Edad" placeholder="Ingresa tu edad" type="number" value={age} onChange={(e) => setAge(e.target.value)} />
-            <FormInput label="¿Cómo deseas registrarte?" placeholder=">" type="text" value={registrationType} onChange={(e) => setRegistrationType(e.target.value)} />
-          </div>
-
-          <SubmitButton />
           <FormCheckbox />
         </form>
       </section>
@@ -141,5 +205,4 @@ export default function RegistrationForm () {
       `}</style>
     </main>
   );
-};
-
+}

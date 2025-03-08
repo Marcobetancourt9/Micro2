@@ -9,11 +9,6 @@ const AuthHeader = () => {
         alt="Authentication Logo"
         className={styles.mainLogo}
       />
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/89eae8f2fd3ed7e0eb643f727bbbf0bdea771df7ba20833f9a66a801ab15788f?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-        alt="Brand Logo"
-        className={styles.brandLogo}
-      />
     </header>
   );
 };

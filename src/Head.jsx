@@ -7,21 +7,17 @@ import button2Image from "./assets/icono inicio.png";
 const Head = () => {
   const navigate = useNavigate();
 
-  const handleButton2Click = () => {
-    navigate('/login');
-  };
-
   return (
     <div className={styles.header}>
-      <button className={styles.headerButton}><img 
+      <button className={styles.headerButton} onClick={() => navigate('/')}><img 
         src={button1Image} 
         alt="Botón 1" 
         className={styles.headerButtonImage}
       /></button>
-      <button className={styles.headerButton} onClick={handleButton2Click}><img
+      <button className={styles.headerButton} onClick={()=> navigate('/login') }><img
         src={button2Image} 
         alt="Botón 2" 
-        className={styles.headerButtonImage}
+        className={styles.headerButtonImageTwo}
       /></button>
     </div>
   );
