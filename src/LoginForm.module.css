@@ -166,28 +166,28 @@ h2 {
 }
 
 
-@media (width <= 991px) {
+@media (max-width: 991px) {
   .loginContainer {
     padding-bottom: 100px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5%; /* Usar porcentajes */
+    padding-right: 5%;
   }
 
   .formContainer {
     max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .inputGroup {
     max-width: 100%;
-    padding-right: 20px;
+    padding-right: 5%;
   }
 
   .inputField {
     max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .loginButton {
@@ -197,15 +197,44 @@ h2 {
 
   .googleButton {
     max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centrar verticalmente */
+  }
+
+  .googleIcon {
+    margin-bottom: 10px; /* Espacio entre el ícono y el texto */
   }
 
   .registerButton {
     max-width: 100%;
     white-space: initial;
     margin-top: 40px;
+  }
+
+  .largeHeading {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 18px; 
+    margin-bottom: 20px; 
+  }
+}
+
+/* Punto de quiebre adicional para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .inputGroup {
+    font-size: 30px; 
+  }
+
+  .inputField {
+    font-size: 16px; 
+  }
+
+  .loginButton, .googleButton, .registerButton {
+    font-size: 24px; 
   }
 }
