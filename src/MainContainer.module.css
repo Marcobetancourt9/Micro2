@@ -25,7 +25,7 @@ body {
   padding: 20px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1284px) { 
   .header {
     flex-direction: column;
     gap: 20px;
@@ -44,13 +44,13 @@ body {
 }
 
 .headerButtonImage {
-  width: 100%; /* Imagenes responsivas */
+  width: 100%;
   max-width: 400px;
   height: auto;
 }
 
 .headerButtonImageTwo {
-  width: 100%; /* Imagenes responsivas */
+  width: 100%;
   max-width: 75px;
   height: auto;
 }
@@ -88,7 +88,7 @@ body {
   color: #ff6708;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1284px) { 
   .heroTitle {
     font-size: 60px;
   }
@@ -97,7 +97,7 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 991px) { 
   .heroTitle {
     font-size: 40px;
   }
@@ -105,6 +105,7 @@ body {
     font-size: 30px;
   }
 }
+
 
 /* Info Section */
 .infoSection {
@@ -133,13 +134,13 @@ body {
   margin-top: -20px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1284px) { 
   .infoText {
     padding: 48px 80px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 991px) { 
   .infoSection {
     flex-direction: column;
     height: auto;
@@ -170,7 +171,7 @@ body {
   font-weight: 700;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 991px) { 
   .platformTitle {
     font-size: 30px;
   }
@@ -227,7 +228,7 @@ body {
   background-color: #009b1e;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 991px) { 
   .buttonContainer {
     flex-direction: column;
     gap: 20px;
@@ -268,7 +269,7 @@ body {
 }
 
 .img {
-  width: 100%; /* Imagenes responsivas */
+  width: 100%;
   height: 400px;
   object-fit: cover;
 }
@@ -289,14 +290,14 @@ body {
   padding-bottom: 20px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1284px) { 
   .routeCards {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 991px) { 
   .routeCards {
     gap: 40px;
   }
@@ -304,6 +305,7 @@ body {
     width: 100%;
   }
 }
+
 
 /* Footer */
 .footer {
@@ -325,14 +327,14 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 991px) {
+@media (max-width: 1284px) { 
   .heroTitle { font-size: 60px; }
   .heroSubtitle { font-size: 50px; }
   .infoText { padding: 48px 80px; }
   .routeCards { flex-wrap: wrap; justify-content: center; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 991px) { 
   .header { flex-direction: column; gap: 20px; }
   .heroTitle { font-size: 40px; }
   .heroSubtitle { font-size: 30px; }
