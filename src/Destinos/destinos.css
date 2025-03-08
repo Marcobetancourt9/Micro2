@@ -50,7 +50,6 @@
     border: 3px black solid;
     border-radius: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
     background-size: cover;
 }
@@ -148,7 +147,6 @@
     border: 3px black solid;
     border-radius: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
     background-size: cover;
 }
