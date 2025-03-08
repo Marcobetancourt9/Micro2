@@ -47,27 +47,24 @@ export default function RegistrationForm() {
     event.preventDefault();
     setError("");
 
-    // Validación de campos vacíos
     if (!formData.name || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
       setError("Todos los campos son requeridos");
       return;
     }
 
-    // Validación de email
     const email = formData.email.trim();
     if (!validateEmail(email)) {
       setError("El formato del correo es inválido");
       return;
     }
 
-    // Validación de contraseñas
     if (formData.password !== formData.confirmPassword) {
       setError("Las contraseñas no coinciden");
       return;
     }
 
-    setLoading(true);
     try {
+      setLoading(true);
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCredential.user;
       
@@ -96,9 +93,12 @@ export default function RegistrationForm() {
         age: "",
         registrationType: "",
       });
+      console.log("Usuario registrado exitosamente");
       setLoading(false);
+      console.log("Usuario registrado exitosamente");
       navigate("/login");
     } catch (error) {
+      console.error(error);
       setError("Hubo un error al registrar el usuario. Inténtalo nuevamente.");
       setLoading(false);
     }
@@ -140,7 +140,7 @@ export default function RegistrationForm() {
             }} 
             type="submit"
           >
-            Registrar
+            Registrarse
           </button>
 
           <FormCheckbox />
