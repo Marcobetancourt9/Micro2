@@ -31,7 +31,11 @@ export default function RegistrationForm() {
   const [error, setError] = useState("");
   
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
   const validateEmail = (email) => {

@@ -1,10 +1,18 @@
 import React from "react";
 
-const FormInput = ({ label, placeholder, type = "text" }) => {
+const FormInput = ({ label, name, placeholder, type = "text", value, onChange }) => {
   return (
     <div className="input-group">
-      <label className="input-label">{label}</label>
-      <input type={type} placeholder={placeholder} className="input-field" />
+      <label className="input-label" htmlFor={name}>{label}</label>
+      <input 
+        id={name}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        className="input-field" 
+      />
 
       <style jsx>{`
         .input-group {
