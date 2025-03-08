@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   background-color: #031d31;
   font-family: Poppins, sans-serif;
@@ -41,17 +40,18 @@ body {
 }
 
 .headerButton:nth-child(2) .headerButtonImage {
-  transform: translateX(100px); /* Mueve la imagen 20px a la derecha */
+  transform: translateX(100px);
 }
 
-
 .headerButtonImage {
-  width: 400px; /* Tamaño reducido */
+  width: 100%; /* Imagenes responsivas */
+  max-width: 400px;
   height: auto;
 }
 
 .headerButtonImageTwo {
-  width: 75px; /* Tamaño reducido */
+  width: 100%; /* Imagenes responsivas */
+  max-width: 75px;
   height: auto;
 }
 
@@ -88,6 +88,24 @@ body {
   color: #ff6708;
 }
 
+@media (max-width: 991px) {
+  .heroTitle {
+    font-size: 60px;
+  }
+  .heroSubtitle {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+  .heroSubtitle {
+    font-size: 30px;
+  }
+}
+
 /* Info Section */
 .infoSection {
   display: flex;
@@ -115,6 +133,26 @@ body {
   margin-top: -20px;
 }
 
+@media (max-width: 991px) {
+  .infoText {
+    padding: 48px 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .infoSection {
+    flex-direction: column;
+    height: auto;
+  }
+  .infoText {
+    width: 100%;
+    padding: 30px;
+  }
+  .infoImage {
+    width: 100%;
+  }
+}
+
 .infoImage {
   width: 50%;
   height: 100%;
@@ -130,6 +168,12 @@ body {
 .platformTitle {
   font-size: 40px;
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .platformTitle {
+    font-size: 30px;
+  }
 }
 
 /* Adventure Section */
@@ -165,7 +209,8 @@ body {
   gap: 40px;
 }
 
-.routesBtn, .scheduleBtn {
+.routesBtn,
+.scheduleBtn {
   padding: 20px 42px;
   border: none;
   border-radius: 10px;
@@ -175,8 +220,19 @@ body {
   color: #fff;
 }
 
-.routesBtn { background-color: #ff6709; }
-.scheduleBtn { background-color: #009b1e; }
+.routesBtn {
+  background-color: #ff6709;
+}
+.scheduleBtn {
+  background-color: #009b1e;
+}
+
+@media (max-width: 640px) {
+  .buttonContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 
 /* Explore Section */
 .exploreSection {
@@ -212,7 +268,7 @@ body {
 }
 
 .img {
-  width: 100%;
+  width: 100%; /* Imagenes responsivas */
   height: 400px;
   object-fit: cover;
 }
@@ -231,6 +287,22 @@ body {
   font-style: italic;
   color: #ff6709;
   padding-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .routeCards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .routeCards {
+    gap: 40px;
+  }
+  .routeCard {
+    width: 100%;
+  }
 }
 
 /* Footer */
