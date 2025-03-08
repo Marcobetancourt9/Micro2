@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useEffect } from "react";
 import Head from "../Head";
 import Footer from "../Footer";
 import QuebradaQuinteroMap from "/src/assets/Quebrada_quintero_mapa.png";
@@ -33,6 +34,11 @@ const allInfo = [
 ]
 
 const Destino = ({id}) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   let info = allInfo[0]
   return <>
     <Head/>

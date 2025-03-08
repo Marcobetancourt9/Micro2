@@ -37,6 +37,7 @@ body {
   background: none;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .headerButton:nth-child(2) .headerButtonImage {
@@ -46,6 +47,11 @@ body {
 
 .headerButtonImage {
   width: 400px; /* Tamaño reducido */
+  height: auto;
+}
+
+.headerButtonImageTwo {
+  width: 75px; /* Tamaño reducido */
   height: auto;
 }
 
@@ -202,6 +208,7 @@ body {
   border-radius: 10px;
   width: 271px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .img {

@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "./Head";
-import Header from "./Header";
 import HeroSection from "./HeroSection";
 import InfoSection from "./InfoSection";
 import PlatformSection from "./PlatformSection";
@@ -12,7 +11,6 @@ const MainContainer = () => {
   return (
     <main className={styles.mainContainer}>
       <Head />
-      <Header />
       <HeroSection />
       <InfoSection />
       <PlatformSection />
