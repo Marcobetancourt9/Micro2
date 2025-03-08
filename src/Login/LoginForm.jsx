@@ -20,36 +20,48 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    // Validar que el email sea válido
     if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) {
       setError("Por favor, ingresa un email válido.");
       return;
     }
+
     try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      console.log(user.user.email);
-      console.log(user.user.uid);
-      navigate("/");
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log("Usuario:", userCredential.user.email);
+      console.log("UID:", userCredential.user.uid);
+      navigate("/"); // Redirigir al home
     } catch (error) {
-      console.log(error.message);
-      if (error.message === 'Firebase: Error (auth/invalid-credential).') {
-        setError('Credenciales invalidas');
+      console.error("Error de autenticación:", error.message);
+
+      if (error.code === "auth/invalid-credential" || error.code === "auth/wrong-password") {
+        setError("Credenciales inválidas. Verifica tu correo y contraseña.");
+      } else if (error.code === "auth/user-not-found") {
+        setError("No existe una cuenta con este correo.");
+      } else {
+        setError("Ocurrió un error. Inténtalo de nuevo.");
       }
     }
   };
 
   return (
     <main className={styles.loginContainer}>
-      <AuthHeader className="center"/>
+      <AuthHeader className="center" />
       <section className={styles.formContainer}>
         <form className={styles.formWrapper} onSubmit={handleLogin}>
-          {error && <div className='text-red-500'>{error}</div>}
-          <h1 className={styles.largeHeading}>Inicio Sesión</h1>
+          {error && <div className="text-red-500">{error}</div>}
+          <h1 className={styles.largeHeading}>Inicio de Sesión</h1>
           <h2>Inicia sesión en tu cuenta Ecomet</h2>
+          
+          {/* Se pasa el estado del padre a los inputs */}
           <EmailInput value={email} onChange={(e) => setEmail(e.target.value)} />
           <PasswordInput value={password} onChange={(e) => setPassword(e.target.value)} />
+
           <button type="submit" className={styles.loginButton}>
             Iniciar Sesión
           </button>
+
           <GoogleAuthButton />
           <RegisterButton />
         </form>
