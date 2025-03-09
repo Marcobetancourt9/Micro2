@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import FormHeader from "./FormHeader";
 import FormInput from "./FormInput";
 import FormCheckbox from "./FormCheckbox";
+import DropdownSelect from "./DropdownSelect";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
 import { app } from "../../credentials";
@@ -122,8 +123,7 @@ export default function RegistrationForm() {
           <FormInput label="Teléfono" name="phone" type="tel" value={formData.phone} onChange={handleChange} />
           <FormInput label="Documento de identidad" name="idDocument" type="text" value={formData.idDocument} onChange={handleChange} />
           <FormInput label="Edad" name="age" type="number" value={formData.age} onChange={handleChange} />
-          <FormInput label="¿Cómo deseas registrarte?" name="registrationType" type="text" value={formData.registrationType} onChange={handleChange} />
-          
+          <DropdownSelect label="¿Cómo deseas registrarte?" name="registrationType" value={formData.registrationType} onChange={handleChange} />          
 
           {loading && <p>Registrando...</p>}
           {error && <p style={{color:"rgb(255, 0, 0)"}} className="text-red-500">* {error} *</p>}
