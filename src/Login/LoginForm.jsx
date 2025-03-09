@@ -20,7 +20,6 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
     // Validar que el email sea válido
     if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) {
       setError("Por favor, ingresa un email válido.");
