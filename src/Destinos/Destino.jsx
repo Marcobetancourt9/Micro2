@@ -4,11 +4,9 @@ import React from "react";
 import { useEffect } from "react";
 import Head from "../Head";
 import Footer from "../Footer";
-import QuebradaQuinteroMap from "/src/assets/Quebrada_quintero_mapa.png";
 import TelefericoOption from "/src/assets/teleferico-option.jpg";
 import LagunazoOption from "/src/assets/lagunazo-option.jpg";
 import QuebradaOption from "/src/assets/quebrada-option.jpg";
-import QuebradaOne from "/src/assets/quebrada(1).jpg";
 import MountainOff from "/src/assets/MOUNTAIN-OFF.svg";
 import MountainOn from "/src/assets/MOUNTAIN-ON.svg";
 import StarOff from "/src/assets/STAR-OFF.svg";
@@ -17,13 +15,13 @@ import "./destinos.css"
 
 const allInfo = [
   { // ID: 0 | Quebrada Quintero
-    bannerImage: QuebradaQuinteroMap,
+    bannerImage: "/src/assets/Quebrada_quintero_mapa.png",
     title: "Descubre la magia de La Quebrada Quintero, parte  del rico tapiz natural del Parque Nacional El Ávila.",
     description: "Quebrada Quintero es una joya escondida en los exuberantes paisajes del Parque Nacional El Ávila. Conocida solo por unos pocos exploradores aventureros, esta tranquila cascada ofrece un escape incomparable a la naturaleza. Rodeado de una densa vegetación y accesible a través de un sendero poco conocido, se siente como entrar en un paraíso secreto. Las aguas cristalinas caen suavemente sobre las rocas, creando un ambiente sereno perfecto para aquellos que buscan paz y soledad. Su belleza virgen lo convierte en un hallazgo raro, ideal para los excursionistas que quieren descubrir un lado más tranquilo de El Ávila, lejos de las multitudes.",
-    imageOne: QuebradaOne,
-    imageTwo: QuebradaOne,
-    imageThree: QuebradaOne,
-    imageFour: QuebradaOne,
+    imageOne: "/src/assets/quebrada(1).jpg",
+    imageTwo: "/src/assets/quebrada(1).jpg",
+    imageThree: "/src/assets/quebrada(1).jpg",
+    imageFour: "/src/assets/quebrada(1).jpg",
     especial: "Guantes de escalado",
     difficulty: [1,1,0,0,0],
     reviews: [1,1,1,0,0]

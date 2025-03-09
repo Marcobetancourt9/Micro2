@@ -113,8 +113,6 @@ export default function RegistrationForm() {
         <p className="subtitle">Es rápido y fácil.</p>
       </div>
         <form onSubmit={handleRegister} className="form-content">
-          {loading && <p>Registrando...</p>}
-          {error && <p className="text-red-500">{error}</p>}
           <FormInput label="Nombre" name="name" type="text" value={formData.name} onChange={handleChange} />
           <FormInput label="Apellido" name="lastName" type="text" value={formData.lastName} onChange={handleChange} />
           <FormInput label="Email" name="email" type="email" value={formData.email} onChange={handleChange} />
@@ -126,28 +124,32 @@ export default function RegistrationForm() {
           <FormInput label="Edad" name="age" type="number" value={formData.age} onChange={handleChange} />
           <FormInput label="¿Cómo deseas registrarte?" name="registrationType" type="text" value={formData.registrationType} onChange={handleChange} />
           
+
+          {loading && <p>Registrando...</p>}
+          {error && <p style={{color:"rgb(255, 0, 0)"}} className="text-red-500">* {error} *</p>}
+          <FormCheckbox />
           <button 
             style={{
-              borderRadius: "25px",
+              borderRadius: "22px",
               backgroundColor: "rgba(255, 103, 9, 1)",
               border: "1px solid rgba(0, 0, 0, 1)",
-              minHeight: "100px",
-              width: "499px",
+              minHeight: "75px",
+              width: "300px",
               maxWidth: "100%",
-              padding: "27px 10px",
-              fontSize: "32px",
+              padding: "10px",
+              fontSize: "28px",
               color: "rgba(0, 0, 0, 1)",
               fontWeight: "700",
               textAlign: "center",
               cursor: "pointer",
-              margin: "37px auto",
+              margin: "10px auto",
             }} 
             type="submit"
           >
             Registrarse
           </button>
 
-          <FormCheckbox />
+          
         </form>
       </section>
 
@@ -168,9 +170,11 @@ export default function RegistrationForm() {
           border-radius: 40px;
           background-color: rgba(11, 64, 105, 1);
           display: flex;
-          padding: 77px 0;
+          padding: 50px 0;
           flex-direction: column;
           align-items: center;
+          width: 80%;
+          margin: auto;
         }
 
         .form-content {

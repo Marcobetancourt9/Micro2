@@ -14,14 +14,14 @@ const FormCheckbox = () => {
         .checkbox-container {
           display: flex;
           align-items: center;
-          gap: 27px;
+          gap: 5px;
           margin-top: 20px;
           padding: 0 25px;
         }
 
         .checkbox-input {
-          width: 62px;
-          height: 68px;
+          width: 25px;
+          height: 25px;
           border-radius: 4px;
           border: 1px solid #d1d5db;
           background-color: #fff;
@@ -29,7 +29,7 @@ const FormCheckbox = () => {
 
         .checkbox-label {
           color: rgba(255, 255, 255, 1);
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 400;
           line-height: 1;
           flex: 1;
