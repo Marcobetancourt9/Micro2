@@ -22,7 +22,7 @@ const FormInput = ({ label, name, placeholder, type = "text", value, onChange })
 
         .input-label {
           color: rgba(255, 255, 255, 1);
-          font-size: 40px;
+          font-size: 20px;
           font-weight: 700;
           display: block;
           margin-bottom: 15px;
@@ -33,8 +33,8 @@ const FormInput = ({ label, name, placeholder, type = "text", value, onChange })
           border-radius: 30px;
           background-color: rgba(241, 234, 234, 1);
           border: 3px solid rgba(0, 0, 0, 1);
-          padding: 32px 38px;
-          font-size: 20px;
+          padding: 20px 20px;
+          font-size: 15px;
           color: #000000;
           font-weight: 400;
         }
