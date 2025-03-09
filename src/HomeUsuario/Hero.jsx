@@ -15,7 +15,6 @@ const Hero = () => {
           al<span className={styles.highlight}> Ávila</span>
         </h2>
       </div>
-      <hr className={styles.divider} />
     </section>
   );
 };
