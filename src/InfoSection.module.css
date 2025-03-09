@@ -1,0 +1,127 @@
+.infoSection {
+  width: 100%;
+  max-width: 1225px;
+  margin-top: 49px;
+  margin-right: 21px;
+  align-self: end;
+}
+
+.contentWrapper {
+  gap: 20px;
+  display: flex;
+}
+
+.leftColumn {
+  flex-direction: column;
+  align-items: stretch;
+  width: 43%;
+  margin-left: 0;
+  line-height: normal;
+  display: flex;
+}
+
+.rightColumn {
+  flex-direction: column;
+  align-items: stretch;
+  width: 57%;
+  margin-left: 20px;
+  line-height: normal;
+  display: flex;
+}
+
+.title {
+  color: #ff6709;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid #000;
+  margin-left: 26px;
+  margin-right: 24px;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.description {
+  color: #fff;
+  text-align: center;
+  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 38px;
+}
+
+.parkImage {
+  aspect-ratio: 1.5;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 60px;
+  width: 100%;
+  margin-top: 124px;
+  margin-left: 16px;
+  margin-right: 15px;
+}
+
+.landscapeImage {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  align-self: center;
+  width: 400px;
+  max-width: 100%;
+}
+
+.rightColumn {
+  flex-direction: column;
+  align-items: stretch;
+  width: 57%;
+  margin-left: 20px;
+  line-height: normal;
+  display: flex;
+}
+
+.rightColumn .description {
+  margin-top: 130px; /* Ajusta el valor según tus necesidades */
+}
+
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+@media (width <= 991px) {
+  .infoSection {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-right: 10px;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .title {
+    max-width: 100%;
+    margin-right: 10px;
+    font-size: 40px;
+  }
+
+  .parkImage {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-right: 10px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}
