@@ -1,26 +1,31 @@
+/* Header.module.css */
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1200px;/* Aumenta o disminuye según la separación deseada */
-  width: 100%;
-  max-width: 1140px;
+  justify-content: space-between; /* Ajusta el espacio entre los elementos */
+  padding: 10px 20px; /* Espaciado alrededor del contenido */
 }
 
-.mainLogo, .secondaryLogo {
-  width: 80px; /* Ajusta el tamaño de las imágenes */
-  height: 80px;
+.menuIcon {
+  width: 100px; /* Ajusta el tamaño de las imágenes */
+  height: 150px;
   object-fit: contain;
-  border-radius: 50%;
+}
+/* Header.module.css */
+.mainLogo {
+  width: 250px; /* Ajusta el tamaño de la imagen */
+  height: 200px;
+  object-fit: contain;
 }
 
-@media (width <= 991px) {
+
+@media (max-width: 500px) {
   .header {
-    max-width: 100%;
+    justify-content: center; /* Centra el contenido en pantallas pequeñas */
     gap: 20px; /* Reduce la separación en pantallas pequeñas */
   }
   
-  .mainLogo, .secondaryLogo {
+  .mainLogo, .menuIcon {
     width: 60px;
     height: 60px;
   }
