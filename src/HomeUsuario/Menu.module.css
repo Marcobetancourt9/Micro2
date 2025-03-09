@@ -1,0 +1,60 @@
+/* Menu.module.css */
+
+.menuDesplegable {
+    background-color: #003366; /* Fondo azul oscuro */
+    color: white; /* Texto en color blanco */
+    width: 250px; /* Ancho del menú */
+    padding: 20px; /* Espaciado interno */
+    position: fixed; /* Posición fija para desplegar sobre otros elementos */
+    top: 0; /* Alineado al tope */
+    right: 0; /* Alineado a la derecha */
+    height: 100vh; /* Altura completa de la ventana */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+    transform: translateX(100%); /* Oculto inicialmente */
+  }
+  
+  .menuDesplegable.open {
+    transform: translateX(0); /* Visible cuando está abierto */
+  }
+  
+  .menuDesplegable ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin espaciado interno */
+  }
+  
+  .menuDesplegable li {
+    margin: 15px 0; /* Espaciado entre elementos */
+    display: flex; /* Flexbox para alinear íconos y texto */
+    align-items: center; /* Alineación vertical centrada */
+  }
+  
+  .menuDesplegable li img {
+    margin-right: 10px; /* Espaciado entre ícono y texto */
+  }
+  
+  .menuDesplegable li a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  .menuDesplegable li a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+  }
+  
+  /* Estilo para el icono de cierre */
+  .menuDesplegable .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Ajuste de tamaño de la imagen derecha */
+  .menuIcon {
+    width: 60px; /* Ajusta el tamaño de la imagen derecha */
+    height: 60px;
+  }
+  

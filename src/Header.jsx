@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import styles from "./Header.module.css";
-import { useNavigate } from 'react-router-dom';
+import Menu from "./HomeUsuario/menu";
+import { useNavigate } from "react-router-dom";
 
 
 const Header = () => {
@@ -16,11 +17,7 @@ const Header = () => {
         onClick={()=> navigate("/home")}
         style={{cursor:"pointer"}}
       />
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/8372bb838ffb8ea1b890a87caf366876719b34488f296cf286e9547f4c590c34?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-        alt="Menu icon"
-        className={styles.menuIcon}
-      />
+      <Menu className={styles.missionVision}/>
     </header>
   );
 };
