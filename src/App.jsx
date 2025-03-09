@@ -12,7 +12,7 @@ export default function App() {
           <Route path="/" element={<MainContainer />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="register" element={<RegistrationForm />} />
-          <Route path="destino" element={<Destino/>} />
+          <Route path="destino/:id" element={<Destino/>} />
           <Route path="home" element={<Slide1693 />} />
         </Routes>
         
