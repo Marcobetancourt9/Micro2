@@ -4,7 +4,7 @@ import MainContainer from './Main/MainContainer.jsx';
 import LoginForm from './Login/LoginForm.jsx';
 import RegistrationForm from './Register/RegistrationForm.jsx';
 import Destino from './Destinos/Destino.jsx'
-import Slide1693 from './Slide1693.jsx';
+import Slide1693 from './HomeUsuario/Slide1693.jsx';
 export default function App() {
     return (
       <Router>
