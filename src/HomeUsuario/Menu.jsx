@@ -1,8 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import menuIcon from "/src/assets/menu-icon.png"; // Asegúrate de que la ruta sea correcta
-import styles from "./Menu.module.css"; // Importa el archivo CSS
+import { useState, useEffect, useRef, useContext } from "react"; // Agrega useContext
+import { UserContext } from "../Context/UserContext"; // Asegúrate de importar correctamente
+import menuIcon from "/src/assets/menu-icon.png"; // Verifica la ruta del icono
+import styles from "./Menu.module.css"; // Importa los estilos
 
 export default function Menu() {
+  
+  const { user, setUser,profile } = useContext(UserContext); // Usa useContext para acceder al contexto
+  
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null); // Referencia para el menú desplegable
 
@@ -25,7 +29,7 @@ export default function Menu() {
   return (
     <div>
       <img
-        src={menuIcon} // Uso de la variable importada
+        src={menuIcon}
         alt="Menú"
         className={`cursor-pointer ${styles.menuIcon}`}
         onClick={(e) => {
@@ -44,6 +48,9 @@ export default function Menu() {
           &times;
         </span>
         <ul>
+          <li>
+            <p> Bienvenido {profile.nombre}</p>
+          </li>
           <li>
             <a href="#">🌲 Inicio</a>
           </li>
