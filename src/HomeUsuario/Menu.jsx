@@ -34,6 +34,7 @@ export default function Menu() {
 
   async function checkUser(){
     auth.authStateReady().then(()=>{
+      console.log(auth.currentUser)
       if(!auth.currentUser){
         navigate("/")
       }
@@ -68,7 +69,7 @@ export default function Menu() {
         </span>
         <ul>
           <li>
-            <p> Bienvenido {usuario && usuario.displayName}</p>
+            <p> Bienvenido {usuario && usuario.email}</p>
           </li>
           <li>
             <a href="#">🌲 Inicio</a>
