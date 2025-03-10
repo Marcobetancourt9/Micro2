@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./LoginForm.module.css";
 import AuthHeader from "./AuthHeader";
 import EmailInput from "./EmailInput";
@@ -43,6 +43,20 @@ const LoginForm = () => {
       }
     }
   };
+
+    useEffect(() => {
+      checkUser()
+    }, []);
+  
+    async function checkUser(){
+      auth.authStateReady().then(()=>{
+        if(auth.currentUser){
+          navigate("/home")
+        }
+        console.log(auth)
+      })
+    }
+
 
   return (
     <main className={styles.loginContainer}>

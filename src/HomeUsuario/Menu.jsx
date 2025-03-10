@@ -1,12 +1,14 @@
-import { useState, useEffect, useRef, useContext } from "react"; // Agrega useContext
-import { UserContext } from "../Context/UserContext"; // Asegúrate de importar correctamente
+import { useState, useEffect, useRef } from "react"; 
 import menuIcon from "/src/assets/menu-icon.png"; // Verifica la ruta del icono
 import styles from "./Menu.module.css"; // Importa los estilos
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { app } from "../../credentials";
 
 export default function Menu() {
-  
-  const { user, setUser,profile } = useContext(UserContext); // Usa useContext para acceder al contexto
-  
+  const navigate = useNavigate();
+  const auth = getAuth(app);
+  const usuario = auth.currentUser
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null); // Referencia para el menú desplegable
 
@@ -26,8 +28,25 @@ export default function Menu() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, [isOpen]);
 
+  useEffect(() => {
+    checkUser()
+  }, []);
+
+  async function checkUser(){
+    auth.authStateReady().then(()=>{
+      if(!auth.currentUser){
+        navigate("/")
+      }
+    })
+  }
+
+  function cerrarSesion(){
+    signOut(auth);
+    navigate("/")
+  }
+
   return (
-    <div>
+    <div style={{zIndex: 99}}>
       <img
         src={menuIcon}
         alt="Menú"
@@ -49,7 +68,7 @@ export default function Menu() {
         </span>
         <ul>
           <li>
-            <p> Bienvenido {profile.nombre}</p>
+            <p> Bienvenido {usuario && usuario.displayName}</p>
           </li>
           <li>
             <a href="#">🌲 Inicio</a>
@@ -70,7 +89,7 @@ export default function Menu() {
             <a href="#">📫 Contactarnos</a>
           </li>
           <li>
-            <a href="/">❌ Cerrar Sesión</a>
+            <a onClick={()=> cerrarSesion() }>❌ Cerrar Sesión</a>
           </li>
         </ul>
       </div>
