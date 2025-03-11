@@ -82,7 +82,7 @@ export default function Menu() {
             <a onClick={() => setShowMessage("Rutas")}>🖼️ Rutas</a>
           </li>
           <li>
-            <a href="#">🦺 Consejos de Seguridad</a>
+            <a onClick={() => setShowMessage("Consejos de Seguridad")}>🦺 Consejos de Seguridad</a>
           </li>
           <li>
             <a onClick={() => setShowMessage("Editar Perfil")}>🪪 Editar Perfil</a>
