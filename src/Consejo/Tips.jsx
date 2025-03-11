@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./Tips.module.css";
 import GuideSection from "./GuideSection";
+import Header from "../Header";
 
 const Tips = () => {
   const sections = [
@@ -72,19 +73,7 @@ const Tips = () => {
 
   return (
     <main className={styles.tips}>
-      <div className={styles.headerImages}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/efec7dabf4c0ba302a8d063e6669f161030b9b2ba63530b1cba4993de564ed73?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-          alt="Banner principal"
-          className={styles.bannerImage}
-        />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9e2581d491441fca1ad4ab7421246f4dbab83eda2afc6c23460e3e8076182e3?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-          alt="Logo"
-          className={styles.logoImage}
-        />
-      </div>
-
+      <Header />
       <section className={styles.guideSections}>
         {sections.map((section, index) => (
           <GuideSection
