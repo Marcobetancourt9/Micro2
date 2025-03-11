@@ -146,22 +146,33 @@
 }
 
 .registerButton {
-  color: #fff;
+  color: #fff; /* Color del texto */
   text-align: center;
-  background-color: #031d31;
+  background-color: #031d31; /* Color inicial */
   border: 1px solid #000;
-  border-radius: 25px;
+  border-radius: 25px; /* Bordes redondeados */
   align-self: center;
-  width: 541px;
+  width: 541px; /* Ancho del botón */
   max-width: 100%;
-  min-height: 121px;
+  min-height: 121px; /* Altura mínima */
   margin-top: 71px;
   padding: 38px 10px;
   font-family: Istok Web, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 32px; /* Tamaño de fuente */
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Animaciones suaves */
 }
+
+.registerButton:hover {
+  background-color: #021629; /* Color más oscuro al pasar el cursor */
+}
+
+.registerButton:active {
+  background-color: #01101f; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "presión" */
+}
+
 .largeHeading {
   font-size: 48px;  /* Aumenta el tamaño de la fuente */
   font-weight: 700;
