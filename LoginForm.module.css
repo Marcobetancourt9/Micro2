@@ -1,0 +1,272 @@
+.loginContainer {
+  background-color: #031d31;
+  border: 1px solid #000;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 59px 49px 200px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 4px #00000040;
+}
+
+.mainLogo {
+  aspect-ratio: 1.71;
+  object-fit: contain;
+  object-position: center;
+  z-index: 10;
+  border-radius: 50%;
+  align-self: center;
+  width: 410px;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.brandLogo {
+  aspect-ratio: 4.33;
+  object-fit: contain;
+  object-position: center;
+  width: 350px;
+  max-width: 100%;
+}
+
+.formContainer {
+  background-color: #0b4069;
+  border-radius: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 61px 80px;
+  display: flex;
+}
+
+.formWrapper {
+  flex-direction: column;
+  align-items: stretch;
+  width: 648px;
+  max-width: 100%;
+  display: flex;
+}
+
+.inputGroup {
+  color: #fff;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-family: Istok Web, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+}
+
+.inputLabel {
+  align-self: start;
+  margin-top: 29px;
+}
+
+.inputField {
+  color: #000;
+  background-color: #f1eaea;
+  border: 3px solid #000;
+  border-radius: 30px;
+  margin-top: 15px;
+  padding: 33px 29px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.loginButton {
+  color: #000; /* Color del texto */
+  text-align: center;
+  background-color: #ff6709; /* Color inicial */
+  border: 1px solid #000; /* Borde negro */
+  border-radius: 25px; /* Bordes redondeados */
+  align-self: center;
+  width: 481px; /* Ancho del botón */
+  max-width: 100%;
+  min-height: 96px;
+  margin-top: 65px;
+  padding: 25px 10px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Suavidad en los cambios */
+}
+
+.loginButton:hover {
+  background-color: #d94f02; /* Color más oscuro al pasar el cursor */
+}
+
+.loginButton:active {
+  background-color: #cc5507; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "presión" */
+}
+
+.googleButton {
+  color: #100101; /* Color del texto */
+  text-align: center;
+  background-color: #ff6302; /* Color inicial del botón */
+  border: none;
+  border-radius: 25px; /* Forma redondeada */
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 27px;
+  padding: 20px 57px;
+  font-family: Istok Web, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Para animaciones suaves */
+}
+
+.googleButton:hover {
+  background-color: #d94f02; /* Color más oscuro al pasar el cursor */
+}
+
+.googleButton:active {
+  background-color: #cc4f02; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "hundimiento" */
+}
+
+.googleIcon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 70px;
+}
+
+.googleButtonText {
+  flex: 1;
+}
+
+.registerButton {
+  color: #fff; /* Color del texto */
+  text-align: center;
+  background-color: #031d31; /* Color inicial */
+  border: 1px solid #000;
+  border-radius: 25px; /* Bordes redondeados */
+  align-self: center;
+  width: 541px; /* Ancho del botón */
+  max-width: 100%;
+  min-height: 121px; /* Altura mínima */
+  margin-top: 71px;
+  padding: 38px 10px;
+  font-family: Istok Web, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 32px; /* Tamaño de fuente */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Animaciones suaves */
+}
+
+.registerButton:hover {
+  background-color: #021629; /* Color más oscuro al pasar el cursor */
+}
+
+.registerButton:active {
+  background-color: #01101f; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "presión" */
+}
+
+.largeHeading {
+  font-size: 48px; /* Aumenta el tamaño de la fuente */
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px; /* Añade espacio entre el h1 y el h2 */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ddd;
+  margin-bottom: 30px; /* Ajusta la distancia entre h2 y el resto del contenido */
+}
+
+@media (max-width: 991px) {
+  .largeHeading {
+    font-size: 32px; /* Reducir tamaño de fuente en pantallas más pequeñas */
+    margin-bottom: 15px; /* Menos espacio entre h1 y h2 */
+  }
+
+  h2 {
+    font-size: 18px; /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    margin-bottom: 20px; /* Reduce la distancia */
+  }
+}
+
+@media (max-width: 991px) {
+  .loginContainer {
+    padding-bottom: 100px;
+    padding-left: 5%; /* Usar porcentajes */
+    padding-right: 5%;
+  }
+
+  .formContainer {
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .inputGroup {
+    max-width: 100%;
+    padding-right: 5%;
+  }
+
+  .inputField {
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .loginButton {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .googleButton {
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    flex-direction: column;
+    align-items: center; /* Centrar verticalmente */
+  }
+
+  .googleIcon {
+    margin-bottom: 10px; /* Espacio entre el ícono y el texto */
+  }
+
+  .registerButton {
+    max-width: 100%;
+    white-space: initial;
+    margin-top: 40px;
+  }
+
+  .largeHeading {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Punto de quiebre adicional para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .inputGroup {
+    font-size: 30px;
+  }
+
+  .inputField {
+    font-size: 16px;
+  }
+
+  .loginButton,
+  .googleButton,
+  .registerButton {
+    font-size: 24px;
+  }
+}
