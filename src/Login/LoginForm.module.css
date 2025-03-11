@@ -96,11 +96,11 @@
 }
 
 .googleButton {
-  color: #100101;
+  color: #100101; /* Color del texto */
   text-align: center;
-  background-color: #ff6302;
+  background-color: #ff6302; /* Color inicial del botón */
   border: none;
-  border-radius: 25px;
+  border-radius: 25px; /* Forma redondeada */
   display: flex;
   align-items: center;
   gap: 40px;
@@ -110,7 +110,18 @@
   font-size: 32px;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Para animaciones suaves */
 }
+
+.googleButton:hover {
+  background-color: #e55a02; /* Color más oscuro al pasar el cursor */
+}
+
+.googleButton:active {
+  background-color: #cc4f02; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "hundimiento" */
+}
+
 
 .googleIcon {
   aspect-ratio: 1;
