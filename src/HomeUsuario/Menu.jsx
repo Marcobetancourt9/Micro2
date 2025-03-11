@@ -50,8 +50,13 @@ export default function Menu() {
   function abrirRutas(){
     navigate("/destino/0")
   }
+
   function verconsejos(){
     navigate("/consejos")
+  }
+
+  function volveralinicio(){
+    navigate("/home")
   }
 
   return (
@@ -80,7 +85,7 @@ export default function Menu() {
             <p> Bienvenido {usuario && usuario.email}</p>
           </li>
           <li>
-            <a href="#">🌲 Inicio</a>
+            <a onClick={() => volveralinicio()}>🌲 Inicio</a>
           </li>
           <li>
             <a onClick={() => setShowMessage("Reservar")}>📅 Reservar</a>
