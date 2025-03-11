@@ -10,6 +10,7 @@ export default function Menu() {
   const auth = getAuth(app);
   const usuario = auth.currentUser
   const [isOpen, setIsOpen] = useState(false);
+  const [showMessage, setShowMessage] = useState(null); // Estado para mostrar mensaje
   const menuRef = useRef(null); // Referencia para el menú desplegable
 
   useEffect(() => {
@@ -75,25 +76,33 @@ export default function Menu() {
             <a href="#">🌲 Inicio</a>
           </li>
           <li>
-            <a href="#">🗓️ Reservar</a>
+            <a onClick={() => setShowMessage("Reservar")}>📅 Reservar</a>
           </li>
           <li>
-            <a href="#">🖼️ Rutas</a>
+            <a onClick={() => setShowMessage("Rutas")}>🖼️ Rutas</a>
           </li>
           <li>
             <a href="#">🦺 Consejos de Seguridad</a>
           </li>
           <li>
-            <a href="#">🪪 Editar Perfil</a>
+            <a onClick={() => setShowMessage("Editar Perfil")}>🪪 Editar Perfil</a>
           </li>
           <li>
-            <a href="#">📫 Contactarnos</a>
+            <a onClick={() => setShowMessage("Contactarnos")}>📫 Contactarnos</a>
           </li>
           <li>
             <a onClick={()=> cerrarSesion() }>❌ Cerrar Sesión</a>
           </li>
         </ul>
-      </div>
+        </div>
+      {showMessage && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <p>{showMessage} - Próximamente...</p>
+            <button onClick={() => setShowMessage(null)}>Cerrar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
