@@ -51,6 +51,10 @@ export default function Menu() {
     signOut(auth);
     navigate("/destino/0")
   }
+  function verconsejos(){
+    signOut(auth);
+    navigate("/consejos")
+  }
 
   return (
     <div style={{zIndex: 99}}>
@@ -87,7 +91,7 @@ export default function Menu() {
             <a onClick={()=> abrirRutas() }>🖼️ Rutas</a>
           </li>
           <li>
-            <a onClick={() => setShowMessage("Consejos de Seguridad")}>🦺 Consejos de Seguridad</a>
+            <a onClick={() => verconsejos()}>🦺 Consejos de Seguridad</a>
           </li>
           <li>
             <a onClick={() => setShowMessage("Editar Perfil")}>🪪 Editar Perfil</a>
