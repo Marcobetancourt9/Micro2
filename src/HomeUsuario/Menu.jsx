@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"; 
-import menuIcon from "/src/assets/menu-icon.png"; // Verifica la ruta del icono
+import menuIcon from "/public/menu-icon.png"; // Verifica la ruta del icono
 import styles from "./Menu.module.css"; // Importa los estilos
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
