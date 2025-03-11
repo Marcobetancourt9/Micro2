@@ -80,20 +80,31 @@
 }
 
 .loginButton {
-  color: #000;
+  color: #000; /* Color del texto */
   text-align: center;
-  background-color: #ff6709;
-  border: 1px solid #000;
-  border-radius: 25px;
+  background-color: #ff6709; /* Color inicial */
+  border: 1px solid #000; /* Borde negro */
+  border-radius: 25px; /* Bordes redondeados */
   align-self: center;
-  width: 481px;
+  width: 481px; /* Ancho del botón */
   max-width: 100%;
   min-height: 96px;
   margin-top: 65px;
   padding: 25px 10px;
   font-size: 32px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Suavidad en los cambios */
 }
+
+.loginButton:hover {
+  background-color: #d94f02; /* Color más oscuro al pasar el cursor */
+}
+
+.loginButton:active {
+  background-color: #cc5507; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "presión" */
+}
+
 
 .googleButton {
   color: #100101; /* Color del texto */
