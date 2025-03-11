@@ -47,6 +47,11 @@ export default function Menu() {
     navigate("/")
   }
 
+  function abrirRutas(){
+    signOut(auth);
+    navigate("/destino/0")
+  }
+
   return (
     <div style={{zIndex: 99}}>
       <img
@@ -79,7 +84,7 @@ export default function Menu() {
             <a onClick={() => setShowMessage("Reservar")}>📅 Reservar</a>
           </li>
           <li>
-            <a onClick={() => setShowMessage("Rutas")}>🖼️ Rutas</a>
+            <a onClick={()=> abrirRutas() }>🖼️ Rutas</a>
           </li>
           <li>
             <a onClick={() => setShowMessage("Consejos de Seguridad")}>🦺 Consejos de Seguridad</a>
