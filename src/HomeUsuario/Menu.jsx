@@ -48,11 +48,9 @@ export default function Menu() {
   }
 
   function abrirRutas(){
-    signOut(auth);
     navigate("/destino/0")
   }
   function verconsejos(){
-    signOut(auth);
     navigate("/consejos")
   }
 
