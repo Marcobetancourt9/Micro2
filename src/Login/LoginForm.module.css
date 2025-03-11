@@ -24,7 +24,6 @@
   cursor: pointer;
 }
 
-
 .brandLogo {
   aspect-ratio: 4.33;
   object-fit: contain;
@@ -105,7 +104,6 @@
   transform: scale(0.98); /* Efecto de "presión" */
 }
 
-
 .googleButton {
   color: #100101; /* Color del texto */
   text-align: center;
@@ -133,7 +131,6 @@
   transform: scale(0.98); /* Efecto de "hundimiento" */
 }
 
-
 .googleIcon {
   aspect-ratio: 1;
   object-fit: contain;
@@ -146,24 +143,35 @@
 }
 
 .registerButton {
-  color: #fff;
+  color: #fff; /* Color del texto */
   text-align: center;
-  background-color: #031d31;
+  background-color: #031d31; /* Color inicial */
   border: 1px solid #000;
-  border-radius: 25px;
+  border-radius: 25px; /* Bordes redondeados */
   align-self: center;
-  width: 541px;
+  width: 541px; /* Ancho del botón */
   max-width: 100%;
-  min-height: 121px;
+  min-height: 121px; /* Altura mínima */
   margin-top: 71px;
   padding: 38px 10px;
   font-family: Istok Web, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 32px; /* Tamaño de fuente */
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Animaciones suaves */
 }
+
+.registerButton:hover {
+  background-color: #021629; /* Color más oscuro al pasar el cursor */
+}
+
+.registerButton:active {
+  background-color: #01101f; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "presión" */
+}
+
 .largeHeading {
-  font-size: 48px;  /* Aumenta el tamaño de la fuente */
+  font-size: 48px; /* Aumenta el tamaño de la fuente */
   font-weight: 700;
   color: #fff;
   margin-bottom: 20px; /* Añade espacio entre el h1 y el h2 */
@@ -187,7 +195,6 @@ h2 {
     margin-bottom: 20px; /* Reduce la distancia */
   }
 }
-
 
 @media (max-width: 991px) {
   .loginContainer {
@@ -242,22 +249,24 @@ h2 {
   }
 
   h2 {
-    font-size: 18px; 
-    margin-bottom: 20px; 
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
 
 /* Punto de quiebre adicional para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .inputGroup {
-    font-size: 30px; 
+    font-size: 30px;
   }
 
   .inputField {
-    font-size: 16px; 
+    font-size: 16px;
   }
 
-  .loginButton, .googleButton, .registerButton {
-    font-size: 24px; 
+  .loginButton,
+  .googleButton,
+  .registerButton {
+    font-size: 24px;
   }
 }
