@@ -23,7 +23,7 @@ const tipsData = [
     title: "Seguridad en los senderos",
     description:
       "Ve por los caminos marcados, respeta la vida silvestre y evita caminar solo. Siempre informa a alguien de tus planes.",
-    imageSrc: "/images/safety.png",
+    imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/9508a4e20199cc66f7d5cfefbd3e5a3076ad1cdcab45daa25211b2cefdf8b1a7?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
     imageAlt: "Seguridad en los senderos icono",
   },
   {
@@ -32,7 +32,7 @@ const tipsData = [
     title: "Conciencia meteorológica",
     description:
       "Revisa el pronóstico, vístete adecuadamente y mantente hidratado. Evita explorar durante el clima adverso.",
-    imageSrc: "/images/weather.png",
+    imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/800a177af6d9e30b9b1448d02db73e69cdb3a702c7a995250000d05ee9d26359?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
     imageAlt: "Clima icono",
   },
   {
@@ -41,7 +41,7 @@ const tipsData = [
     title: "Precauciones de salud",
     description:
       "Conozca sus límites, lleve bocadillos y agua, y use protector solar. Tenga a mano los números de emergencia locales.",
-    imageSrc: "/images/health.png",
+    imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/4a28cdca33814200d0543ad53f8e1336c474ae445078cf420b700d0aeda6ad48?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
     imageAlt: "Salud icono",
   },
   {
@@ -50,7 +50,7 @@ const tipsData = [
     title: "Elementos esenciales del equipo",
     description:
       "Empaca un botiquín de primeros auxilios, una linterna y otros equipos necesarios. Asegura de forma segura el equipo de cámara.",
-    imageSrc: "/images/gear.png",
+    imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/b7c59eedba9c27d178c214fcc77ae921ed2d2901a62e2e31f040bcc140109b7f?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
     imageAlt: "Equipo icono",
   },
   {
@@ -59,7 +59,7 @@ const tipsData = [
     title: "Etiqueta del tour",
     description:
       "Sigue las instrucciones de los guías, conoce la ruta y usa cascos cuando sea necesario.",
-    imageSrc: "/images/tour.png",
+    imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/1498097a669dc5d471cc8edb3266fe0ed75237094da523e7039cff59cd708331?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
     imageAlt: "Tour icono",
   },
   {
@@ -68,7 +68,7 @@ const tipsData = [
     title: "Navegación y comunicación",
     description:
       "Lleva un mapa/brújula, ten un plan de emergencia y marca tu ruta si es necesario.",
-    imageSrc: "/images/navigation.png",
+    imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/67e5c77462272bca6d42dbff7d82122ad14463a3068b3aaed721a94b3e491854?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
     imageAlt: "Navegación icono",
   },
   {
@@ -77,7 +77,7 @@ const tipsData = [
     title: "Conciencia de la vida silvestre",
     description:
       "Mantén una distancia segura de los animales y usa repelente de insectos.",
-    imageSrc: "/images/wildlife.png",
+    imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/02e67e553c55144a58b157de8c13b2ef6da74d453a8537e8c88b7a37a937b381?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
     imageAlt: "Vida silvestre icono",
   },
 ];
