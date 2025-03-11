@@ -21,12 +21,19 @@
 
 @media (max-width: 500px) {
   .header {
-    justify-content: center; /* Centra el contenido en pantallas pequeñas */
-    gap: 20px; /* Reduce la separación en pantallas pequeñas */
+    display: flex;
+    justify-content: space-between; /* Coloca los elementos en las esquinas */
+    align-items: center;
+    padding: 10px; /* Agrega espacio alrededor */
   }
   
-  .mainLogo, .menuIcon {
-    width: 60px;
+  .mainLogo {
+    width: 120px; /* Haz el main logo más grande */
+    height: 120px;
+  }
+
+  .menuIcon {
+    width: 60px; /* Tamaño del menú, ajustable si lo deseas */
     height: 60px;
   }
 }
