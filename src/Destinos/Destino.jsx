@@ -8,6 +8,26 @@ import Footer from "../Footer";
 import TelefericoOption from "/public/AntiguoTeleferico/teleferico-option.jpg";
 import LagunazoOption from "/public/Lagunazo/lagunazo-option.jpg";
 import QuebradaOption from "/public/QuebradaQuintero/quebrada-option.jpg";
+
+import mapaQuebrada from "/public/QuebradaQuintero/Quebrada_quintero_mapa.png"
+import quebrada1 from "/public/QuebradaQuintero/quebrada(1).jpg";
+import quebrada2 from "/public/QuebradaQuintero/quebrada(2).jpg";
+import quebrada3 from "/public/QuebradaQuintero/quebrada(3).jpg";
+import quebrada4 from "/public/QuebradaQuintero/quebrada(4).jpg";
+
+import lagunazoMapa from "/public/Lagunazo/Lagunazo_mapa.png"
+import lagunazo1 from "/public/Lagunazo/Lagunazo(1).jpg"
+import lagunazo2 from "/public/Lagunazo/Lagunazo(2).jpg"
+import lagunazo3 from "/public/Lagunazo/Lagunazo(3).jpg"
+import lagunazo4 from "/public/Lagunazo/Lagunazo(4).jpg"
+
+import TeleMapa from "/public/AntiguoTeleferico/Antiguo_teleferico_mapa.png"
+import tele1 from "/public/AntiguoTeleferico/AntiguoTeleferico(1).jpg"
+import tele2 from "/public/AntiguoTeleferico/AntiguoTeleferico(2).jpg"
+import tele3 from "/public/AntiguoTeleferico/AntiguoTeleferico(3).jpg"
+import tele4 from "/public/AntiguoTeleferico/AntiguoTeleferico(4).jpeg"
+
+
 import MountainOff from "/public/MOUNTAIN-OFF.svg";
 import MountainOn from "/public/MOUNTAIN-ON.svg";
 import StarOff from "/public/STAR-OFF.svg";
@@ -17,37 +37,37 @@ import "./destinos.css"
 
 const allInfo = [
   { // ID: 0 | Quebrada Quintero
-    bannerImage: "/public/QuebradaQuintero/Quebrada_quintero_mapa.png",
+    bannerImage: mapaQuebrada,
     title: "Descubre la magia de La Quebrada Quintero, parte  del rico tapiz natural del Parque Nacional El Ávila.",
     description: "Quebrada Quintero es una joya escondida en los exuberantes paisajes del Parque Nacional El Ávila. Conocida solo por unos pocos exploradores aventureros, esta tranquila cascada ofrece un escape incomparable a la naturaleza. Rodeado de una densa vegetación y accesible a través de un sendero poco conocido, se siente como entrar en un paraíso secreto. Las aguas cristalinas caen suavemente sobre las rocas, creando un ambiente sereno perfecto para aquellos que buscan paz y soledad. Su belleza virgen lo convierte en un hallazgo raro, ideal para los excursionistas que quieren descubrir un lado más tranquilo de El Ávila, lejos de las multitudes.",
-    imageOne: "/public/QuebradaQuintero/quebrada(2).jpg",
-    imageTwo: "/public/QuebradaQuintero/quebrada(1).jpg",
-    imageThree: "/public/QuebradaQuintero/quebrada(3).jpg",
-    imageFour: "/public/QuebradaQuintero/quebrada(4).jpg",
+    imageOne: quebrada2,
+    imageTwo: quebrada1,
+    imageThree: quebrada3,
+    imageFour: quebrada4,
     especial: "traje de baño (opcional)",
     difficulty: [1,1,0,0,0],
     reviews: [1,1,1,0,0]
   },
   {// ID: 1 | Lagunazo
-    bannerImage: "/public/Lagunazo/Lagunazo_mapa.png",
+    bannerImage: lagunazoMapa,
     title: "Visita el lagunazo, el sitio ofrece amplios terrenos para acampar con vistas impresionantes.",
     description: "Lagunazo es un tranquilo lugar para acampar ubicado en el corazón del Parque Nacional El Ávila, que ofrece una escapada perfecta para los entusiastas de la naturaleza. Rodeado de frondosos bosques y con una serena laguna, ofrece un escenario ideal para relajarse y observar las estrellas. Accesible a través de un sendero panorámico, esta joya escondida invita a los visitantes a conectarse con la belleza virgen del parque y disfrutar de un retiro tranquilo bajo las estrellas.",
-    imageOne: "/public/Lagunazo/Lagunazo(1).jpg",
-    imageTwo: "/public/Lagunazo/Lagunazo(2).jpg",
-    imageThree: "/public/Lagunazo/Lagunazo(3).jpg",
-    imageFour: "/public/Lagunazo/Lagunazo(4).jpg",
+    imageOne: lagunazo1,
+    imageTwo: lagunazo2,
+    imageThree: lagunazo3,
+    imageFour: lagunazo4,
     especial: "N/A",
     difficulty: [1,1,1,1,0],
     reviews: [1,1,1,0,0]
   },
   {// ID: 2 | AntiguoTeleferico
-    bannerImage: "/public/AntiguoTeleferico/Antiguo_teleferico_mapa.png",
+    bannerImage: TeleMapa,
     title: "Descubre la historia del Antiguo Teleferico,  el 'teleférico fantasma'.",
     description: "El Lirón es una subestación histórica ubicada en el corazón del Parque Nacional Ávila, que alguna vez formó parte del icónico sistema Teleférico del Ávila que conectaba Caracas con la región costera. Inaugurada en 1956 durante el gobierno del general Marcos Pérez Jiménez, la estación jugó un papel crucial en la gestión del movimiento de las cabinas de los teleféricos en su recorrido entre los picos de Ávila y el Litoral. Hoy en día, aunque el sistema de teleférico ha estado inactivo durante décadas, El Lirón sigue siendo un símbolo de la rica historia de la región, que ofrece a los visitantes una visión del pasado y las impresionantes vistas de la costa de Caracas.",
-    imageOne: "/public/AntiguoTeleferico/AntiguoTeleferico(1).jpg",
-    imageTwo: "/public/AntiguoTeleferico/AntiguoTeleferico(2).jpg",
-    imageThree: "/public/AntiguoTeleferico/AntiguoTeleferico(3).jpg",
-    imageFour: "/public/AntiguoTeleferico/AntiguoTeleferico(4).jpeg",
+    imageOne: tele1,
+    imageTwo: tele2,
+    imageThree: tele3,
+    imageFour: tele4,
     especial: "N/A",
     difficulty: [1,1,1,1,1],
     reviews: [1,1,0,0,0]
