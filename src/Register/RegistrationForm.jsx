@@ -175,7 +175,12 @@ export default function RegistrationForm() {
     width: 90%;
     max-width: 600px; /* Límite en pantallas grandes */
     margin: auto;
+    width: 95%;
+    max-width: 700px; /* Aumentamos el tamaño */
+    min-height: 750px; /* Aumentamos la altura */
+    padding: 30px; /* Más espacio interno */
   }
+
 
   .form-content {
     width: 100%;
@@ -228,6 +233,7 @@ export default function RegistrationForm() {
   @media (max-width: 768px) {
     .form-container {
       padding: 15px;
+      min-height: auto;
     }
 
     input {
@@ -239,6 +245,65 @@ export default function RegistrationForm() {
       font-size: 16px;
     }
   }
+    @media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .form-content {
+    gap: 10px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .input-icon {
+    font-size: 14px;
+    left: 8px;
+  }
+
+  button {
+    min-height: 50px;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 5px;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .header-content h1 {
+    font-size: 20px;
+  }
+
+  .header-content p {
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 14px;
+    min-height: 40px;
+  }
+}
+
 `}</style>
 
 
