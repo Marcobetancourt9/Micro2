@@ -1,0 +1,62 @@
+.infoSection {
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  margin-top: 99px;
+  padding: 0 59px;
+  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+  display: flex;
+}
+
+.infoTitle {
+  color: #ef0;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.emailContainer {
+  color: #fff;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 8px 0 0 35px;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  gap: 20px;
+}
+
+.emailIcon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 98px;
+}
+
+.emailText {
+  margin: auto 0;
+}
+
+.description {
+  color: #fff;
+  margin-top: 37px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .infoSection {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+
+  .infoTitle {
+    font-size: 40px;
+  }
+
+  .emailText,
+  .description {
+    max-width: 100%;
+  }
+}
