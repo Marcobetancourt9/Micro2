@@ -9,6 +9,7 @@
   font-size: 48px;
   font-weight: 700;
   margin: 25px 0;
+  text-align: center;
 }
 
 .contactForm {
@@ -16,73 +17,46 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: center;
 }
 
 .formRow {
   color: #fff;
   display: flex;
-  justify-content: space-between;
-  font-size: 40px;
+  flex-direction: column;
+  font-size: 32px;
   font-weight: 700;
   max-width: 1005px;
   width: 100%;
+  text-align: center;
 }
 
 .inputGroup {
   display: flex;
+  flex-direction: column;
   gap: 13px;
   width: 100%;
-}
-
-.selectWrapper {
-  background-color: #f1eaea;
-  border: 3px solid #000;
-  border-radius: 30px;
-  flex: 1;
-  display: flex;
   align-items: center;
-  padding: 26px 38px;
 }
 
-.select {
-  width: 100%;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  font-weight: 400;
-  color: #000;
-  outline: none;
-}
-
-.input {
+.selectWrapper, .input, .messageInput {
   background-color: #f1eaea;
   border: 3px solid #000;
   border-radius: 30px;
   flex: 1;
-  padding: 32px 38px;
+  padding: 26px 38px;
   font-size: 20px;
   font-weight: 400;
   color: #000;
+  width: 100%;
 }
 
 .messageLabel {
   color: #fff;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   margin-top: 24px;
-}
-
-.messageInput {
-  background-color: #f1eaea;
-  border: 3px solid #000;
-  border-radius: 30px;
-  width: 100%;
-  min-height: 300px;
-  padding: 32px 29px;
-  font-size: 20px;
-  font-weight: 400;
-  color: #000;
-  resize: vertical;
+  text-align: center;
 }
 
 .submitButton {
@@ -91,8 +65,8 @@
   background-color: #ff6709;
   border: 1px solid #000;
   border-radius: 25px;
-  width: 418px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 418px;
   min-height: 96px;
   margin: 64px auto;
   padding: 25px 10px;
@@ -106,31 +80,37 @@
   background-color: #ff8137;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 400px) {
   .formSection {
-    padding: 0 20px;
+    padding: 0 15px;
   }
 
   .formTitle {
-    font-size: 40px;
+    font-size: 32px;
+  }
+
+  .formRow {
+    font-size: 24px;
   }
 
   .selectWrapper,
-  .input {
-    padding: 20px;
+  .input,
+  .messageInput {
+    padding: 15px;
   }
 
   .messageInput {
-    padding: 20px;
     min-height: 200px;
   }
 
   .submitButton {
-    margin-top: 40px;
+    font-size: 24px;
+    min-height: 70px;
+    margin-top: 30px;
   }
 }
 
-/* Estilo del modal */
+
 .modal {
   position: fixed;
   top: 50%;
@@ -147,7 +127,7 @@
   max-width: 90%;
 }
 
-/* Fondo de oscurecimiento detrás del modal */
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -158,7 +138,7 @@
   z-index: 99;
 }
 
-/* Botón de cierre dentro del modal */
+
 .modalContent button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -171,4 +151,66 @@
 
 .modalContent button:hover {
   background-color: #0056b3;
+}
+.label {
+  font-size: 40px; 
+  font-weight: 700; 
+  color: #FFFFFF; 
+  margin-bottom: 8px; 
+  text-align: left; 
+  width: 100%;
+  max-width: 1005px;
+}
+
+@media (max-width: 400px) {
+  .label {
+    font-size: 18px; 
+  }
+}
+
+
+.inputGroup select {
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #000;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputGroup select:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.inputGroup select:focus {
+  background-color: #d0d0d0;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.inputGroup option {
+  background-color: #f0f0f0;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 768px) {
+  .inputGroup select {
+    padding: 8px 15px;
+    font-size: 16px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .inputGroup select {
+    padding: 6px 10px;
+    font-size: 14px;
+    max-width: 90%;
+  }
 }

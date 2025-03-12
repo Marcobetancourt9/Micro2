@@ -30,26 +30,24 @@ const ContactForm = () => {
     <section className={styles.formSection}>
       <h2 className={styles.formTitle}>Contáctanos</h2>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
-        <div className={styles.formRow}>
+        
+        <div className={styles.inputGroup}>
           <label className={styles.label}>Tópicos</label>
-          <label className={styles.label}>Nombres y Apellidos</label>
+          <select
+            name="topic"
+            value={formData.topic}
+            onChange={handleChange}
+            className={styles.select}
+            aria-label="Seleccione un Tópico"
+          >
+            <option value="">Seleccione un Tópico</option>
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+          </select>
         </div>
 
         <div className={styles.inputGroup}>
-          <div className={styles.selectWrapper}>
-            <select
-              name="topic"
-              value={formData.topic}
-              onChange={handleChange}
-              className={styles.select}
-              aria-label="Seleccione un Tópico"
-            >
-              <option value="">Seleccione un Tópico</option>
-              <option value="1">Opción 1</option>
-              <option value="2">Opción 2</option>
-            </select>
-          </div>
-
+          <label className={styles.label}>Nombres y Apellidos</label>
           <input
             type="text"
             name="name"
@@ -61,12 +59,8 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className={styles.formRow}>
-          <label className={styles.label}>Email</label>
-          <label className={styles.label}>Teléfono</label>
-        </div>
-
         <div className={styles.inputGroup}>
+          <label className={styles.label}>Email</label>
           <input
             type="email"
             name="email"
@@ -76,7 +70,10 @@ const ContactForm = () => {
             className={styles.input}
             aria-label="Email"
           />
+        </div>
 
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>Teléfono</label>
           <input
             type="tel"
             name="phone"
@@ -88,15 +85,17 @@ const ContactForm = () => {
           />
         </div>
 
-        <label className={styles.messageLabel}>Reseña</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Escriba su mensaje..."
-          className={styles.messageInput}
-          aria-label="Mensaje"
-        />
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>Reseña</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Escriba su mensaje..."
+            className={styles.messageInput}
+            aria-label="Mensaje"
+          />
+        </div>
 
         <button type="submit" className={styles.submitButton}>
           ENVIAR MENSAJE
@@ -116,3 +115,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
