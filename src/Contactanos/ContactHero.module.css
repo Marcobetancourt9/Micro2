@@ -1,0 +1,38 @@
+.hero {
+  color: #fff;
+  white-space: nowrap;
+  flex-direction: column;
+  width: 100%;
+  min-height: 355px;
+  margin-top: 26px;
+  padding: 138px 70px 110px;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  display: flex;
+  position: relative;
+}
+
+.heroBackground {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.heroTitle {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .hero {
+    max-width: 100%;
+    white-space: initial;
+    padding: 100px 20px 110px;
+    font-size: 40px;
+  }
+}

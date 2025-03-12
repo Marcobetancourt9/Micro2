@@ -1,0 +1,131 @@
+.formSection {
+  width: 100%;
+  padding: 0 59px;
+  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.formTitle {
+  color: #ef0;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 25px 0;
+}
+
+.contactForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formRow {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+  font-weight: 700;
+  max-width: 1005px;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 13px;
+  width: 100%;
+}
+
+.selectWrapper {
+  background-color: #f1eaea;
+  border: 3px solid #000;
+  border-radius: 30px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 26px 38px;
+}
+
+.select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  outline: none;
+}
+
+.input {
+  background-color: #f1eaea;
+  border: 3px solid #000;
+  border-radius: 30px;
+  flex: 1;
+  padding: 32px 38px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+}
+
+.messageLabel {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.messageInput {
+  background-color: #f1eaea;
+  border: 3px solid #000;
+  border-radius: 30px;
+  width: 100%;
+  min-height: 300px;
+  padding: 32px 29px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  resize: vertical;
+}
+
+.submitButton {
+  color: #000;
+  text-align: center;
+  background-color: #ff6709;
+  border: 1px solid #000;
+  border-radius: 25px;
+  width: 418px;
+  max-width: 100%;
+  min-height: 96px;
+  margin: 64px auto;
+  padding: 25px 10px;
+  font-size: 32px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #ff8137;
+}
+
+@media (max-width: 991px) {
+  .formSection {
+    padding: 0 20px;
+  }
+
+  .formTitle {
+    font-size: 40px;
+  }
+
+  .selectWrapper,
+  .input {
+    padding: 20px;
+  }
+
+  .messageInput {
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  .submitButton {
+    margin-top: 40px;
+  }
+}

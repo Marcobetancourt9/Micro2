@@ -50,6 +50,9 @@ export default function Menu() {
   function abrirRutas(){
     navigate("/destino/0")
   }
+  function contacto(){
+    navigate("/contactanos")
+  }
 
   function verconsejos(){
     navigate("/consejos")
@@ -100,7 +103,7 @@ export default function Menu() {
             <a onClick={() => setShowMessage("Editar Perfil")}>🪪 Editar Perfil</a>
           </li>
           <li>
-            <a onClick={() => setShowMessage("Contactarnos")}>📫 Contactarnos</a>
+            <a onClick={() => contacto()}>📫 Contactarnos</a>
           </li>
           <li>
             <a onClick={()=> cerrarSesion() }>❌ Cerrar Sesión</a>

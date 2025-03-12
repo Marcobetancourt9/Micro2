@@ -6,6 +6,7 @@ import RegistrationForm from './Register/RegistrationForm.jsx';
 import Destino from './Destinos/Destino.jsx'
 import Slide1693 from './HomeUsuario/Slide1693.jsx';
 import Tips from './Consejo/Tips.jsx';
+import ContactPage from './Contactanos/ContactPage.jsx';
 export default function App() {
     return (
       <Router>
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="destino/:id" element={<Destino/>} />
           <Route path="home" element={<Slide1693 />} />
           <Route path="consejos" element={<Tips />} />
+          <Route path="contactanos" element={<ContactPage />} />
         </Routes>
         
       </Router>
