@@ -83,6 +83,7 @@
 @media (max-width: 400px) {
   .formSection {
     padding: 0 15px;
+    font-size: 50px;
   }
 
   .formTitle {
