@@ -61,6 +61,10 @@ export default function Menu() {
   function volveralinicio(){
     navigate("/home")
   }
+  
+  function calendario(){
+    navigate("/calendario")
+  }
 
   return (
     <div style={{zIndex: 99}}>
@@ -91,7 +95,7 @@ export default function Menu() {
             <a onClick={() => volveralinicio()}>🌲 Inicio</a>
           </li>
           <li>
-            <a onClick={() => setShowMessage("Reservar")}>📅 Reservar</a>
+            <a onClick={() => calendario()}>📅 Reservar</a>
           </li>
           <li>
             <a onClick={()=> abrirRutas() }>🖼️ Rutas</a>
