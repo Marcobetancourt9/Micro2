@@ -18,6 +18,7 @@ export default function App() {
           <Route path="home" element={<Slide1693 />} />
           <Route path="consejos" element={<Tips />} />
           <Route path="contactanos" element={<ContactPage />} />
+          <Route path="calendario" element={<CalendarView />} />
         </Routes>
         
       </Router>
