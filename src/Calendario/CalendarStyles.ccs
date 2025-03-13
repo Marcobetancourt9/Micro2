@@ -1,0 +1,71 @@
+/* Estilos generales */
+.calendar-grid {
+    background-color: #001f3f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Estilos para CalendarDayNames */
+.day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.month-name { /* Estilo para el nombre del mes */
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    grid-column: 1 / -1; /* Centrar el nombre del mes */
+    margin-bottom: 10px; /* Agregar un poco de espacio debajo del nombre del mes */
+}
+
+.day-name {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Estilos para CalendarDay */
+.day-cell {
+    background-color: #003366;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #0056b3;
+}
+
+/* Estilos para el botón "SELECCIONAR" */
+.select-button {
+    background-color: #ffcc80;
+    color: #000;
+    border: 5px solid #ff9800;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Estilos para weeks-container */
+.weeks-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+/* Estilos para días vacíos */
+.calendar-day.empty {
+    width: 40px;
+    height: 40px;
+}

@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Header from "../Header";
 import CalendarGrid from "./CalendarGrid";
 
@@ -53,8 +54,7 @@ const CalendarView = () => {
           .calendar-container {
             padding: 20px 20px 100px;
           }
-
-          .select-button {
+            .select-button {
             max-width: 100%;
             margin-top: 40px;
             white-space: initial;
