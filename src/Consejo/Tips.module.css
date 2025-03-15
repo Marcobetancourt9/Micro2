@@ -1,0 +1,103 @@
+.tips {
+  background-color: #031d31;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Contenedor principal de las secciones */
+.guideSections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Estilos de cada sección de consejos */
+.guideSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.guideSection img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.guideSection h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffdb4d;
+}
+
+.guideSection p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .guideSections {
+    max-width: 100%;
+  }
+
+  .guideSection h2 {
+    font-size: 18px;
+  }
+
+  .guideSection p {
+    font-size: 14px;
+  }
+}
+
+.headerImages {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+}
+
+.bannerImage {
+  aspect-ratio: 1.5;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.logoImage {
+  aspect-ratio: 1.03;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+  width: 150px;
+  max-width: 100%;
+  margin: auto 0;
+}
+
+.guideSections {
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (width <= 991px) {
+  .headerImages {
+    max-width: 100%;
+  }
+}

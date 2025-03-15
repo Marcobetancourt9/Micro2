@@ -2,6 +2,9 @@ import React from "react";
 import styles from "./MainContainer.module.css";
 
 const PlatformSection = () => {
+  const handleComingSoon = () => {
+    alert("Próximamente...");
+  }
   return (
     <section className={styles.platformSection}>
       <h2 className={styles.platformTitle}>
@@ -17,10 +20,20 @@ const PlatformSection = () => {
         <div className={styles.adventureContent}>
           <h3 className={styles.adventureTitle}>
             ¿Qué esperas para iniciar tu primera aventura?
-          </h3>
+            </h3>
           <div className={styles.buttonContainer}>
-            <button className={styles.routesBtn}>Ver rutas</button>
-            <button className={styles.scheduleBtn}>¡Agenda ya!</button>
+            <button
+              className={styles.routesBtn}
+              onClick={handleComingSoon} // Acción al hacer clic en "Ver rutas"
+            >
+              Ver rutas
+            </button>
+            <button
+              className={styles.scheduleBtn}
+              onClick={handleComingSoon} // Acción al hacer clic en "¡Agenda ya!"
+            >
+              ¡Agenda ya!
+            </button>
           </div>
         </div>
       </div>

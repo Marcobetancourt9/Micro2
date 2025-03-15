@@ -214,14 +214,35 @@ body {
   font-weight: 700;
   cursor: pointer;
   color: #fff;
+  transition: background-color 0.3s, transform 0.1s; /* Transición suave para interacciones */
 }
 
 .routesBtn {
-  background-color: #ff6709;
+  background-color: #ff6709; /* Color inicial del botón */
 }
+
+.routesBtn:hover {
+  background-color: #e55a08; /* Color más oscuro al pasar el cursor */
+}
+
+.routesBtn:active {
+  background-color: #cc4f06; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "presión" */
+}
+
 .scheduleBtn {
-  background-color: #009b1e;
+  background-color: #009b1e; /* Color inicial del botón */
 }
+
+.scheduleBtn:hover {
+  background-color: #008a1a; /* Color más oscuro al pasar el cursor */
+}
+
+.scheduleBtn:active {
+  background-color: #007815; /* Color aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de "presión" */
+}
+
 
 @media (max-width: 991px) { 
   .buttonContainer {

@@ -154,59 +154,159 @@ export default function RegistrationForm() {
       </section>
 
       <style jsx>{`
-        .registration-form {
-          background-color: rgba(3, 29, 49, 1);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          border: 1px solid rgba(0, 0, 0, 1);
-          display: flex;
-          padding: 79px 36px 191px;
-          flex-direction: column;
-          overflow: hidden;
-          align-items: stretch;
-          font-family: Istok Web, -apple-system, Roboto, Helvetica, sans-serif;
-        }
+  .registration-form {
+    background-color: rgba(3, 29, 49, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 1);
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    font-family: Istok Web, -apple-system, Roboto, Helvetica, sans-serif;
+  }
 
-        .form-container {
-          border-radius: 40px;
-          background-color: rgba(11, 64, 105, 1);
-          display: flex;
-          padding: 50px 0;
-          flex-direction: column;
-          align-items: center;
-          width: 80%;
-          margin: auto;
-        }
+  .form-container {
+    border-radius: 40px;
+    background-color: rgba(11, 64, 105, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px; /* Límite en pantallas grandes */
+    margin: auto;
+    width: 95%;
+    max-width: 700px; /* Aumentamos el tamaño */
+    min-height: 750px; /* Aumentamos la altura */
+    padding: 30px; /* Más espacio interno */
+  }
 
-        .form-content {
-          width: 100%;
-          max-width: 1200px;
-          padding: 0 23px;
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
 
-        .input-row {
-          display: flex;
-          gap: 13px;
-          width: 100%;
-          flex-wrap: wrap;
-        }
+  .form-content {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-        @media (max-width: 991px) {
-          .registration-form {
-            padding: 20px 20px 100px;
-          }
+  input {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px 40px 10px 12px; /* Espacio adicional para el icono */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    position: relative;
+  }
 
-          .form-container {
-            max-width: 100%;
-          }
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+  }
 
-          .form-content {
-            padding: 0 20px;
-          }
-        }
-      `}</style>
+  .input-icon {
+    position: absolute;
+    left: 10px; /* Ajusta para alineación correcta */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    font-size: 18px; /* Tamaño adaptable */
+    color: #777;
+  }
+
+  button {
+    border-radius: 22px;
+    background-color: rgba(255, 103, 9, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    min-height: 50px;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: clamp(14px, 3vw, 20px);
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px auto;
+  }
+
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 15px;
+      min-height: auto;
+    }
+
+    input {
+      font-size: 14px;
+      padding: 10px 36px 10px 12px; /* Ajusta el padding para iconos */
+    }
+
+    .input-icon {
+      font-size: 16px;
+    }
+  }
+    @media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .form-content {
+    gap: 10px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .input-icon {
+    font-size: 14px;
+    left: 8px;
+  }
+
+  button {
+    min-height: 50px;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 5px;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .header-content h1 {
+    font-size: 20px;
+  }
+
+  .header-content p {
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 14px;
+    min-height: 40px;
+  }
+}
+
+`}</style>
+
+
     </main>
   );
 }

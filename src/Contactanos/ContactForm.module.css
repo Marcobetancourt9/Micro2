@@ -1,0 +1,217 @@
+.formSection {
+  width: 100%;
+  padding: 0 59px;
+  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.formTitle {
+  color: #ef0;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 25px 0;
+  text-align: center;
+}
+
+.contactForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.formRow {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  font-weight: 700;
+  max-width: 1005px;
+  width: 100%;
+  text-align: center;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+  align-items: center;
+}
+
+.selectWrapper, .input, .messageInput {
+  background-color: #f1eaea;
+  border: 3px solid #000;
+  border-radius: 30px;
+  flex: 1;
+  padding: 26px 38px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  width: 100%;
+}
+
+.messageLabel {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.submitButton {
+  color: #000;
+  text-align: center;
+  background-color: #ff6709;
+  border: 1px solid #000;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 418px;
+  min-height: 96px;
+  margin: 64px auto;
+  padding: 25px 10px;
+  font-size: 32px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #ff8137;
+}
+
+@media (max-width: 400px) {
+  .formSection {
+    padding: 0 15px;
+    font-size: 50px;
+  }
+
+  .formTitle {
+    font-size: 32px;
+  }
+
+  .formRow {
+    font-size: 24px;
+  }
+
+  .selectWrapper,
+  .input,
+  .messageInput {
+    padding: 15px;
+  }
+
+  .messageInput {
+    min-height: 200px;
+  }
+
+  .submitButton {
+    font-size: 24px;
+    min-height: 70px;
+    margin-top: 30px;
+  }
+}
+
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 100;
+  text-align: center;
+  width: 300px;
+  max-width: 90%;
+}
+
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+
+.modalContent button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modalContent button:hover {
+  background-color: #0056b3;
+}
+.label {
+  font-size: 40px; 
+  font-weight: 700; 
+  color: #FFFFFF; 
+  margin-bottom: 8px; 
+  text-align: left; 
+  width: 100%;
+  max-width: 1005px;
+}
+
+@media (max-width: 400px) {
+  .label {
+    font-size: 18px; 
+  }
+}
+
+
+.inputGroup select {
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #000;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputGroup select:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.inputGroup select:focus {
+  background-color: #d0d0d0;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.inputGroup option {
+  background-color: #f0f0f0;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 768px) {
+  .inputGroup select {
+    padding: 8px 15px;
+    font-size: 16px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .inputGroup select {
+    padding: 6px 10px;
+    font-size: 14px;
+    max-width: 90%;
+  }
+}

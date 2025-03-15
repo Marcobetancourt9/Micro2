@@ -1,32 +1,42 @@
-/* Header.module.css */
+
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ajusta el espacio entre los elementos */
-  padding: 10px 20px; /* Espaciado alrededor del contenido */
+  justify-content: space-between; /* Coloca los elementos en extremos opuestos */
+  padding: 10px 20px;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  box-sizing: border-box; /* Incluye padding en el tamaño total */
 }
 
 .menuIcon {
-  width: 100px; /* Ajusta el tamaño de las imágenes */
-  height: 150px;
-  object-fit: contain;
+  width: clamp(70px, 15vw, 120px); /* Tamaño más grande y adaptable */
+  height: clamp(70px, 15vw, 120px); /* Tamaño más grande y adaptable */
+  object-fit: contain; /* Escala correctamente */
 }
-/* Header.module.css */
+
 .mainLogo {
-  width: 250px; /* Ajusta el tamaño de la imagen */
-  height: 200px;
-  object-fit: contain;
+  width: clamp(150px, 25vw, 300px); /* Tamaño más grande y adaptable */
+  height: clamp(100px, 20vw, 250px); /* Tamaño más grande y adaptable */
+  object-fit: contain; /* Escala correctamente */
 }
+
 
 
 @media (max-width: 500px) {
   .header {
-    justify-content: center; /* Centra el contenido en pantallas pequeñas */
-    gap: 20px; /* Reduce la separación en pantallas pequeñas */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
   }
   
-  .mainLogo, .menuIcon {
-    width: 60px;
+  .mainLogo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .menuIcon {
+    width: 60px; 
     height: 60px;
   }
 }

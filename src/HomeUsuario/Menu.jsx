@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"; 
-import menuIcon from "/src/assets/menu-icon.png"; // Verifica la ruta del icono
+import menuIcon from "/public/menu-icon.png"; // Verifica la ruta del icono
 import styles from "./Menu.module.css"; // Importa los estilos
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -47,6 +47,25 @@ export default function Menu() {
     navigate("/")
   }
 
+  function abrirRutas(){
+    navigate("/destino/0")
+  }
+  function contacto(){
+    navigate("/contactanos")
+  }
+
+  function verconsejos(){
+    navigate("/consejos")
+  }
+
+  function volveralinicio(){
+    navigate("/home")
+  }
+  
+  function calendario(){
+    navigate("/calendario")
+  }
+
   return (
     <div style={{zIndex: 99}}>
       <img
@@ -73,22 +92,22 @@ export default function Menu() {
             <p> Bienvenido {usuario && usuario.email}</p>
           </li>
           <li>
-            <a href="#">🌲 Inicio</a>
+            <a onClick={() => volveralinicio()}>🌲 Inicio</a>
           </li>
           <li>
-            <a onClick={() => setShowMessage("Reservar")}>📅 Reservar</a>
+            <a onClick={() => calendario()}>📅 Reservar</a>
           </li>
           <li>
-            <a onClick={() => setShowMessage("Rutas")}>🖼️ Rutas</a>
+            <a onClick={()=> abrirRutas() }>🖼️ Rutas</a>
           </li>
           <li>
-            <a href="#">🦺 Consejos de Seguridad</a>
+            <a onClick={() => verconsejos()}>🦺 Consejos de Seguridad</a>
           </li>
           <li>
             <a onClick={() => setShowMessage("Editar Perfil")}>🪪 Editar Perfil</a>
           </li>
           <li>
-            <a onClick={() => setShowMessage("Contactarnos")}>📫 Contactarnos</a>
+            <a onClick={() => contacto()}>📫 Contactarnos</a>
           </li>
           <li>
             <a onClick={()=> cerrarSesion() }>❌ Cerrar Sesión</a>
