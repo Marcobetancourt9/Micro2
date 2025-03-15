@@ -9,6 +9,7 @@ import Tips from './Consejo/Tips.jsx';
 import ContactPage from './Contactanos/ContactPage.jsx';
 import Calendar from './Calendario/Calendar.jsx';
 import EditProfileForm from './Editar_perfil/EditProfileForm.jsx';
+import PaypalLoginForm from './Paypal/PaypalLoginForm.jsx';
 export default function App() {
     return (
       <Router>
@@ -22,6 +23,8 @@ export default function App() {
           <Route path="contactanos" element={<ContactPage />} />
           <Route path="editarp" element={<EditProfileForm />} />
           <Route path="calendario" element={<Calendar />} />
+          <Route path="paypal" element={<PaypalLoginForm />} />
+          
         </Routes>
       </Router>
     );
