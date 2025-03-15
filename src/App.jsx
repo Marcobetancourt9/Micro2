@@ -8,6 +8,7 @@ import Slide1693 from './HomeUsuario/Slide1693.jsx';
 import Tips from './Consejo/Tips.jsx';
 import ContactPage from './Contactanos/ContactPage.jsx';
 import Calendar from './Calendario/Calendar.jsx';
+import EditProfileForm from './Editar_perfil/EditProfileForm.jsx';
 export default function App() {
     return (
       <Router>
