@@ -7,7 +7,7 @@ import Destino from './Destinos/Destino.jsx'
 import Slide1693 from './HomeUsuario/Slide1693.jsx';
 import Tips from './Consejo/Tips.jsx';
 import ContactPage from './Contactanos/ContactPage.jsx';
-import CalendarView from './Calendario/CalendarView.jsx';
+import Calendar from './Calendario/Calendar.jsx';
 export default function App() {
     return (
       <Router>
@@ -19,8 +19,8 @@ export default function App() {
           <Route path="home" element={<Slide1693 />} />
           <Route path="consejos" element={<Tips />} />
           <Route path="contactanos" element={<ContactPage />} />
-          <Route path="calendario" element={<CalendarView />} />
           <Route path="editarp" element={<EditProfileForm />} />
+          <Route path="calendario" element={<Calendar />} />
         </Routes>
       </Router>
     );
