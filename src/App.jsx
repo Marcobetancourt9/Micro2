@@ -20,6 +20,7 @@ export default function App() {
           <Route path="consejos" element={<Tips />} />
           <Route path="contactanos" element={<ContactPage />} />
           <Route path="calendario" element={<CalendarView />} />
+          <Route path="editarp" element={<EditProfileForm />} />
         </Routes>
       </Router>
     );
