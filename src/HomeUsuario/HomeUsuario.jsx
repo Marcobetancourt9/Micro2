@@ -5,11 +5,11 @@ import Hero from "./Hero";
 import InfoSection from "./InfoSection";
 import MissionVision from "./MissionVision";
 import Footer from "../Footer";
-import styles from "./Slide1693.module.css";
+import styles from "./HomeUsuario.module.css";
 
-const Slide1693 = () => {
+const HomeUsuario = () => {
   return (
-    <main className={styles.slide1693}>
+    <main className={styles.homeusuario}>
       <Header className={styles.center}/>
       <Hero />
       <InfoSection className={styles.infoSection} />
@@ -19,6 +19,6 @@ const Slide1693 = () => {
   );
 };
 
-export default Slide1693;
+export default HomeUsuario;
 
 

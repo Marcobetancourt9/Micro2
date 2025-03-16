@@ -1,4 +1,4 @@
-.slide1693 {
+.homeusuario {
   background-color: #031d31;
   border: 1px solid #000;
   flex-direction: column;
@@ -24,7 +24,7 @@
 
 
 @media (width <= 991px) {
-  .slide1693 {
+  .home-usuario {
     padding-bottom: 100px;
   }
 }
