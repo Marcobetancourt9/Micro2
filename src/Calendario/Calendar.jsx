@@ -27,7 +27,6 @@ const Calendar = () => {
     let emptyDays = [];
     for( let i = 0; i < month[2]; i++) emptyDays.push(0);
   return <>
-    <Header/>
     <div className="calendar-container">
         <div className="top-calendar">
             <div style={{transform: "scale(-1, 1)"}} className="arrow" onClick={()=> handleMonth(0)}>{monthId==0?"-":"➜"}</div>

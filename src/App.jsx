@@ -13,9 +13,36 @@ import PaypalLoginForm from './Paypal/PaypalLoginForm.jsx';
 import Slide16918 from './Pago/Slide16918.jsx';
 import Slide1698 from './Menu_Rutas/Slide1698.jsx';
 import UserManagementDashboard from './Perfiles/UserManagementDashboard.jsx';
+
+import { getAuth } from "firebase/auth";
+import { app } from "../credentials";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Header from './Header.jsx';
+import Head from './Head.jsx';
+import HeaderAdmin from './Header_admin.jsx';
+import Footer from './Footer.jsx';
+const auth = getAuth(app);
+
+
+
+
 export default function App() {
-    return (
+  const [ user, setUser ] = useState("")
+
+  async function checkUser() {
+    auth.authStateReady().then(() => {
+      setUser(auth.currentUser)
+    });
+}
+  useEffect(() => {
+    checkUser();
+  }, []);
+
+    return (<>
       <Router>
+      {/* SI HAY USUARIO LOGEADO LE MUESTRA UN HEADER U OTRO */}
+      {user? <Header/>:<Head/>}
         <Routes>
           <Route path="/" element={<MainContainer />} />
           <Route path="login" element={<LoginForm />} />
@@ -30,8 +57,9 @@ export default function App() {
           <Route path="pago" element={<Slide16918 />} />
           <Route path="ruta" element={<Slide1698  />} />
           <Route path="perfiles" element={<UserManagementDashboard  />} />
-          
         </Routes>
+      <Footer/>
       </Router>
+      </>
     );
   }

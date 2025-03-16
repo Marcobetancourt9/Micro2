@@ -5,7 +5,7 @@ import Menu_admin from "./Perfiles/Menu_admin";
 import { useNavigate } from "react-router-dom";
 
 
-const Header = () => {
+const HeaderAdmin = () => {
   const navigate = useNavigate();
 
   return (
@@ -22,4 +22,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderAdmin;

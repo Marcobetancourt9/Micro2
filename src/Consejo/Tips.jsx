@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./Tips.module.css";
-import Footer from "../Footer";
-import Header from "../Header";
 
 // Componente para cada sección de consejos
 const GuideSection = ({ number, title, description, imageSrc, imageAlt }) => {
@@ -30,7 +28,6 @@ const tipsData = [
 const Tips = () => {
   return (
     <main className={styles.tips}>
-      <Header />
       <section className={styles.guideSections}>
         {tipsData.map((section) => (
           <GuideSection
@@ -43,7 +40,6 @@ const Tips = () => {
           />
         ))}
       </section>
-      <Footer />
     </main>
   );
 };

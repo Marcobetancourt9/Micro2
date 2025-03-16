@@ -10,12 +10,10 @@ import styles from "./MainContainer.module.css";
 const MainContainer = () => {
   return (
     <main className={styles.mainContainer}>
-      <Head />
       <HeroSection />
       <InfoSection />
       <PlatformSection />
       <ExploreSection />
-      <Footer />
     </main>
   );
 };

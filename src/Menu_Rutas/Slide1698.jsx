@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
 import styles from "./Slide1698.module.css";
-import LocationHeader from "../Header";
 import LocationDetails from "./LocationDetails";
 import Footer from "../Footer";
 
 const Slide1698 = () => {
   return (
     <main className={styles.slide1698}>
-      <LocationHeader />
-
       <section className={styles.heroSection}>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/1766841f900ce419b84265a79829844ed7d504af6488c7d18208877f95c16025?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
@@ -49,7 +46,6 @@ const Slide1698 = () => {
       </section>
 
       <hr className={styles.divider} />
-      <Footer />
     </main>
   );
 };

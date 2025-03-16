@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./Main/MainContainer.module.css";
+import { useLocation } from "react-router-dom";
+const rutasSinHeaders = ["/paypal"]
 
 const Footer = () => {
-  return (
-    <footer className={styles.footer}>
+  const location = useLocation();
+
+  return (<>
+    {!rutasSinHeaders.includes(location.pathname) &&<footer className={styles.footer}>
       <p className={styles.footerContent}>
         © Visita Caracas 2025 | Síguenos:{" "}
         
@@ -15,7 +19,8 @@ const Footer = () => {
           Facebook
         </a>
       </p>
-    </footer>
+    </footer>}
+  </>
   );
 };
 

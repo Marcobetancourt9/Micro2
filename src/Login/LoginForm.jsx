@@ -60,7 +60,6 @@ const LoginForm = () => {
 
   return (
     <main className={styles.loginContainer}>
-      <AuthHeader className="center" />
       <section className={styles.formContainer}>
         <form className={styles.formWrapper} onSubmit={handleLogin}>
           {error && <div className="text-red-500">{error}</div>}
