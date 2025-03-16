@@ -10,6 +10,7 @@ import ContactPage from './Contactanos/ContactPage.jsx';
 import Calendar from './Calendario/Calendar.jsx';
 import EditProfileForm from './Editar_perfil/EditProfileForm.jsx';
 import PaypalLoginForm from './Paypal/PaypalLoginForm.jsx';
+import Slide16918 from './Pago/Slide16918.jsx';
 export default function App() {
     return (
       <Router>
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="editarp" element={<EditProfileForm />} />
           <Route path="calendario" element={<Calendar />} />
           <Route path="paypal" element={<PaypalLoginForm />} />
+          <Route path="pago" element={<Slide16918 />} />
           
         </Routes>
       </Router>
