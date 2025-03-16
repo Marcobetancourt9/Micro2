@@ -12,6 +12,7 @@ import EditProfileForm from './Editar_perfil/EditProfileForm.jsx';
 import PaypalLoginForm from './Paypal/PaypalLoginForm.jsx';
 import Slide16918 from './Pago/Slide16918.jsx';
 import Slide1698 from './Menu_Rutas/Slide1698.jsx';
+import UserManagementDashboard from './Perfiles/UserManagementDashboard.jsx';
 export default function App() {
     return (
       <Router>
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="paypal" element={<PaypalLoginForm />} />
           <Route path="pago" element={<Slide16918 />} />
           <Route path="ruta" element={<Slide1698  />} />
+          <Route path="perfiles" element={<UserManagementDashboard  />} />
           
         </Routes>
       </Router>
