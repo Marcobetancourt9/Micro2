@@ -1,0 +1,29 @@
+.dashboard {
+  background-color: #031d31;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.userGrid {
+  width: 100%;
+  max-width: 1147px;
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+  margin-top: 93px;
+}
+
+@media (width <= 991px) {
+  .dashboard {
+    padding-bottom: 100px;
+  }
+
+  .userGrid {
+    max-width: 100%;
+    margin-top: 40px;
+    gap: 40px;
+  }
+}

@@ -107,7 +107,6 @@ export default function RegistrationForm() {
 
   return (
     <main className="registration-form">
-      <FormHeader />
       <section className="form-container">
       <div className="header-content">
         <h1 className="title">Crea una cuenta</h1>

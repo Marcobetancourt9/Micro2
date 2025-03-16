@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import menuIcon from "/public/menu-icon.png"; // Verifica la ruta del icono
-import styles from "./Menu.module.css"; // Importa los estilos
+import styles from "../HomeUsuario/Menu.module.css"; // Importa los estilos
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { app } from "../../credentials";
 
-export default function Menu() {
+export default function Menu_admin() {
   const navigate = useNavigate();
   const auth = getAuth(app);
   const usuario = auth.currentUser;
@@ -35,6 +35,7 @@ export default function Menu() {
 
   async function checkUser() {
     auth.authStateReady().then(() => {
+      console.log(auth.currentUser);
       if (!auth.currentUser) {
         navigate("/");
       }
@@ -46,23 +47,23 @@ export default function Menu() {
     navigate("/");
   }
 
-  function abrirRutas() {
-    navigate("/destino/0");
+  function gestionrrutas() {
+    navigate("/gestionarrutas");//agregar
   }
-  function contacto() {
-    navigate("/contactanos");
+  function finanzas() {
+    navigate("/finanzas");//agregar
   }
 
-  function verconsejos() {
-    navigate("/consejos");
+  function perfiles() {
+    navigate("/perfiles");
   }
 
   function volveralinicio() {
     navigate("/home");
   }
 
-  function calendario() {
-    navigate("/calendario");
+  function reservas() {
+    navigate("/gestionarreservas");//Agregar
   }
 
   function editarperfil() {
@@ -95,33 +96,25 @@ export default function Menu() {
             <a onClick={() => volveralinicio()}>🌲 Inicio</a>
           </li>
           <li>
-            <a onClick={() => calendario()}>📅 Reservar</a>
+            <a onClick={() => reservas()}>📅 Gestionar Reservas</a>
           </li>
           <li>
-            <a onClick={() => abrirRutas()}>🖼️ Rutas</a>
+            <a onClick={() => gestionrrutas()}>🖼️ Gestionar Rutas</a>
           </li>
           <li>
-            <a onClick={() => verconsejos()}>🦺 Consejos de Seguridad</a>
+            <a onClick={() => perfiles()}>👤 Administrar Usuarios</a>
           </li>
           <li>
             <a onClick={() => editarperfil()}>🪪 Editar Perfil</a>
           </li>
           <li>
-            <a onClick={() => contacto()}>📫 Contactarnos</a>
+            <a onClick={() => finanzas()}>💵 Gestionar Finanzas</a>
           </li>
           <li>
             <a onClick={() => cerrarSesion()}>❌ Cerrar Sesión</a>
           </li>
         </ul>
       </div>
-      {showMessage && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <p>{showMessage} - Próximamente...</p>
-            <button onClick={() => setShowMessage(null)}>Cerrar</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

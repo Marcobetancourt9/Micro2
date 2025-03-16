@@ -1,0 +1,103 @@
+.card {
+  width: 100%;
+  max-width: 1147px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 11px;
+}
+
+.cardContent {
+  display: flex;
+  gap: 20px;
+}
+
+.imageColumn {
+  width: 21%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.profileImage {
+  aspect-ratio: 0.96;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  width: 90px;
+}
+
+.infoColumn {
+  width: 79%;
+  margin-left: 20px;
+  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.userName {
+  color: #fff;
+  margin-left: 13px;
+  font-size: 40px;
+}
+
+.userRole {
+  color: #000;
+  background-color: #f1eaea;
+  border: 3px solid #000;
+  border-radius: 30px;
+  margin-top: 8px;
+  padding: 18px 26px;
+  font-size: 24px;
+}
+
+.viewButton {
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+  background-color: #ff6709;
+  border: 1px solid #000;
+  border-radius: 25px;
+  align-self: flex-end;
+  min-height: 66px;
+  margin-top: -77px;
+  padding: 15px 10px;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (width <= 991px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .cardContent {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .imageColumn {
+    width: 100%;
+  }
+
+  .profileImage {
+    margin-top: 13px;
+  }
+
+  .infoColumn {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .userName {
+    margin-left: 10px;
+    margin-right: 6px;
+  }
+
+  .userRole {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

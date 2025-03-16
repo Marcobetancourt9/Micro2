@@ -84,8 +84,6 @@ const Destino = () => {
 
   let info = allInfo[params.id]
   return <>
-    <Head/>
-
     <img className="banner" src={info.bannerImage} />
     <div className="options-container">
       <div style={{backgroundImage:`url(${TelefericoOption})`}} onClick={()=> navigate("/destino/2")}>
@@ -143,7 +141,6 @@ const Destino = () => {
         <h2>Consejos de Seguridad</h2>
       </div>
     </div>
-    <Footer/>
   </>;
 
 };

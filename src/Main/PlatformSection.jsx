@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./MainContainer.module.css";
+import { useNavigate } from "react-router";
 
 const PlatformSection = () => {
-  const handleComingSoon = () => {
-    alert("Próximamente...");
+  const navigate = useNavigate();
+  const handleButtons = () => {
+    navigate("/login")
   }
   return (
     <section className={styles.platformSection}>
@@ -24,13 +26,13 @@ const PlatformSection = () => {
           <div className={styles.buttonContainer}>
             <button
               className={styles.routesBtn}
-              onClick={handleComingSoon} // Acción al hacer clic en "Ver rutas"
+              onClick={handleButtons} // Acción al hacer clic en "Ver rutas"
             >
               Ver rutas
             </button>
             <button
               className={styles.scheduleBtn}
-              onClick={handleComingSoon} // Acción al hacer clic en "¡Agenda ya!"
+              onClick={handleButtons} // Acción al hacer clic en "¡Agenda ya!"
             >
               ¡Agenda ya!
             </button>
