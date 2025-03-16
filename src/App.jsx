@@ -10,6 +10,8 @@ import ContactPage from './Contactanos/ContactPage.jsx';
 import Calendar from './Calendario/Calendar.jsx';
 import EditProfileForm from './Editar_perfil/EditProfileForm.jsx';
 import PaypalLoginForm from './Paypal/PaypalLoginForm.jsx';
+import SuccessfulTransaction from './Paypal/SuccessfulTransaction.jsx';
+import PayPalPayment from './Paypal/PayPalPayment.jsx';
 export default function App() {
     return (
       <Router>
@@ -24,6 +26,8 @@ export default function App() {
           <Route path="editarp" element={<EditProfileForm />} />
           <Route path="calendario" element={<Calendar />} />
           <Route path="paypal" element={<PaypalLoginForm />} />
+          <Route path="exitosa" element={<SuccessfulTransaction />} />
+          <Route path="pago" element={<PayPalPayment />} />
           
         </Routes>
       </Router>
