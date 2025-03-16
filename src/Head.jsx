@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from "./Main/MainContainer.module.css";
-import button1Image from "/public/Ecomet icon.png"; // Asegúrate de que la imagen esté en la carpeta correcta
+import button1Image from "/public/Ecomet icon.png";
 import button2Image from "/public/icono inicio.png";
 
 const Head = () => {
