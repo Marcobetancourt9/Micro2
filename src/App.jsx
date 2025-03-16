@@ -20,7 +20,6 @@ import { app, db } from "../credentials";
 import { doc, getDoc } from "firebase/firestore";
 import UserManagementDashboard from './Perfiles/UserManagementDashboard.jsx';
 
-
 const auth = getAuth(app);
 
 export default function App() {
@@ -32,9 +31,9 @@ export default function App() {
       setUser(auth.currentUser)
       return auth.currentUser
     }).then((usuario) => {
-      return getDoc(doc(db, "users", usuario.uid));
+      if(usuario) return getDoc(doc(db, "users", usuario.uid));
     }).then((info)=>{
-      setUserInfo(info.data())
+      if(info) setUserInfo(info.data())
     })
 }
   useEffect(() => {
