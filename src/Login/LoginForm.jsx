@@ -53,7 +53,6 @@ const LoginForm = () => {
         if(auth.currentUser){
           navigate("/home")
         }
-        console.log(auth)
       })
     }
 

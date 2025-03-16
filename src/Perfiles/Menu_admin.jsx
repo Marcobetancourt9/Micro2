@@ -35,7 +35,6 @@ export default function Menu_admin() {
 
   async function checkUser() {
     auth.authStateReady().then(() => {
-      console.log(auth.currentUser);
       if (!auth.currentUser) {
         navigate("/");
       }

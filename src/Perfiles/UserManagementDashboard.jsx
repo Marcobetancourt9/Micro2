@@ -70,7 +70,6 @@ const users = [
 const UserManagementDashboard = () => {
   return (
     <main className={styles.dashboard}>
-      <DashboardHeader />
       <section className={styles.userGrid}>
         {users.map((user) => (
           <UserProfileCard
