@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import styles from "./EditProfileForm.module.css";
 
+const ParentComponent = () => {
+  const guardarCambios = () => {
+    // Aquí va tu lógica para guardar los datos
+    console.log("Datos guardados exitosamente");
+  };
+
+  return <ActionButton guardarCambios={guardarCambios} />;
+};
+
 export const ProfilePicture = () => {
   const [imageSrc, setImageSrc] = useState(
     "https://cdn.builder.io/api/v1/image/assets/TEMP/cf81e9eb4f779150f9c8b3aa1d54f125bba9b94d3106e925ce5c3bc3a7334b02?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
