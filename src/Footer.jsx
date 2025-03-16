@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Main/MainContainer.module.css";
 import { useLocation } from "react-router-dom";
-const rutasSinHeaders = ["/paypal"]
+const rutasSinHeaders = ["/paypal"] // Guardar aqui rutas donde no se quiere mostrar el footer
 
 const Footer = () => {
   const location = useLocation();

@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import Menu from "./HomeUsuario/Menu";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-const rutasSinHeaders = ["/paypal"]
+const rutasSinHeaders = ["/paypal"] // Guardar aqui rutas donde no se quiere mostrar el header
 
 const Header = () => {
   const location = useLocation();
