@@ -4,7 +4,7 @@ import styles from "./Main/MainContainer.module.css";
 import button1Image from "/public/Ecomet icon.png";
 import button2Image from "/public/icono inicio.png";
 import { useLocation } from "react-router-dom";
-const rutasSinHeaders = ["/paypal"] // Guardar aqui rutas donde no se quiere mostrar el header
+const rutasSinHeaders = ["/paypal", "/perfiles"] // Guardar aqui rutas donde no se quiere mostrar el header
 
 const Head = () => {
   const navigate = useNavigate();
