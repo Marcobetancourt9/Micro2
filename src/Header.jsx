@@ -32,10 +32,12 @@ const Header = () => {
       if (usuario) return getDoc(doc(db, "users", usuario.uid));
       else if (!rutasVisitante.includes(location.pathname)) navigate("/login")
     }).then((info) => {
-      if (info) setUserInfo(info.data())
-      if (info.data().tipoRegistro != null && !["Administrador", "Guia"].includes(userInfo.tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
-        console.log(location.pathname)
-      })
+      if (info) {
+        setUserInfo(info.data())
+        if (info.data().tipoRegistro != null && !["Administrador", "Guia"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
+      }
+    }
+    )
   }
 
 
@@ -44,26 +46,26 @@ const Header = () => {
   }, [location]);
 
   // MENU DE VISITANTE
-  if (rutasSinHeaders.includes(location.pathname)){
+  if (rutasSinHeaders.includes(location.pathname)) {
     return
   }
 
   else if (!user) {
     return (<>
-          <div className={stylesVisitante.header}>
-            <button className={stylesVisitante.headerButton} onClick={() => navigate('/')}><img 
-              src={button1Image} 
-              alt="Botón 1" 
-              className={stylesVisitante.headerButtonImage}
-            /></button>
-            <button className={stylesVisitante.headerButton} onClick={()=> navigate('/login') }><img
-              src={button2Image} 
-              alt="Botón 2" 
-              className={stylesVisitante.headerButtonImageTwo}
-            /></button>
-          </div>
-        </>
-      );
+      <div className={stylesVisitante.header}>
+        <button className={stylesVisitante.headerButton} onClick={() => navigate('/')}><img
+          src={button1Image}
+          alt="Botón 1"
+          className={stylesVisitante.headerButtonImage}
+        /></button>
+        <button className={stylesVisitante.headerButton} onClick={() => navigate('/login')}><img
+          src={button2Image}
+          alt="Botón 2"
+          className={stylesVisitante.headerButtonImageTwo}
+        /></button>
+      </div>
+    </>
+    );
   }
   // MENU DE USUARIO
   else if (userInfo && userInfo.tipoRegistro != null && !["Administrador", "Guia"].includes(userInfo.tipoRegistro)) {
@@ -81,19 +83,19 @@ const Header = () => {
     )
   }
   // MENU DE ADMIN
-  else if (userInfo && userInfo.tipoRegistro=="Administrador") {
-      return (
-        <header className={styles.header}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/efec7dabf4c0ba302a8d063e6669f161030b9b2ba63530b1cba4993de564ed73?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-            alt="Main logo"
-            className={styles.mainLogo}
-            onClick={()=> navigate("/home")}
-            style={{cursor:"pointer"}}
-          />
-          <Menu_admin className={styles.missionVision}/>
-        </header>
-      );
+  else if (userInfo && userInfo.tipoRegistro == "Administrador") {
+    return (
+      <header className={styles.header}>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/efec7dabf4c0ba302a8d063e6669f161030b9b2ba63530b1cba4993de564ed73?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
+          alt="Main logo"
+          className={styles.mainLogo}
+          onClick={() => navigate("/home")}
+          style={{ cursor: "pointer" }}
+        />
+        <Menu_admin className={styles.missionVision} />
+      </header>
+    );
   }
 };
 
