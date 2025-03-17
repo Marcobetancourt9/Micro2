@@ -34,7 +34,7 @@ const Header = () => {
     }).then((info) => {
       if (info) {
         setUserInfo(info.data())
-        if (info.data().tipoRegistro != null && !["Administrador", "Guia"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
+        if (info.data().tipoRegistro != null && !["Administrador"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
       }
     }
     )
