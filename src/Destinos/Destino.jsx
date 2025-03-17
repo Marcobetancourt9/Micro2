@@ -3,8 +3,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import Head from "../Head";
-import Footer from "../Footer";
 import TelefericoOption from "/public/AntiguoTeleferico/teleferico-option.jpg";
 import LagunazoOption from "/public/Lagunazo/lagunazo-option.jpg";
 import QuebradaOption from "/public/QuebradaQuintero/quebrada-option.jpg";

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./UserManagementDashboard.module.css";
-import DashboardHeader from "../Header_admin";
 import UserProfileCard from "./UserProfileCard";
 
 const users = [
