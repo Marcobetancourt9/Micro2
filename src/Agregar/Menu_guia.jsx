@@ -58,7 +58,7 @@ export default function Menu_guia() {
   }
 
   function reservas() {
-    navigate("/calendario");//Calendario cambiar a calendario de reservas
+    navigate("/gestionarreservas");//Calendario cambiar a calendario de reservas
   }
 
   function editarperfil() {
