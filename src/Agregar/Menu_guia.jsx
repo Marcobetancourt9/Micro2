@@ -5,7 +5,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { app } from "../../credentials";
 
-export default function Menu_admin() {
+export default function Menu_guia() {
   const navigate = useNavigate();
   const auth = getAuth(app);
   const usuario = auth.currentUser;
@@ -49,8 +49,8 @@ export default function Menu_admin() {
   function gestionrrutas() {
     navigate("/gestionarrutas");//agregar
   }
-  function finanzas() {
-    navigate("/PARTICIPANTES");//agregar
+  function participantes() {
+    navigate("/participantes");//agregar
   }
 
   function perfiles() {
@@ -107,7 +107,7 @@ export default function Menu_admin() {
             <a onClick={() => editarperfil()}>🪪 Editar Perfil</a>
           </li>
           <li>
-            <a onClick={() => finanzas()}>👥 PARTICIPANTES</a>
+            <a onClick={() => participantes()}>👥 PARTICIPANTES</a>
           </li>
           <li>
             <a onClick={() => cerrarSesion()}>❌ Cerrar Sesión</a>
