@@ -42,18 +42,6 @@ const reviews = [
 export const TestimonialsSection = () => {
   return (
     <section className={styles.testimonials}>
-      <div className={styles.headerImages}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/efec7dabf4c0ba302a8d063e6669f161030b9b2ba63530b1cba4993de564ed73?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-          alt="Scenic view"
-          className={styles.headerImage}
-        />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9e2581d491441fca1ad4ab7421246f4dbab83eda2afc6c23460e3e8076182e3?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-          alt="Logo"
-          className={styles.logoImage}
-        />
-      </div>
       <div className={styles.titleContainer}>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/d86a986f075bc7dcb3b9b54b4f42b2834daffe14002dd6a4274d089d41b9de29?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
