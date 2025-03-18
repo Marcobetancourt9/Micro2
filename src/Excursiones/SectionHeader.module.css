@@ -1,0 +1,36 @@
+.sectionHeader {
+  color: #fff;
+  flex-direction: column;
+  width: 100%;
+  min-height: 355px;
+  margin-top: 77px;
+  padding: 149px 70px 119px;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  display: flex;
+  position: relative;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+}
+
+@media (width <= 991px) {
+  .sectionHeader {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 100px 20px 110px;
+    font-size: 40px;
+  }
+}
