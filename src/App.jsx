@@ -10,6 +10,7 @@ import ContactPage from './Contactanos/ContactPage.jsx';
 import Calendar from './Calendario/Calendar.jsx';
 import EditProfileForm from './Editar_perfil/EditProfileForm.jsx';
 import PaypalLoginForm from './Paypal/PaypalLoginForm.jsx';
+import ExcursionsSection from './Excursiones/ExcursionsSection.jsx';
 import Agregar from './Agregar/Agregar.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
@@ -36,6 +37,8 @@ export default function App() {
             <Route path="paypal" element={<PaypalLoginForm />} />
             <Route path="perfiles" element={<UserManagementDashboard />} />
             <Route path="agregar" element={<Agregar />} />
+            <Route path="excursion" element={<ExcursionsSection />} />
+            
           </Routes>
         <Footer/>
       </Router>

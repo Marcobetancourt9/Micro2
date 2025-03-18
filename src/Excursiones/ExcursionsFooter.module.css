@@ -1,0 +1,41 @@
+.footer {
+  margin-top: 108px;
+}
+
+.footerContent {
+  color: #fff;
+  flex-wrap: wrap;
+  align-self: center;
+  align-items: stretch;
+  gap: 10px;
+  width: 550px;
+  max-width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+}
+
+.copyright {
+  text-align: center;
+  flex: auto;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.socialLink {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (width <= 991px) {
+  .footer {
+    margin-top: 40px;
+  }
+
+  .copyright {
+    max-width: 100%;
+  }
+}
