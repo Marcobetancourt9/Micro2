@@ -1,7 +1,5 @@
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
 import { useNavigate } from 'react-router';
-import React from 'react'
-
 
 
 const PayPalButtonComponent = () => {
@@ -19,7 +17,7 @@ const PayPalButtonComponent = () => {
       purchase_units: [{
         amount: {
           currency_code: "USD",
-          value: "5",
+          value: "100",
         },
       }],
     });
@@ -48,19 +46,13 @@ const PayPalButtonComponent = () => {
 }
 
 
-function App() {
-
+export default function PayPalPayment() {
   return (
     <>
 
-      <PayPalButtonComponent />
+
+        <PaypalButtonComponent />
 
     </>
-  )
-}
-
-export default function PayPalPayment() {
-  return (
-    <div>PayPalPayment</div>
-  )
+)
 }
