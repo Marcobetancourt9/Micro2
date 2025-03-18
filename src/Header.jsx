@@ -4,6 +4,7 @@ import styles from "./Header.module.css";
 import stylesVisitante from "./Main/MainContainer.module.css";
 import Menu from "./HomeUsuario/Menu";
 import Menu_admin from "./Perfiles/Menu_admin";
+import Menu_guia from "./Agregar/Menu_guia";
 import button1Image from "/public/Ecomet icon.png";
 import button2Image from "/public/icono inicio.png";
 import { useNavigate } from "react-router-dom";
@@ -34,7 +35,7 @@ const Header = () => {
     }).then((info) => {
       if (info) {
         setUserInfo(info.data())
-        if (info.data().tipoRegistro != null && !["Administrador"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
+        if (info.data().tipoRegistro != null && !["Administrador", "Guia"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
       }
     }
     )
@@ -68,7 +69,7 @@ const Header = () => {
     );
   }
   // MENU DE USUARIO
-  else if (userInfo && userInfo.tipoRegistro != null && !["Administrador", "Guia"].includes(userInfo.tipoRegistro)) {
+  else if (userInfo && userInfo.tipoRegistro != null && !["Administrador"].includes(userInfo.tipoRegistro)) {
     return (
       <header className={styles.header}>
         <img
@@ -78,7 +79,7 @@ const Header = () => {
           onClick={() => navigate("/home")}
           style={{ cursor: "pointer" }}
         />
-        <Menu className={styles.missionVision} />
+        {["Guia"].includes(userInfo.tipoRegistro)? <Menu_guia className={styles.missionVision} />:<Menu className={styles.missionVision} /> }
       </header>
     )
   }
