@@ -1,0 +1,13 @@
+.ratingContainer {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.starIcon {
+  aspect-ratio: 0.94;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+  width: 47px;
+}
