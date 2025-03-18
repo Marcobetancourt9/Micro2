@@ -16,6 +16,7 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 
 import UserManagementDashboard from './Perfiles/UserManagementDashboard.jsx';
+import GestionarReservas from './GestionarReservas/GestionarReservas.jsx';
 
 
 export default function App() {
@@ -38,7 +39,8 @@ export default function App() {
             <Route path="perfiles" element={<UserManagementDashboard />} />
             <Route path="agregar" element={<Agregar />} />
             <Route path="excursion" element={<ExcursionsSection />} />
-            
+            <Route path="gestionarreservas" element={<GestionarReservas />} />
+              
           </Routes>
         <Footer/>
       </Router>

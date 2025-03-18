@@ -1,0 +1,48 @@
+.reservas-container{
+    display: flex;
+    width: 85%;
+    margin: 5% auto;
+    background-color: #0B4069;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2% 2%;
+    border-radius: 10px;
+}
+
+.reservas-container h1{
+    margin: 0 auto 2% auto;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.user-container{
+    background: #335670;
+    padding: 25px 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.user-container h2{
+    color:whitesmoke;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.user-container h4{
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.user-container h3{
+    color: #ff6709;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.reservas p{
+    margin-bottom: 10px;
+    font-style: italic;
+    color: rgb(231, 231, 231);
+    border-bottom: 1px solid #457aa3;
+}

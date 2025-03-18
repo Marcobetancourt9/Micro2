@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { app, db } from "../../credentials";
 import { getAuth } from 'firebase/auth';
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc, collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router";
 import "./Calendar.css"
 
@@ -30,9 +30,11 @@ const Calendar = () => {
         setMonth(months[monthId]);
     }
 
+
+
     async function handleReservation(){
         if(!selectedDay) return alert("Selecciona una fecha para reservar.")
-
+            
         await auth.authStateReady()
         let tempUser = doc(db, "users", auth.currentUser.uid)
         let userDoc = await getDoc(tempUser)
