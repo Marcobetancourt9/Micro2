@@ -1,5 +1,8 @@
-import Header from "../Header";
 import { useState } from "react";
+import { app, db } from "../../credentials";
+import { getAuth } from 'firebase/auth';
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { useNavigate } from "react-router";
 import "./Calendar.css"
 
 //              [Nombre del mes, dias del mes, el mes empieza un miercoles(2)]
@@ -9,7 +12,10 @@ const days = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"]
 const day = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
 let monthId = 0;
 
+
 const Calendar = () => {
+    const auth = getAuth(app);
+    const navigate = useNavigate();
     const [selectedDay, setSelectedDay] = useState(0);
     const [month, setMonth] = useState(months[0]);    
 
@@ -24,8 +30,22 @@ const Calendar = () => {
         setMonth(months[monthId]);
     }
 
+    async function handleReservation(){
+        if(!selectedDay) return alert("Selecciona una fecha para reservar.")
+
+        await auth.authStateReady()
+        let tempUser = doc(db, "users", auth.currentUser.uid)
+        let userDoc = await getDoc(tempUser)
+        let reservations = userDoc.data().reservations? userDoc.data().reservations : []
+        reservations.push({mes: month[0], day: selectedDay})
+        await updateDoc(tempUser, {reservations: reservations})
+        navigate("/paypal")
+        alert(`Se ha reservado tu excursión con Exito!⛰️🏔️ Puedes pagar ahora con PayPal o en otra ocasión antes de ${month[0]} ${selectedDay}`)
+    }
+
     let emptyDays = [];
     for( let i = 0; i < month[2]; i++) emptyDays.push(0);
+
   return <>
     <div className="calendar-container">
         <div className="top-calendar">
@@ -46,7 +66,7 @@ const Calendar = () => {
                 >{day}</button>)}
             </div>
         </div>
-        <button className="select-button">
+        <button className="select-button" onClick={()=>handleReservation()}>
             SELECCIONAR
         </button>
     </div>
