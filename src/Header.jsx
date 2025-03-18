@@ -14,7 +14,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 import { useState, useEffect } from "react";
 const rutasVisitante = ["/login", "/register", "/"]
-const rutasEstudiante = ["/home", "/destino/0", "/destino/1", "/destino/2", "/consejos", "/contactanos", "/editarp", "/calendario", "/paypal", "/excursion"]
+const rutasEstudiante = ["/home", "/destino/0", "/destino/1", "/destino/2", "/consejos", "/contactanos", "/editarp", "/calendario", "/paypal", "/excursion", "/foro"]
 const rutasSinHeaders = ["/paypal"] // Guardar aqui rutas donde no se quiere mostrar el header
 
 const auth = getAuth(app);
@@ -35,7 +35,7 @@ const Header = () => {
     }).then((info) => {
       if (info) {
         setUserInfo(info.data())
-        if (info.data().tipoRegistro != null && !["Administrador", "Guia"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
+        if (info.data().tipoRegistro != null && !["Administrador", "guia"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
       }
     }
     )
@@ -79,7 +79,7 @@ const Header = () => {
           onClick={() => navigate("/home")}
           style={{ cursor: "pointer" }}
         />
-        {["Guia"].includes(userInfo.tipoRegistro)? <Menu_guia className={styles.missionVision} />:<Menu className={styles.missionVision} /> }
+        {["guia"].includes(userInfo.tipoRegistro)? <Menu_guia className={styles.missionVision} />:<Menu className={styles.missionVision} /> }
       </header>
     )
   }
