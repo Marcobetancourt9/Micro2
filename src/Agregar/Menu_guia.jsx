@@ -47,12 +47,8 @@ export default function Menu_guia() {
   }
 
   function gestionrrutas() {
-    navigate("/gestionarrutas");//agregar
+    navigate("/agregar");//agrega rutas o las elimina
   }
-  function participantes() {
-    navigate("/participantes");//agregar
-  }
-
   function perfiles() {
     navigate("/perfiles");
   }
@@ -62,7 +58,7 @@ export default function Menu_guia() {
   }
 
   function reservas() {
-    navigate("/gestionarreservas");//Agregar
+    navigate("/calendario");//Calendario cambiar a calendario de reservas
   }
 
   function editarperfil() {
@@ -105,9 +101,6 @@ export default function Menu_guia() {
           </li>
           <li>
             <a onClick={() => editarperfil()}>🪪 Editar Perfil</a>
-          </li>
-          <li>
-            <a onClick={() => participantes()}>👥 PARTICIPANTES</a>
           </li>
           <li>
             <a onClick={() => cerrarSesion()}>❌ Cerrar Sesión</a>
