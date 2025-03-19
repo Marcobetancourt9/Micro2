@@ -132,16 +132,15 @@ const Destino = () => {
     </div>
 
     <div className="aditional-info">
-      <div>
-        <h2 style={{backgroundColor: "#FF6709"}}>Ver Reseñas</h2>
+      <div onClick={() => navigate("/foro")} style={{ cursor: "pointer" }}>
+        <h2 style={{ backgroundColor: "#FF6709" }}>Ver Reseñas</h2>
       </div>
-      <div style={{backgroundImage:`url(${TelefericoOption})`}}>
+      <div style={{ backgroundImage: `url(${TelefericoOption})` }}>
         <h2>Consejos de Seguridad</h2>
       </div>
     </div>
   </>;
 
 };
-
 
 export default Destino;
