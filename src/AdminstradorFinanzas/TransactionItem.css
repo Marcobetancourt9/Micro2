@@ -3,6 +3,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    padding: 0 2%;
+    margin: 2%;
   }
   
   @media (max-width: 991px) {

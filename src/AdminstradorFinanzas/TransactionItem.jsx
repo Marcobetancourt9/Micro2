@@ -2,6 +2,7 @@
 import React from "react";
 import "./TransactionItem.css";
 
+
 function TransactionItem({ description }) {
   return (
     <article className="transaction-item">

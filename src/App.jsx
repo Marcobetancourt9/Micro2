@@ -19,7 +19,7 @@ import UserAdministration from './Administrarusuarios/UserAdmin.jsx';
 import UserManagementPage from './Administrarusuarios/UserManagement/UserManagementPage.jsx';
 import UserManagementDashboard from './Perfiles/UserManagementDashboard.jsx';
 import GestionarReservas from './GestionarReservas/GestionarReservas.jsx';
-
+import FinanceAdministration from './AdminstradorFinanzas/FinanceAdmin.jsx';
 
 export default function App() {
  
@@ -45,6 +45,7 @@ export default function App() {
             <Route path="foro" element={<Forum />} />
             <Route path="adminuser" element={<UserAdministration />} />
             <Route path="userman/:id" element={<UserManagementPage />} />
+            <Route path="finanzas" element={<FinanceAdministration />} />
           </Routes>
         <Footer/>
       </Router>
