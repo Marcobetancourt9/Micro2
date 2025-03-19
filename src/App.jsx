@@ -15,7 +15,8 @@ import Forum from './Foro/Forum.jsx';
 import Agregar from './Agregar/Agregar.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-
+import UserAdministration from './Administrarusuarios/UserAdmin.jsx';
+import UserManagementPage from './Administrarusuarios/UserManagement/UserManagementPage.jsx';
 import UserManagementDashboard from './Perfiles/UserManagementDashboard.jsx';
 import GestionarReservas from './GestionarReservas/GestionarReservas.jsx';
 
@@ -42,7 +43,8 @@ export default function App() {
             <Route path="excursion" element={<ExcursionsSection />} />
             <Route path="gestionarreservas" element={<GestionarReservas />} />
             <Route path="foro" element={<Forum />} />
-              
+            <Route path="adminuser" element={<UserAdministration />} />
+            <Route path="userman/:id" element={<UserManagementPage />} />
           </Routes>
         <Footer/>
       </Router>

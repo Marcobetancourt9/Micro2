@@ -54,7 +54,7 @@ export default function Menu_admin() {
   }
 
   function perfiles() {
-    navigate("/perfiles");
+    navigate("/adminuser");
   }
 
   function volveralinicio() {

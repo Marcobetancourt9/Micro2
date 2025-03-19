@@ -50,7 +50,7 @@ export default function Menu_guia() {
     navigate("/agregar");//agrega rutas o las elimina
   }
   function perfiles() {
-    navigate("/perfiles");
+    navigate("/adminuser");
   }
 
   function volveralinicio() {

@@ -1,0 +1,85 @@
+.action-buttons {
+    display: flex;
+    margin-top: 88px;
+    align-items: stretch;
+    gap: 20px;
+    font-family:
+      Istok Web,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 991px) {
+    .action-buttons {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .delete-button {
+    border-radius: 25px;
+    background-color: rgba(131, 81, 52, 1);
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    min-height: 60px;
+    padding: 7px 10px;
+    font-family:
+      Istok Web,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .restrict-button {
+    border-radius: 25px;
+    background-color: rgba(229, 94, 10, 0.55);
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    min-height: 60px;
+    padding: 7px 10px;
+    font-family:
+      Istok Web,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    border-radius: 25px;
+    background-color: rgba(255, 103, 9, 1);
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    min-height: 60px;
+    padding: 7px 10px;
+    font-family:
+      Istok Web,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    cursor: pointer;
+  }

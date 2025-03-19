@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .logo-image {
+    aspect-ratio: 1.71;
+    object-fit: contain;
+    object-position: center;
+    width: 410px;
+    border-radius: 50%;
+    align-self: center;
+    max-width: 100%;
+  }
