@@ -1,0 +1,21 @@
+.admin-container {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #031d31;
+    
+  }
+  
+  @media (max-width: 991px) {
+    .admin-container {
+      max-width: 991px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .admin-container {
+      max-width: 640px;
+    }
+  }
