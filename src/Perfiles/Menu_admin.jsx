@@ -47,7 +47,7 @@ export default function Menu_admin() {
   }
 
   function gestionrrutas() {
-    navigate("/gestionarrutas");//agregar
+    navigate("/agregar");//agregar
   }
   function finanzas() {
     navigate("/finanzas");//agregar
