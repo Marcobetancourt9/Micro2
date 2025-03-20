@@ -51,7 +51,7 @@ export default function PayPalPayment() {
     <>
 
 
-        <PaypalButtonComponent />
+        <PayPalButtonComponent />
 
     </>
 )
