@@ -46,6 +46,7 @@ export default function App() {
             <Route path="adminuser" element={<UserAdministration />} />
             <Route path="userman/:id" element={<UserManagementPage />} />
             <Route path="finanzas" element={<FinanceAdministration />} />
+            
           </Routes>
         <Footer/>
       </Router>
