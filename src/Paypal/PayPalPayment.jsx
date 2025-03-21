@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './PaypalLoginForm.module.css';
 
 export default function PayPalPayment() {
     const [cardNumber, setCardNumber] = useState('');
@@ -23,41 +24,40 @@ export default function PayPalPayment() {
     };
 
     return (
-        <div>
-            <h2>Pago simulado</h2>
-            {!showConfirmation && paymentStatus !== 'success' && (
-                <form onSubmit={handlePayment}>
-                    <label>Número de tarjeta:</label>
-                    <input type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
+      <div className={styles.paymentContainer}>
+          {!showConfirmation && paymentStatus !== 'success' && (
+              <form className={styles.paymentForm} onSubmit={handlePayment}>
+                  <label className={styles.paymentLabel}>Número de tarjeta:</label>
+                  <input className={styles.paymentInput} type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
 
-                    <label>Fecha de vencimiento:</label>
-                    <input type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+                  <label className={styles.paymentLabel}>Fecha de vencimiento:</label>
+                  <input className={styles.paymentInput} type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
 
-                    <label>CVV:</label>
-                    <input type="text" value={cvv} onChange={(e) => setCvv(e.target.value)} />
+                  <label className={styles.paymentLabel}>CVV:</label>
+                  <input className={styles.paymentInput} type="text" value={cvv} onChange={(e) => setCvv(e.target.value)} />
 
-                    <label>Nombre del titular de la tarjeta:</label>
-                    <input type="text" value={cardHolder} onChange={(e) => setCardHolder(e.target.value)} />
+                  <label className={styles.paymentLabel}>Nombre del titular de la tarjeta:</label>
+                  <input className={styles.paymentInput} type="text" value={cardHolder} onChange={(e) => setCardHolder(e.target.value)} />
 
-                    <button type="submit">Pagar</button>
-                </form>
-            )}
+                  <button className={styles.paymentButton} type="submit">Pagar</button>
+              </form>
+          )}
 
-            {showConfirmation && (
-                <div>
-                    <h3>Confirmar pago</h3>
-                    <p>Número de tarjeta: {cardNumber}</p>
-                    <p>Fecha de vencimiento: {expiryDate}</p>
-                    <p>CVV: {cvv}</p>
-                    <p>Nombre del titular: {cardHolder}</p>
-                    <button onClick={confirmPayment}>Confirmar</button>
-                    <button onClick={() => setShowConfirmation(false)}>Cancelar</button>
-                </div>
-            )}
+          {showConfirmation && (
+              <div className={styles.confirmation}>
+                  <h3>Confirmar pago</h3>
+                  <p>Número de tarjeta: {cardNumber}</p>
+                  <p>Fecha de vencimiento: {expiryDate}</p>
+                  <p>CVV: {cvv}</p>
+                  <p>Nombre del titular: {cardHolder}</p>
+                  <button className={styles.paymentButton} onClick={confirmPayment}>Confirmar</button>
+                  <button className={styles.paymentButton} onClick={() => setShowConfirmation(false)}>Cancelar</button>
+              </div>
+          )}
 
-            {paymentStatus === 'success' && (
-                <p>Pago exitoso. ¡Gracias por tu compra!</p>
-            )}
-        </div>
-    );
+          {paymentStatus === 'success' && (
+              <p className={styles.successMessage}>Pago exitoso. ¡Gracias por tu compra!</p>
+          )}
+      </div>
+  );
 }
