@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Forum.module.css";
 import { collection, addDoc, getDocs } from "firebase/firestore";
+import { getAuth } from "firebase/auth"; // Importar Firebase Auth
 import { db } from "../../credentials"; // Asegúrate de que la ruta sea correcta
 
 const StarRating = ({ rating, onRatingChange, interactive = false }) => {
@@ -130,6 +131,17 @@ const ReviewInput = ({ onSubmitReview }) => {
 
 const Forum = () => {
   const [reviews, setReviews] = useState([]);
+  const [userName, setUserName] = useState("Anonymous User"); // Estado para el nombre del usuario
+
+  // Obtener el usuario autenticado
+  useEffect(() => {
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+
+    if (currentUser) {
+      setUserName(currentUser.displayName || currentUser.email); // Usa el nombre o el correo del usuario
+    }
+  }, []);
 
   // Cargar reseñas desde Firestore
   useEffect(() => {
@@ -149,7 +161,7 @@ const Forum = () => {
   const handleSubmitReview = async (newReview) => {
     try {
       const reviewWithAuthor = {
-        author: "Anonymous User",
+        author: userName, // Usa el nombre del usuario autenticado
         image:
           "https://cdn.builder.io/api/v1/image/assets/TEMP/207a84b99b87e80953c63aa2e0087f83a5735364?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
         rating: newReview.rating,
