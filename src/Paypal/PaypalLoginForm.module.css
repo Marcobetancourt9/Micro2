@@ -269,9 +269,10 @@
   margin-top: 20px;
   color: green;
   font-weight: bold;
+  text-align: center;
 }
 .formGroup {
-  margin-bottom: 20px; /* Ajusta el margen inferior según tus preferencias */
+  margin-bottom: 20px; 
 }
 
 .paymentLabel {
