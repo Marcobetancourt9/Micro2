@@ -265,3 +265,23 @@
   color: green;
   font-weight: bold;
 }
+.formGroup {
+  margin-bottom: 20px; /* Ajusta el margen inferior según tus preferencias */
+}
+
+.paymentLabel {
+  font-size: 16px; /* Ajusta el tamaño de fuente según tus preferencias */
+  font-weight: bold; /* Opcional: para que las etiquetas estén en negrita */
+  margin-bottom: 5px; /* Ajusta el margen inferior según tus preferencias */
+  display: block; /* Asegura que la etiqueta ocupe todo el ancho disponible */
+}
+
+.paymentInput {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Asegura que el campo de entrada ocupe todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total */
+}
