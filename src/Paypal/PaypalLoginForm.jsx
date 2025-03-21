@@ -2,26 +2,32 @@
 import * as React from "react";
 import { useState } from "react";
 import styles from "./PaypalLoginForm.module.css";
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 const PaypalLoginForm = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    keepLoggedIn: false,
-  });
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+        keepLoggedIn: false,
+    });
+    const navigate = useNavigate(); // Inicializa useNavigate
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
+    const handleInputChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked : value,
+        }));
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Simula el inicio de sesión
+        setTimeout(() => {
+            // Redirige a la página de pago simulada
+            navigate('/paypal-payment');
+        }, 1000); // Espera 1 segundo para simular el procesamiento
+    };
 
   return (
     <main className={styles.paypalContainer}>
@@ -43,7 +49,7 @@ const PaypalLoginForm = () => {
               value={formData.email}
               onChange={handleInputChange}
               className={styles.formInput}
-              placeholder="Correo electronico o número de celular"
+              placeholder="Correo electrónico o número de celular"
               aria-label="Email or phone number"
             />
 
