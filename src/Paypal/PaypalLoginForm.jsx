@@ -2,32 +2,62 @@
 import * as React from "react";
 import { useState } from "react";
 import styles from "./PaypalLoginForm.module.css";
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const PaypalLoginForm = () => {
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-        keepLoggedIn: false,
-    });
-    const navigate = useNavigate(); // Inicializa useNavigate
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    keepLoggedIn: false,
+  });
+  const navigate = useNavigate();
 
-    const handleInputChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: type === "checkbox" ? checked : value,
-        }));
-    };
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Simula el inicio de sesión
-        setTimeout(() => {
-            // Redirige a la página de pago simulada
-            navigate('/paypal-payment');
-        }, 1000); // Espera 1 segundo para simular el procesamiento
-    };
+  const validarFormulario = () => {
+    if (!formData.email.trim()) {
+      alert('Por favor, ingresa tu correo electrónico.');
+      return false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Por favor, ingresa un correo electrónico válido.');
+      return false;
+    }
+
+    if (!formData.password.trim()) {
+      alert('Por favor, ingresa tu contraseña.');
+      return false;
+    }
+
+    if (formData.password.length < 8) {
+      alert('La contraseña debe tener al menos 8 caracteres.');
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validarFormulario()) {
+      return; // Detiene la ejecución si la validación falla
+    }
+
+    // Simula el inicio de sesión
+    setTimeout(() => {
+      // Redirige a la página de pago simulada
+      navigate('/paypal-payment');
+    }, 1000); // Espera 1 segundo para simular el procesamiento
+  };
 
   return (
     <main className={styles.paypalContainer}>

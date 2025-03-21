@@ -8,6 +8,7 @@
   display: flex;
   overflow: hidden;
   box-shadow: 0 4px 4px #00000040;
+  padding-left: 100px; /* Agregado para empujar el contenido a la derecha */
 }
 
 .formSection {
@@ -84,8 +85,8 @@
   background-color: #fff;
   border-radius: 4px;
   flex-shrink: 0;
-  width: 62px;
-  height: 68px;
+  width: 31px;  /* Reduce el ancho a la mitad */
+  height: 34px; /* Reduce el alto a la mitad */
 }
 
 .checkboxContent {
@@ -113,6 +114,7 @@
   border-radius: 10px;
   width: 384px;
   max-width: 100%;
+  display: block;
   margin: 21px auto;
   padding: 25px 70px;
   font-size: 32px;
@@ -266,10 +268,12 @@
 }
 
 .successMessage {
-  margin-top: 20px;
+  font-size: 20px; /* Aumenta el tamaño de la fuente */
+  margin-top: 0px;
   color: green;
   font-weight: bold;
   text-align: center;
+  padding: 10px;
 }
 .formGroup {
   margin-bottom: 20px; 

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import styles from './PaypalLoginForm.module.css';
 
+const rutas = [
+    { id: "AntiguoTeleferico", nombre: "Antiguo Teleferico" },
+    { id: "Lagunazo", nombre: "Lagunazo" },
+    { id: "QuebradaQuintero", nombre: "Quebrada Quintero" },
+];
+
 export default function PayPalPayment() {
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
@@ -8,9 +14,44 @@ export default function PayPalPayment() {
     const [cardHolder, setCardHolder] = useState('');
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [paymentStatus, setPaymentStatus] = useState(null);
+    const [rutaSeleccionada, setRutaSeleccionada] = useState(null);
+
+    const validarFormulario = () => {
+        if (!cardNumber.trim()) {
+            alert('Por favor, ingresa el número de tarjeta.');
+            return false;
+        }
+
+        if (!expiryDate.trim()) {
+            alert('Por favor, ingresa la fecha de vencimiento.');
+            return false;
+        }
+
+        if (!cvv.trim()) {
+            alert('Por favor, ingresa el CI.');
+            return false;
+        }
+
+        if (!cardHolder.trim()) {
+            alert('Por favor, ingresa el nombre del titular.');
+            return false;
+        }
+
+        if (!rutaSeleccionada) {
+            alert('Por favor, selecciona una ruta.');
+            return false;
+        }
+
+        return true;
+    };
 
     const handlePayment = (e) => {
         e.preventDefault();
+
+        if (!validarFormulario()) {
+            return;
+        }
+
         setShowConfirmation(true);
     };
 
@@ -23,8 +64,27 @@ export default function PayPalPayment() {
 
     return (
         <div className={styles.paymentContainer}>
+            <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/5337c2e761da58e32576f029bfb16a6b09c930f02b0aa4acaf420432439168ef?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
+                alt="PayPal Logo"
+                style={{ width: '150px', marginBottom: '20px' }}
+            />
             {!showConfirmation && paymentStatus !== 'success' && (
                 <form className={styles.paymentForm} onSubmit={handlePayment}>
+                    <div className={styles.formGroup}>
+                        <label className={styles.paymentLabel}>Seleccionar Ruta</label>
+                        <select
+                            value={rutaSeleccionada}
+                            onChange={(e) => setRutaSeleccionada(e.target.value)}
+                            className={styles.paymentInput}
+                        >
+                            <option value="">Selecciona una ruta</option>
+                            {rutas.map((ruta) => (
+                                <option key={ruta.id} value={ruta.id}>{ruta.nombre}</option>
+                            ))}
+                        </select>
+                    </div>
+
                     <div className={styles.formGroup}>
                         <label className={styles.paymentLabel}>Número de tarjeta</label>
                         <input
@@ -59,7 +119,7 @@ export default function PayPalPayment() {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label className={styles.paymentLabel}>Nombre</label>
+                        <label className={styles.paymentLabel}>Nombre del titular</label>
                         <input
                             className={styles.paymentInput}
                             type="text"
@@ -73,13 +133,14 @@ export default function PayPalPayment() {
                 </form>
             )}
 
-            {showConfirmation && (
+           {showConfirmation && (
                 <div className={styles.confirmation}>
                     <div>
                         <h3>Confirmar pago</h3>
+                        <p>Ruta Seleccionada: {rutas.find(ruta => ruta.id === rutaSeleccionada)?.nombre}</p>
                         <p>Número de tarjeta: {cardNumber}</p>
                         <p>Fecha de vencimiento: {expiryDate}</p>
-                        <p>CVV: {cvv}</p>
+                        <p>CI: {cvv}</p>
                         <p>Nombre del titular: {cardHolder}</p>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
