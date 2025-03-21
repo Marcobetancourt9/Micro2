@@ -2,7 +2,9 @@ import React from "react";
 import styles from "./LoginForm.module.css";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../../credentials";
+import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../credentials";
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const signInWithGooglePopup = () => signInWithPopup(auth, provider);
@@ -13,8 +15,27 @@ const GoogleAuthButton = () => {
   const navigate = useNavigate();
   const logGoogleUser = async () => {
     const response = await signInWithGooglePopup();
-    navigate("/home");
-}
+    if (response) {
+      const user = response.user;
+      const info = await getDoc(doc(db, "users", user.uid))
+      if (!info.data()) {
+        await setDoc(doc(db, "users", user.uid), {
+          nombre: user.displayName.split(" ")[0],
+          apellido: user.displayName.split(" ")[1],
+          email: user.email,
+          genero: "Desconocido",
+          telefono: "Desconocido",
+          documento: "Desconocido",
+          edad: 0,
+          tipoRegistro: "Estudiante",
+          uid: user.uid,
+          fechaCreacion: new Date(),
+        });
+      }
+
+      navigate("/home");
+    }
+  }
 
   return (
     <button

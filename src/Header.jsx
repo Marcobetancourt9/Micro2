@@ -33,7 +33,7 @@ const Header = () => {
       if (usuario) return getDoc(doc(db, "users", usuario.uid));
       else if (!rutasVisitante.includes(location.pathname)) navigate("/login")
     }).then((info) => {
-      if (info) {
+      if (info.data()) {
         setUserInfo(info.data())
         if (info.data().tipoRegistro != null && !["Administrador", "guia"].includes(info.data().tipoRegistro) && !rutasEstudiante.includes(location.pathname)) navigate("/home")
       }
