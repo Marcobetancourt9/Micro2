@@ -246,11 +246,12 @@
 .paymentButton {
   padding: 10px 20px;
   background-color: #0070BA;
-  color: white;
+  color: #000; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  width: 45%; 
 }
 
 .confirmation {
@@ -258,6 +259,8 @@
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
+  display: flex; 
+  justify-content: space-between; 
 }
 
 .successMessage {
@@ -270,10 +273,11 @@
 }
 
 .paymentLabel {
-  font-size: 16px; /* Ajusta el tamaño de fuente según tus preferencias */
-  font-weight: bold; /* Opcional: para que las etiquetas estén en negrita */
-  margin-bottom: 5px; /* Ajusta el margen inferior según tus preferencias */
-  display: block; /* Asegura que la etiqueta ocupe todo el ancho disponible */
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  color: #000; /* Agrega esta línea para establecer el color del texto */
 }
 
 .paymentInput {
