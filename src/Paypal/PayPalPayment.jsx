@@ -28,16 +28,40 @@ export default function PayPalPayment() {
           {!showConfirmation && paymentStatus !== 'success' && (
               <form className={styles.paymentForm} onSubmit={handlePayment}>
                   <label className={styles.paymentLabel}>Número de tarjeta:</label>
-                  <input className={styles.paymentInput} type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
+                  <input 
+                      className={styles.paymentInput} 
+                      type="text" 
+                      value={cardNumber} 
+                      onChange={(e) => setCardNumber(e.target.value)} 
+                      placeholder="XXXX-XXXX-XXXX-XXXX" // Agrega placeholder
+                  />
 
                   <label className={styles.paymentLabel}>Fecha de vencimiento:</label>
-                  <input className={styles.paymentInput} type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+                  <input 
+                      className={styles.paymentInput} 
+                      type="text" 
+                      value={expiryDate} 
+                      onChange={(e) => setExpiryDate(e.target.value)} 
+                      placeholder="MM/AA" // Agrega placeholder
+                  />
 
-                  <label className={styles.paymentLabel}>CVV:</label>
-                  <input className={styles.paymentInput} type="text" value={cvv} onChange={(e) => setCvv(e.target.value)} />
+                  <label className={styles.paymentLabel}>CI:</label>
+                  <input 
+                      className={styles.paymentInput} 
+                      type="text" 
+                      value={cvv} 
+                      onChange={(e) => setCvv(e.target.value)} 
+                      placeholder="XXXXXXXX" // Agrega placeholder
+                  />
 
                   <label className={styles.paymentLabel}>Nombre del titular de la tarjeta:</label>
-                  <input className={styles.paymentInput} type="text" value={cardHolder} onChange={(e) => setCardHolder(e.target.value)} />
+                  <input 
+                      className={styles.paymentInput} 
+                      type="text" 
+                      value={cardHolder} 
+                      onChange={(e) => setCardHolder(e.target.value)} 
+                      placeholder="Nombre Completo" // Agrega placeholder
+                  />
 
                   <button className={styles.paymentButton} type="submit">Pagar</button>
               </form>
