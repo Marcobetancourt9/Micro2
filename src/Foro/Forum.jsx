@@ -1,6 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Forum.module.css";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { getAuth } from "firebase/auth"; // Importar Firebase Auth
+import { db } from "../../credentials"; // Asegúrate de que la ruta sea correcta
 
 const StarRating = ({ rating, onRatingChange, interactive = false }) => {
   const handleStarClick = (selectedRating) => {
@@ -127,53 +130,54 @@ const ReviewInput = ({ onSubmitReview }) => {
 };
 
 const Forum = () => {
-  const [reviews, setReviews] = useState([
-    {
-      author: "Diego Fernández",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/ce8a1e837e099e5f3ff8fc71c1614dbad61c3e37?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
-      rating: 5,
-      comment:
-        "Una excelente forma de explorar la naturaleza. ¡Qué manera más fácil de descubrir rutas en el Ávila! Me encantó cómo la página de destinos detalla todo, desde la dificultad hasta los puntos de interés. Reservar fue pan comido y todo estuvo muy organizado.",
-    },
-    {
-      author: "Ariadna Cagiao",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/6f250be457c4528d2dca4ddeaef542b59fccf811?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
-      rating: 5,
-      comment:
-        "Hermosas vistas y un proceso de reserva sencillo. Me encantó la experiencia de usar la app. Reservar fue muy sencillo, y el calendario de disponibilidad me ayudó a planificar con anticipación. La galería de fotos realmente muestra lo increíble del Ávila, y las vistas durante la caminata fueron aún mejores.",
-    },
-    {
-      author: "Daniel Carrero",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/5b85d06ba925fc41b20b42d27aceab97629c57ac?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
-      rating: 5,
-      comment:
-        "Excelente experiencia en el Ávila. La aplicación es muy intuitiva y permite planificar excursiones fácilmente. Las rutas están bien descritas, incluyendo su dificultad y duración. La pasarela de pago con PayPal me dio mucha tranquilidad al momento de reservar.",
-    },
-    {
-      author: "Sophia Lavie",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/9af2f5ff1336ed04d09b77d2911b17901f975aba?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
-      rating: 5,
-      comment:
-        "Fácil de usar y con excursiones espectaculares. La plataforma está bien diseñada, y se nota que le han puesto atención a los detalles. Me gustó especialmente el buscador de excursiones, ya que me permitió encontrar rutas ideales para mi nivel.",
-    },
-  ]);
+  const [reviews, setReviews] = useState([]);
+  const [userName, setUserName] = useState("Anonymous User"); // Estado para el nombre del usuario
 
-  const handleSubmitReview = async (newReview) => {
-    // In a real application, you would send this to an API
-    // For now, we'll just add it to the reviews array
-    const reviewWithAuthor = {
-      author: "Anonymous User",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/207a84b99b87e80953c63aa2e0087f83a5735364?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
-      rating: newReview.rating,
-      comment: newReview.comment,
+  // Obtener el usuario autenticado
+  useEffect(() => {
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+
+    if (currentUser) {
+      setUserName(currentUser.displayName || currentUser.email); // Usa el nombre o el correo del usuario
+    }
+  }, []);
+
+  // Cargar reseñas desde Firestore
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "reviews"));
+        const reviewsData = querySnapshot.docs.map((doc) => doc.data());
+        setReviews(reviewsData);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      }
     };
 
-    setReviews((prevReviews) => [...prevReviews, reviewWithAuthor]);
+    fetchReviews();
+  }, []);
+
+  const handleSubmitReview = async (newReview) => {
+    try {
+      const reviewWithAuthor = {
+        author: userName, // Usa el nombre del usuario autenticado
+        image:
+          "https://cdn.builder.io/api/v1/image/assets/TEMP/207a84b99b87e80953c63aa2e0087f83a5735364?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e",
+        rating: newReview.rating,
+        comment: newReview.comment,
+        date: new Date().toISOString(),
+      };
+
+      // Guardar la reseña en Firestore
+      await addDoc(collection(db, "reviews"), reviewWithAuthor);
+
+      // Actualizar el estado local
+      setReviews((prevReviews) => [...prevReviews, reviewWithAuthor]);
+    } catch (error) {
+      console.error("Error submitting review:", error);
+      alert("Failed to submit review. Please try again.");
+    }
   };
 
   return (

