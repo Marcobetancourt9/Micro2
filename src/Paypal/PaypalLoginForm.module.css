@@ -251,7 +251,9 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  width: 45%; 
+  width: 30%;
+  display: block; 
+  margin: 20px auto; 
 }
 
 .confirmation {
@@ -259,8 +261,8 @@
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
-  display: flex; 
-  justify-content: space-between; 
+  justify-content: space-between;
+  color: #000; 
 }
 
 .successMessage {
