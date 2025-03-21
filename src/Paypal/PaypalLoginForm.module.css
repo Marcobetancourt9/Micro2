@@ -246,11 +246,12 @@
 .paymentButton {
   padding: 10px 20px;
   background-color: #0070BA;
-  color: white;
+  color: #000; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  width: 45%; 
 }
 
 .confirmation {
@@ -258,6 +259,8 @@
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
+  display: flex; 
+  justify-content: space-between; 
 }
 
 .successMessage {
