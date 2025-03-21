@@ -1,58 +1,24 @@
-import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
-import { useNavigate } from 'react-router';
-
-
-const PayPalButtonComponent = () => {
-
-  const navigate = useNavigate()
-
-  const initialPaypalOptions = {
-    "client-id": "ARWA6ZwSow2Vlidf0pJ4Fe6A--7Zw0zEaTDu4nKOgO_E2qpqK1kO8bRea0LGdrelp1gZ6UqvrZaF-mge",
-    currency: "USD",
-    intent: "capture",
-  }
-
-  const createOrder = (data, actions) => {
-    return actions.order.create({
-      purchase_units: [{
-        amount: {
-          currency_code: "USD",
-          value: "100",
-        },
-      }],
-    });
-  };
-
-  const onApprove = (data, actions) => {
-    return actions.order.capture().then(function (details) {
-      const name = details.payer.name.given_name;
-
-      console.log(name)
-      console.log("")
-      alert(`Transaction completed by ${name}`);;
-      navigate(`/exitosa`)
-    });
-  }
-
-  return (
-    <>
-      <PayPalScriptProvider options={initialPaypalOptions}>
-        <PayPalButtons createOrder={createOrder} onApprove={onApprove} />
-      </PayPalScriptProvider>
-    </>
-  )
-
-
-}
-
+import React, { useState } from 'react';
 
 export default function PayPalPayment() {
-  return (
-    <>
+    const [paymentStatus, setPaymentStatus] = useState(null);
 
+    const handlePayment = () => {
+        // Simula el procesamiento del pago
+        setTimeout(() => {
+            // Simula un pago exitoso
+            setPaymentStatus('success');
+        }, 1500); // Simula 1.5 segundos de procesamiento
+    };
 
-        <PayPalButtonComponent />
+    return (
+        <div>
+            <h2>Pago simulado</h2>
+            <button onClick={handlePayment}>Pagar</button>
 
-    </>
-)
+            {paymentStatus === 'success' && (
+                <p>Pago exitoso. ¡Gracias por tu compra!</p>
+            )}
+        </div>
+    );
 }
