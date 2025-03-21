@@ -1,21 +1,43 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./ContactForm.module.css";
+import { collection, addDoc } from "firebase/firestore"; // Importar Firestore
+import { db } from "../../credentials"; // Asegúrate de que la ruta sea correcta
 
 const ContactForm = () => {
   const [showMessage, setShowMessage] = useState(null);
   const [formData, setFormData] = useState({
-    topic: "",
     name: "",
     email: "",
     phone: "",
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setShowMessage("Envio de Mensaje - Próximamente...");
+
+    try {
+      // Guardar el comentario en Firestore
+      await addDoc(collection(db, "comments"), {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        date: new Date().toISOString(), // Agregar la fecha del envío
+      });
+
+      // Mostrar mensaje de éxito
+      setShowMessage("¡Tu mensaje ha sido enviado exitosamente!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error al enviar el mensaje:", error);
+      setShowMessage("Hubo un error al enviar tu mensaje. Intenta nuevamente.");
+    }
   };
 
   const handleChange = (e) => {
@@ -30,22 +52,6 @@ const ContactForm = () => {
     <section className={styles.formSection}>
       <h2 className={styles.formTitle}>Contáctanos</h2>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
-        
-        <div className={styles.inputGroup}>
-          <label className={styles.label}>Tópicos</label>
-          <select
-            name="topic"
-            value={formData.topic}
-            onChange={handleChange}
-            className={styles.select}
-            aria-label="Seleccione un Tópico"
-          >
-            <option value="">Seleccione un Tópico</option>
-            <option value="1">Opción 1</option>
-            <option value="2">Opción 2</option>
-          </select>
-        </div>
-
         <div className={styles.inputGroup}>
           <label className={styles.label}>Nombres y Apellidos</label>
           <input
@@ -115,4 +121,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
