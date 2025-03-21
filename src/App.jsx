@@ -10,7 +10,7 @@ import ContactPage from './Contactanos/ContactPage.jsx';
 import Calendar from './Calendario/Calendar.jsx';
 import EditProfileForm from './Editar_perfil/EditProfileForm.jsx';
 import PaypalLoginForm from './Paypal/PaypalLoginForm.jsx';
-import PayPalPayment from './PayPalPayment';
+import PayPalPayment from "./Paypal/PayPalPayment";
 import ExcursionsSection from './Excursiones/ExcursionsSection.jsx';
 import Forum from './Foro/Forum.jsx';
 import Agregar from './Agregar/Agregar.jsx';
