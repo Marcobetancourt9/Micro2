@@ -30,18 +30,12 @@
 
 /* Main image styles */
 .mainImage {
-  aspect-ratio: -2.05;
   object-fit: cover;
   object-position: center;
   color: #fff;
   text-align: center;
   align-items: start;
   width: 100%;
-  max-width: 1441px;
-  min-height: 641px;
-  margin-top: 97px;
-  padding: 19px 80px 378px;
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 800;
 }
 
@@ -64,8 +58,8 @@
   color: #fff;
   text-align: center;
   width: 100%;
-  margin-top: 37px;
-  padding: 0 40px;
+  padding: 0 10%;
+  margin-top: 5%;
   font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 64px;
   font-weight: 800;
@@ -81,14 +75,15 @@
 
 /* Location card styles */
 .locationCard {
-  border-radius: 40px;
+  border-radius: 100px;
   flex-direction: column;
-  min-height: 425px;
-  margin-left: 10px;
-  padding: 174px 10px;
+  padding: 5%;
+  min-height: 250px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  margin-bottom: 37px;
+  margin-bottom: 2.5%;
 }
 
 .locationCard:first-child {
@@ -104,6 +99,9 @@
 }
 
 .locationBackground {
+  border-radius: 100px;
+  filter: brightness(0.3);
+  border: 2px solid black;
   object-fit: cover;
   object-position: center;
   width: 100%;
@@ -114,9 +112,19 @@
 
 .locationTitle {
   position: relative;
+
+}
+
+.locationTitle h2{
   margin: 0;
   font-size: inherit;
   font-weight: inherit;
+}
+
+.locationTitle p{
+  margin-top: 15px;
+  font-size: 26px;
+  font-weight: 900;
 }
 
 /* Action buttons styles */

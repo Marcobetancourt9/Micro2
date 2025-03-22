@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
 import styles from "./Agregar.module.css";
+import { allInfo } from "../Destinos/Destino";
+import { doc, getDoc, updateDoc} from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { db } from "../../credentials";
 
 const MainImage = () => {
   return (
@@ -14,15 +18,35 @@ const MainImage = () => {
   );
 };
 
-const LocationCard = ({ backgroundImage, title }) => {
+const LocationCard = ({ backgroundImage, title, includes, array, setter, id }) => {
+
+  async function setActive(id){
+    let documento =  doc(db, "rutas", "gGOg5ObNJu6ZVH6ykCjZ");
+    let tempArray = array;
+    tempArray[id] = !tempArray[id]
+
+    try{
+      await updateDoc(documento, {rutasActivas: tempArray})
+      setter(tempArray)
+    }catch(err){
+      throw(err)
+    }
+
+  }
+
   return (
-    <article className={styles.locationCard}>
+    <article className={styles.locationCard} onClick={()=> setActive(id)} >
       <img
         src={backgroundImage}
         alt={`Fondo de ${title}`}
+        style={includes? {}:{filter: 'brightness(0)'}}
         className={styles.locationBackground}
       />
-      <h2 className={styles.locationTitle}>{title}</h2>
+      <div className={styles.locationTitle}>
+        <h2>{title}</h2>
+        <p style={includes? {}:{color: 'red'}}
+        >{includes? "ACTIVA":"INACTIVA"}</p>
+      </div>
     </article>
   );
 };
@@ -37,24 +61,32 @@ const ActionButtons = () => {
 };
 
 function Agregar() {
+  const [rutasActivas, setRutasActivas] = useState([]);
+  async function checkRutas() {
+    let querySnapshot = await getDoc(doc(db, "rutas", "gGOg5ObNJu6ZVH6ykCjZ"));
+    setRutasActivas(querySnapshot.data().rutasActivas)
+  }
+
+    useEffect(() => {
+      checkRutas();
+    }, [rutasActivas]);
+  
+
   return (
     <main className={styles.slide1698}>
       <MainImage />
-
       <section className={styles.locationsSection}>
-        <LocationCard
-          backgroundImage="https://cdn.builder.io/api/v1/image/assets/TEMP/58926609537fd9ac0798395a6fcee90c776e5fe12bbe363c288caafa7b4356eb?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-          title="QUEBRADA QUINTERO"
-        />
-        <LocationCard
-          backgroundImage="https://cdn.builder.io/api/v1/image/assets/TEMP/74f3314d662502c154fbf947b73f9ed00b340f2d2b5b01a2d939523de6ee5f67?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-          title="ANTIGUO TELEFERICO"
-        />
-        <LocationCard
-          backgroundImage="https://cdn.builder.io/api/v1/image/assets/TEMP/d030e53bb51acf345950aba78e0804a2c5568d14b22d9daaf8e89d2228dc7894?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"
-          title="LAGUNAZO"
-        />
-        <ActionButtons />
+        {allInfo.map((x) => {
+          return <LocationCard
+            backgroundImage={x.imageOne}
+            title={x.name}
+            includes={rutasActivas[x.id]}
+            array={rutasActivas}
+            setter={setRutasActivas}
+            id={x.id}
+          />
+
+        })}
       </section>
     </main>
   );
