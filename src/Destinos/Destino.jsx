@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import TelefericoOption from "/public/AntiguoTeleferico/teleferico-option.jpg";
 import LagunazoOption from "/public/Lagunazo/lagunazo-option.jpg";
 import QuebradaOption from "/public/QuebradaQuintero/quebrada-option.jpg";
+import SabasOption from "../../public/SabasNieves/sabas-option.png"
 
 import mapaQuebrada from "/public/QuebradaQuintero/Quebrada_quintero_mapa.png"
 import quebrada1 from "/public/QuebradaQuintero/quebrada(1).jpg";
@@ -134,6 +135,9 @@ const Destino = () => {
       </div>
       <div style={{backgroundImage:`url(${LagunazoOption})`}} onClick={()=> navigate("/destino/1")}>
         <h2>{params.id==1?"":"Lagunazo"}</h2>
+      </div>
+      <div style={{backgroundImage:`url(${SabasOption})`}} onClick={()=> navigate("/destino/3")}>
+        <h2>{params.id==1?"":"Sabas Nieves"}</h2>
       </div>
     </div>
 
