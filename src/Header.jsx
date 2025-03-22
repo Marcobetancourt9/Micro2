@@ -14,7 +14,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 import { useState, useEffect } from "react";
 const rutasVisitante = ["/login", "/register", "/"]
-const rutasEstudiante = ["/home", "/destino/0", "/destino/1", "/destino/2", "/consejos", "/contactanos", "/editarp", "/calendario", "/paypal", "/excursion", "/foro", "/paypal-payment"]
+const rutasEstudiante = ["/home", "/destino/0", "/destino/1", "/destino/2","/destino/3","/destino/4", "/consejos", "/contactanos", "/editarp", "/calendario", "/paypal", "/excursion", "/foro", "/paypal-payment"]
 const rutasSinHeaders = ["/paypal"] // Guardar aqui rutas donde no se quiere mostrar el header
 
 const auth = getAuth(app);
