@@ -142,6 +142,7 @@ export default function PayPalPayment() {
                         <p>Fecha de vencimiento: {expiryDate}</p>
                         <p>CI: {cvv}</p>
                         <p>Nombre del titular: {cardHolder}</p>
+                        <p>Monto total: 10$</p>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <button className={styles.paymentButton} onClick={confirmPayment}>Confirmar</button>

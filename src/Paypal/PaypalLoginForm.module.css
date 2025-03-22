@@ -267,6 +267,13 @@
   color: #000; 
 }
 
+.montoTotal {
+  font-weight: bold; 
+  font-size: 18px; 
+  margin-top: 10px; 
+  color: #000;  
+}
+
 .successMessage {
   font-size: 20px; /* Aumenta el tamaño de la fuente */
   margin-top: 0px;
