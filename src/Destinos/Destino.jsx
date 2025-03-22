@@ -19,6 +19,12 @@ import lagunazo2 from "/public/Lagunazo/Lagunazo(2).jpg"
 import lagunazo3 from "/public/Lagunazo/Lagunazo(3).jpg"
 import lagunazo4 from "/public/Lagunazo/Lagunazo(4).jpg"
 
+import SabasMapa from "../../public/SabasNieves/Sabas_Nieves_mapa.png"
+import sabas1 from "../../public/SabasNieves/Sabas(1).png"
+import sabas2 from "../../public/SabasNieves/Sabas(2).png"
+import sabas3 from "../../public/SabasNieves/Sabas(3).png"
+import sabas4 from "../../public/SabasNieves/Sabas(4).png"
+
 import TeleMapa from "/public/AntiguoTeleferico/Antiguo_teleferico_mapa.png"
 import tele1 from "/public/AntiguoTeleferico/AntiguoTeleferico(1).jpg"
 import tele2 from "/public/AntiguoTeleferico/AntiguoTeleferico(2).jpg"
@@ -59,6 +65,42 @@ const allInfo = [
     reviews: [1,1,1,0,0]
   },
   {// ID: 2 | AntiguoTeleferico
+    bannerImage: TeleMapa,
+    title: "Descubre la historia del Antiguo Teleferico,  el 'teleférico fantasma'.",
+    description: "El Lirón es una subestación histórica ubicada en el corazón del Parque Nacional Ávila, que alguna vez formó parte del icónico sistema Teleférico del Ávila que conectaba Caracas con la región costera. Inaugurada en 1956 durante el gobierno del general Marcos Pérez Jiménez, la estación jugó un papel crucial en la gestión del movimiento de las cabinas de los teleféricos en su recorrido entre los picos de Ávila y el Litoral. Hoy en día, aunque el sistema de teleférico ha estado inactivo durante décadas, El Lirón sigue siendo un símbolo de la rica historia de la región, que ofrece a los visitantes una visión del pasado y las impresionantes vistas de la costa de Caracas.",
+    imageOne: tele1,
+    imageTwo: tele2,
+    imageThree: tele3,
+    imageFour: tele4,
+    especial: "N/A",
+    difficulty: [1,1,1,1,1],
+    reviews: [1,1,0,0,0]
+  },
+  {// ID: 3 | Sabas Nieves
+    bannerImage: SabasMapa,
+    title: "Uno de los paseos que más se hacen al Ávila es, sin duda alguna, la subida al puesto de guardaparques de Sabas Nieves.",
+    description: "Sabas Nieves es uno de los principales puntos de entrada del Parque Nacional El Ávila en Caracas, Venezuela. Popular entre los amantes del senderismo, esta ruta ofrece una mezcla de desafíos moderados y paisajes fascinantes. El sendero serpentea a través de frondosos bosques, conducente a vistas panorámicas de la ciudad, y es el lugar ideal para aquellos que buscan una escapada natural sin alejarse demasiado de la urbe.",
+    imageOne: sabas1,
+    imageTwo: sabas2,
+    imageThree: sabas3,
+    imageFour: sabas4,
+    especial: "N/A",
+    difficulty: [1,1,1,1,1],
+    reviews: [1,1,0,0,0]
+  },
+  {// ID: 4 | AntiguoTeleferico
+    bannerImage: TeleMapa,
+    title: "Descubre la historia del Antiguo Teleferico,  el 'teleférico fantasma'.",
+    description: "El Lirón es una subestación histórica ubicada en el corazón del Parque Nacional Ávila, que alguna vez formó parte del icónico sistema Teleférico del Ávila que conectaba Caracas con la región costera. Inaugurada en 1956 durante el gobierno del general Marcos Pérez Jiménez, la estación jugó un papel crucial en la gestión del movimiento de las cabinas de los teleféricos en su recorrido entre los picos de Ávila y el Litoral. Hoy en día, aunque el sistema de teleférico ha estado inactivo durante décadas, El Lirón sigue siendo un símbolo de la rica historia de la región, que ofrece a los visitantes una visión del pasado y las impresionantes vistas de la costa de Caracas.",
+    imageOne: tele1,
+    imageTwo: tele2,
+    imageThree: tele3,
+    imageFour: tele4,
+    especial: "N/A",
+    difficulty: [1,1,1,1,1],
+    reviews: [1,1,0,0,0]
+  },
+  {// ID: 5 | AntiguoTeleferico
     bannerImage: TeleMapa,
     title: "Descubre la historia del Antiguo Teleferico,  el 'teleférico fantasma'.",
     description: "El Lirón es una subestación histórica ubicada en el corazón del Parque Nacional Ávila, que alguna vez formó parte del icónico sistema Teleférico del Ávila que conectaba Caracas con la región costera. Inaugurada en 1956 durante el gobierno del general Marcos Pérez Jiménez, la estación jugó un papel crucial en la gestión del movimiento de las cabinas de los teleféricos en su recorrido entre los picos de Ávila y el Litoral. Hoy en día, aunque el sistema de teleférico ha estado inactivo durante décadas, El Lirón sigue siendo un símbolo de la rica historia de la región, que ofrece a los visitantes una visión del pasado y las impresionantes vistas de la costa de Caracas.",
