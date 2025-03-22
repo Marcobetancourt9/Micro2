@@ -98,24 +98,12 @@ const allInfo = [
   },
   {// ID: 4 | Galipan
     bannerImage: GaliMapa,
-    title: "Descubre la historia del Antiguo Teleferico,  el 'teleférico fantasma'.",
-    description: "El Lirón es una subestación histórica ubicada en el corazón del Parque Nacional Ávila, que alguna vez formó parte del icónico sistema Teleférico del Ávila que conectaba Caracas con la región costera. Inaugurada en 1956 durante el gobierno del general Marcos Pérez Jiménez, la estación jugó un papel crucial en la gestión del movimiento de las cabinas de los teleféricos en su recorrido entre los picos de Ávila y el Litoral. Hoy en día, aunque el sistema de teleférico ha estado inactivo durante décadas, El Lirón sigue siendo un símbolo de la rica historia de la región, que ofrece a los visitantes una visión del pasado y las impresionantes vistas de la costa de Caracas.",
+    title: "En Galipán encontrarás una variedad de sabores locales que se fusionan con influencias de otras culturas",
+    description: "Este encantador pueblo de montaña, ubicado a tan solo un suspiro de Caracas, es un refugio de paz y naturaleza en medio del ajetreo y el bullicio de la ciudad. Desde las impresionantes vistas hasta la gastronomía local, Galipán tiene mucho que ofrecer.",
     imageOne: gali1,
     imageTwo: gali2,
-  imageThree: gali3,
-   imageFour: gali4,
-    especial: "N/A",
-    difficulty: [1,1,1,1,1],
-    reviews: [1,1,0,0,0]
-  },
-  {// ID: 5 | AntiguoTeleferico
-    bannerImage: TeleMapa,
-    title: "Descubre la historia del Antiguo Teleferico,  el 'teleférico fantasma'.",
-    description: "El Lirón es una subestación histórica ubicada en el corazón del Parque Nacional Ávila, que alguna vez formó parte del icónico sistema Teleférico del Ávila que conectaba Caracas con la región costera. Inaugurada en 1956 durante el gobierno del general Marcos Pérez Jiménez, la estación jugó un papel crucial en la gestión del movimiento de las cabinas de los teleféricos en su recorrido entre los picos de Ávila y el Litoral. Hoy en día, aunque el sistema de teleférico ha estado inactivo durante décadas, El Lirón sigue siendo un símbolo de la rica historia de la región, que ofrece a los visitantes una visión del pasado y las impresionantes vistas de la costa de Caracas.",
-    imageOne: tele1,
-    imageTwo: tele2,
-    imageThree: tele3,
-    imageFour: tele4,
+    imageThree: gali3,
+    imageFour: gali4,
     especial: "N/A",
     difficulty: [1,1,1,1,1],
     reviews: [1,1,0,0,0]
@@ -145,6 +133,9 @@ const Destino = () => {
       </div>
       <div style={{backgroundImage:`url(${SabasOption})`}} onClick={()=> navigate("/destino/3")}>
         <h2>{params.id==1?"":"Sabas Nieves"}</h2>
+      </div>
+      <div style={{backgroundImage:`url(${GaliOption})`}} onClick={()=> navigate("/destino/4")}>
+        <h2>{params.id==1?"":"Galipan"}</h2>
       </div>
       <div style={{backgroundImage:`url(${GaliOption})`}} onClick={()=> navigate("/destino/4")}>
         <h2>{params.id==1?"":"Galipan"}</h2>
