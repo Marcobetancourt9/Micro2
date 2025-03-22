@@ -28,10 +28,10 @@ import sabas3 from "../../public/SabasNieves/Sabas(3).png"
 import sabas4 from "../../public/SabasNieves/Sabas(4).png"
 
 import GaliMapa from "../../public/Galipan/Galipan_mapa.png"
-import sabas1 from "../../public/Galipan/Galipan(1).png"
-import sabas2 from "../../public/Galipan/Galipan(2).png"
-import sabas3 from "../../public/Galipan/Galipan(3).png"
-import sabas4 from "../../public/Galipan/Galipan(4).png"
+import gali1 from "../../public/Galipan/Galipan(1).png"
+import gali2 from "../../public/Galipan/Galipan(2).png"
+import gali3 from "../../public/Galipan/Galipan(3).png"
+import gali4 from "../../public/Galipan/Galipan(4).png"
 
 import TeleMapa from "/public/AntiguoTeleferico/Antiguo_teleferico_mapa.png"
 import tele1 from "/public/AntiguoTeleferico/AntiguoTeleferico(1).jpg"
@@ -133,9 +133,6 @@ const Destino = () => {
       </div>
       <div style={{backgroundImage:`url(${SabasOption})`}} onClick={()=> navigate("/destino/3")}>
         <h2>{params.id==1?"":"Sabas Nieves"}</h2>
-      </div>
-      <div style={{backgroundImage:`url(${GaliOption})`}} onClick={()=> navigate("/destino/4")}>
-        <h2>{params.id==1?"":"Galipan"}</h2>
       </div>
       <div style={{backgroundImage:`url(${GaliOption})`}} onClick={()=> navigate("/destino/4")}>
         <h2>{params.id==1?"":"Galipan"}</h2>
