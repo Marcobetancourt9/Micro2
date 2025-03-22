@@ -132,10 +132,10 @@ const Destino = () => {
         <h2>{params.id==1?"":"Lagunazo"}</h2>
       </div>
       <div style={{backgroundImage:`url(${SabasOption})`}} onClick={()=> navigate("/destino/3")}>
-        <h2>{params.id==1?"":"Sabas Nieves"}</h2>
+        <h2>{params.id==3?"":"Sabas Nieves"}</h2>
       </div>
       <div style={{backgroundImage:`url(${GaliOption})`}} onClick={()=> navigate("/destino/4")}>
-        <h2>{params.id==1?"":"Galipan"}</h2>
+        <h2>{params.id==4?"":"Galipan"}</h2>
       </div>
     </div>
 
