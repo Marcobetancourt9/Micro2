@@ -2,12 +2,12 @@
 import React from "react";
 import "./UserProfilePhoto.css";
 
-function UserProfilePicture() {
+function UserProfilePicture({user}) {
   return (
     <section className="picture-column">
       <div className="picture-container">
         <img
-          src="https://media.discordapp.net/attachments/1289764054168113175/1352026396435943434/Portrait_Placeholder.png?ex=67dc8434&is=67db32b4&hm=f60fc698990d7c1cde606a9fff180519d3ef2f762afadfb1d9da6939342f6f3a&=&format=webp&quality=lossless"
+          src={user.foto_perfil? user.foto_perfil : "https://cdn.builder.io/api/v1/image/assets/TEMP/cf81e9eb4f779150f9c8b3aa1d54f125bba9b94d3106e925ce5c3bc3a7334b02?placeholderIfAbsent=true&apiKey=5865bf14632e4b9982ad8baa15ee726e"}
           alt="Profile picture"
           className="profile-image"
         />

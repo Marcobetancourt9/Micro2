@@ -13,7 +13,7 @@ function UserProfileCard({ user }) {
         <div className="content-container">
           <div className="profile-columns">
             <UserProfileInfo user={user}/>
-            <UserProfilePicture />
+            <UserProfilePicture  user={user}/>
           </div>
         </div>
         <ActionButtons />

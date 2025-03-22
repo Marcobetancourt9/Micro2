@@ -29,7 +29,7 @@ const UserAdministration = () => {
     <main className="admin-container">
       <HeroSection />
       {usuariosConReservas.map((user)=>{
-        return <UserCard role={user.tipoRegistro} name={user.nombre+" "+user.apellido} uid={user.uid}/>
+        return <UserCard user={user}/>
       })}
     </main>
   );
