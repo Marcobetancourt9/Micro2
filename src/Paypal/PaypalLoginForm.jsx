@@ -51,6 +51,10 @@ const PaypalLoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!validarFormulario()) {
+      return; // Detiene la ejecución si la validación falla
+    }
+
     try {
       await addDoc(collection(db, "payments"), {
         email: formData.email,
