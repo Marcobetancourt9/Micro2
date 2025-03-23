@@ -68,7 +68,7 @@ const Header = () => {
     </>
     );
   }
-  // MENU DE USUARIO
+  // MENU DE USUARIO 
   else if (userInfo && userInfo.tipoRegistro != null && !["Administrador"].includes(userInfo.tipoRegistro)) {
     return (
       <header className={styles.header}>
